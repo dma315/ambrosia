@@ -8,12 +8,21 @@
 </head>
 <body>
 
-  <div ng-app="myApp">
-    {{"Hello world!"}}
+  <div ng-app="myApp" ng-controller="NameOfController">
+    <h1>{{"Hello world!"}}</h1>
+    <h3>{{ statement }}</h3>
   </div>
 
   <script>
     var App = angular.module('myApp', ['ui.router'])
+  </script>
+
+  <script>
+    App.controller('NameOfController', [
+      '$scope',
+      function($scope) {
+        $scope.statement = "Say something!!!"
+      }])
   </script>
 
 </body>
