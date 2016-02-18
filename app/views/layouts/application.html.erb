@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<%= yield %>
+  <div ng-app="myApp">
+    {{"Hello world!"}}
+  </div>
+
+  <script>
+    var App = angular.module('myApp', ['ui.router'])
+  </script>
 
 </body>
 </html>
