@@ -5,6 +5,7 @@ class CreateExperiences < ActiveRecord::Migration
       t.date :start_date, null: false
       t.date :end_date
       t.text :description
+      t.references :user, null: false
 
       t.timestamps null: false
     end
