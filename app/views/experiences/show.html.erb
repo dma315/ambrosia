@@ -1,0 +1,17 @@
+<h1><%= @experience.title %></h1>
+<p><%= @experience.start_date %></p>
+<p><%= @experience.end_date %></p>
+<p><%= @experience.description %></p>
+
+<% @experience.assets.each do |asset| %>
+  <div class="experience-image">
+    <img src="<%= asset.link %>">
+  </div>
+<% end %>
+
+<h1>Upload a file</h1>
+
+<%= form_tag user_experience_assets_path(@user, @experience), enctype: 'multipart/form-data' do %>
+    <%= file_field_tag :file  %>
+    <%= submit_tag 'Upload file' %>
+<% end %>
