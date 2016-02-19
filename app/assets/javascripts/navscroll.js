@@ -8,7 +8,6 @@ $(document).ready(function() {
     var experienceBubble = new ExperienceBubbleView(element)
     bubbles.push(experienceBubble)
   })
-  console.log(bubbles)
 
   $('nav').on('scroll', function(event) {
     for (var i in bubbles) {
