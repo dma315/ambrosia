@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'application#angular'
 
+  resources :users do
+    resources :experiences do
+      resources :assets
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
