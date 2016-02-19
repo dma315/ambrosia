@@ -14,4 +14,5 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.kinetic
+//= require bootstrap
 //= require_tree .
