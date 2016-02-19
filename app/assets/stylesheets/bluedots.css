@@ -1,0 +1,20 @@
+/*To use <div class="round-button-circle"></div> */
+
+
+.round-button-circle {
+  margin-left: 20px;
+  margin-top: 40px;
+	width: 12px;
+	height: 12px;
+  border-radius: 50%;
+    background: #00FFFF; 
+    box-shadow: 0 0 5px white;
+  transition: box-shadow .2s ease;
+  opacity: 5;
+}
+
+
+.round-button-circle:hover {
+	box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
+  
+}
