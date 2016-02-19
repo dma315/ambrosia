@@ -7,25 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<!--   <div ng-app="myApp" ng-controller="NameOfController">
-    <h1>{{"Hello world!"}}</h1>
-    <h3>{{ statement }}</h3>
-  </div>
-
-  <script>
-    var App = angular.module('myApp', ['ui.router', 'templates'])
-  </script>
-
-  <script>
-    App.controller('NameOfController', [
-      '$scope',
-      function($scope) {
-        $scope.statement = "Say something!!!"
-      }])
-  </script> -->
-
-<%= yield %>
+  <nav>
+    <% 30.times do %>
+    <div class="experience-bubble red"></div>
+    <div class="experience-bubble green"></div>
+    <% end %>
+  </nav>
+  <main>stuff</main>
 
 </body>
 </html>
