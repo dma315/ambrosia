@@ -1,24 +1,11 @@
-var navigationBarHTML = "<nav role='navigation' id='section-nav'>
-  <ul>
-    <li><a href='#?'>Create</a></li>
-    <li><a href='#?'>Edit</a></li>
-    <li><a href='#?'>Logout</a></li>
-  </ul>
-</nav>  
-
-<div class='hamb'>
-  <a href='#'><i class='fa fa-bars'></i></a>
-</div>
-
-<div id='overlay'></div>"
-
 
 $(document)
+
   .on('click', '.fa-bars', function() {
     $('nav').before($('#overlay'));
     $('#overlay').fadeIn();
-  
-    // Manages the adding of each link and animates each  
+
+    // Manages the adding of each link and animates each
     var i = 0;
     $('#section-nav').find('li').each(function() {
       var link = $(this);

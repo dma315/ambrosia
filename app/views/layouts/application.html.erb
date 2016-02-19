@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <nav>
@@ -13,7 +14,22 @@
     <div class="experience-bubble green"></div>
     <% end %>
   </nav>
-  <main>stuff</main>
+
+  <!-- Foldable navbar -->
+  <div role='navigation' id='section-nav'>
+    <ul>
+      <li><a href='#?'>Create</a></li>
+      <li><a href='#?'>Edit</a></li>
+      <li><a href='#?'>Logout</a></li>
+    </ul>
+  </div>
+  <div class='hamb'>
+    <a href='#'><i class='fa fa-bars'></i></a>
+  </div>
+  <div id='overlay'></div>
+
+
+  <main></main>
 
 </body>
 </html>
