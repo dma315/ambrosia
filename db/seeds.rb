@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destroy_all
+Experience.destroy_all
+
+u = User.create!(
+  first_name: "John",
+  last_name: "Smith",
+  email: "john@smith.com",
+  username: "jsmith",
+  password_digest: "password"
+  )
+
+u.experiences.create!(
+  title: "Trip to Hot Doug's",
+  start_date: DateTime.now.to_date,
+  end_date: DateTime.now.to_date,
+  description: "Hot Doug's is closed now :("
+  )
