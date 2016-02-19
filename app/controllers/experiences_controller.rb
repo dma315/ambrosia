@@ -1,6 +1,7 @@
 class ExperiencesController < ApplicationController
 
   def show
-    @experience = Experience.find(params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @experience = Experience.find_by(id: params[:id])
   end
 end
