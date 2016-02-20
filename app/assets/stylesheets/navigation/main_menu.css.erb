@@ -1,0 +1,47 @@
+#main-menu {
+  position: absolute;
+  left: 75px;
+  font-family: sans-serif;
+  z-index: 1;
+  /*padding-top: 75px;*/
+}
+
+#main-menu li {
+    margin: 30px;
+    left: -550px;
+    position: relative;
+    display: none;
+    list-style: none;
+  }
+
+#main-menu a {
+  color: #FFF;
+  text-shadow: 2px 2px 0 #000;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.hamb {
+  position: fixed;
+  left: 55px;
+  top: 20px;
+  font-size: 2.5em;
+  z-index: 1;
+}
+
+.hamb a, .hamb a:visited {
+  color: transparent;
+  text-shadow: 0 0 1px white;
+  text-decoration: none;
+}
+
+#menu-overlay {
+  left: 140px;
+  width: 200px;
+  height: 100%;
+  opacity: .9;
+  position: fixed;
+  display: none;
+  z-index: 1;
+  background: rgba(0, 0, 0, .5);
+}
