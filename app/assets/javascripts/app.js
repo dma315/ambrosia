@@ -17,11 +17,16 @@ $(document).ready(function() {
     hideMainMenu()
   });
 
-  // Render Login
+  // Login stuff
   $('#main-menu').on('click', 'li', function(event) {
-    // event.preventDefault();
     renderLoginForm()
   });
+  $('main').on('submit', '.login-form', function(event) {
+    event.preventDefault();
+    sendLoginCredentials(this)
+  })
+
+
 
 })
 
