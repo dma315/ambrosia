@@ -8,6 +8,7 @@ $(document).ready(function() {
   $(document).on('click', '.fa-bars', function() {
     showMainMenu()
   });
+
   $(document).on('click', '#menu-overlay, .fa-times', function() {
     hideMainMenu()
   });
