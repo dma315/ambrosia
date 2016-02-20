@@ -1,7 +1,5 @@
 
-$(document)
-
-  .on('click', '.fa-bars', function() {
+$(document).on('click', '.fa-bars', function() {
     $('nav').before($('#overlay'));
     $('#overlay').fadeIn();
 
