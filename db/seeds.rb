@@ -23,3 +23,5 @@ u.experiences.create!(
   end_date: DateTime.now.to_date,
   description: "Hot Doug's is closed now :("
   )
+
+User.create(first_name: "calvin", last_name: "lang", email: "c@c.com" , username: "calvin", password: "password")
