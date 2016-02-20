@@ -17,7 +17,11 @@ $(document).ready(function() {
     hideMainMenu()
   });
 
-  $('nav').on('click', '.experience-module')
+  // Render Login
+  $('#main-menu').on('click', 'li', function(event) {
+    // event.preventDefault();
+    renderLoginForm()
+  });
 
 })
 

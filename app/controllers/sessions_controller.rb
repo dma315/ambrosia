@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    render "sessions/new", layout: false
   end
 
   def create
