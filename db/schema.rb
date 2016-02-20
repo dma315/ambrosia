@@ -19,17 +19,20 @@ ActiveRecord::Schema.define(version: 20160218235716) do
   create_table "assets", force: :cascade do |t|
     t.string   "link"
     t.text     "caption"
-    t.integer  "experience_id", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "experience_id",                       null: false
+    t.string   "direct_upload_url",                   null: false
+    t.integer  "user_id",                             null: false
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.boolean  "processed",           default: false, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
-  create_table "contents", force: :cascade do |t|
-    t.string   "url"
-    t.text     "caption"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "assets", ["processed"], name: "index_assets_on_processed", using: :btree
+  add_index "assets", ["user_id"], name: "index_assets_on_user_id", using: :btree
 
   create_table "experiences", force: :cascade do |t|
     t.string   "title",       null: false
@@ -39,21 +42,6 @@ ActiveRecord::Schema.define(version: 20160218235716) do
     t.integer  "user_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "records", force: :cascade do |t|
-    t.string   "title"
-    t.date     "date"
-    t.float    "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root to: 'application#index'
 
   resources :users do
+    resources :assets, only: [:create, :index, :show]
     resources :experiences do
-      resources :assets
     end
   end
 
