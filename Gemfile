@@ -23,10 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Angular stuff
-gem 'angular-rails-templates'
-
-gem 'aws-sdk', '~> 1.6'
+# S3 direct upload stuff
+gem 'aws-sdk', '~> 1'
+gem 'aws-sdk-resources', '~> 2'
+gem 'paperclip'
+gem 's3_direct_upload'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
