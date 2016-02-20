@@ -6,8 +6,13 @@ body {
 main {
   height: 100%;
   width: 100%;
+  position: fixed;
+}
+
+.background-images {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("<%= asset_path('northern-lights.jpg') %>");
   background-size: cover;
+  transition: background 1s linear;
   position: fixed;
   display: flex;
   align-content: center;
