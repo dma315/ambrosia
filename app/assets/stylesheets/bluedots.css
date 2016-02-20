@@ -1,9 +1,0 @@
-/*To use <div class="round-button-circle"></div> */
-
-
-
-
-
-.round-button-circle:hover {
-	box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
-}

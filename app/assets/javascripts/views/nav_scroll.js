@@ -24,4 +24,11 @@ function NavScroll() {
     this.resizeBubbles()
     return this
   };
+  this.recalibrateBubbles = function() {
+    this.navHeight = $('nav').height();
+    this.navCenterY = this.navHeight / 2;
+    this.experienceBubbles = []
+    this.loadBubbles()
+    this.resizeBubbles()
+  }
 }

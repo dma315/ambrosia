@@ -4,6 +4,10 @@ $(document).ready(function() {
   var nav = new NavScroll().initialize()
   $('nav').on('scroll', function () { nav.resizeBubbles() })
 
+  $(window).on('resize', function() {
+    nav.recalibrateBubbles()
+  })
+
   // Load Hidden Navbar
   $(document).on('click', '.fa-bars', function() {
     showMainMenu()
