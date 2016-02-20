@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'application#index'
+  resources :sessions
 
   resources :users do
     resources :assets, only: [:create, :index, :show]
