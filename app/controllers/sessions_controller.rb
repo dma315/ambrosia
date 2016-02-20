@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       end
       return 202
     else
-      @errors = ["Login credentials are invalid."]
+      return 406
     end
   end
 
