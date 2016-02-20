@@ -17,5 +17,7 @@ $(document).ready(function() {
     hideMainMenu()
   });
 
+  $('nav').on('click', '.experience-module')
+
 })
 
