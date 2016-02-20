@@ -1,28 +1,28 @@
 
 $(document).on('click', '.fa-bars', function() {
-    $('nav').before($('#overlay'));
-    $('#overlay').fadeIn();
+    $('nav').after($('#menu-overlay'));
+    $('#menu-overlay').fadeIn();
 
     // Manages the adding of each link and animates each
-    var i = 0;
-    $('#section-nav').find('li').each(function() {
+    var linkIndex = 0;
+    $('#main-menu').find('li').each(function() {
       var link = $(this);
-      i++;
-      (function(i, link) {
-        setTimeout(function() {
-          link
-            .animate({
-              'left': '20px'
-            }, {
-              duration: 1000,
-              easing: "easeOutCubic"
-            })
-            .fadeIn({
-              queue: false
-            });
-        }, 60 * i) //time between each link
-      }(i, link))
+      linkIndex++;
+      fadeAllMenuItems(linkIndex, link)
+
+      // Helper functions for above
+      function fadeAllMenuItems(linkIndex, link) {
+        setTimeout(animateAndFadeIn, 60 * linkIndex) //time between each link
+      }
+
+      function animateAndFadeIn() {
+        link.animate( {'left': '20px'},
+                      { duration: 1000,
+                        easing: "easeOutCubic" })
+        link.fadeIn( {queue: false} );
+      }
     });
+
     $('.fa-bars').fadeOut(100, function() {
       $(this)
         .removeClass('fa-bars')
@@ -30,10 +30,10 @@ $(document).on('click', '.fa-bars', function() {
         .fadeIn();
     });
   })
-  .on('click', '#overlay, .fa-times', function() {
+  .on('click', '#menu-overlay, .fa-times', function() {
     //This is the going away part
-    $('#overlay').fadeOut();
-    $('#section-nav').find('li')
+    $('#menu-overlay').fadeOut();
+    $('#main-menu').find('li')
       .animate({
         'left': '-550px'
       }, {

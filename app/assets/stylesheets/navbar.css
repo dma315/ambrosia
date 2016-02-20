@@ -1,18 +1,18 @@
-#section-nav {
+#main-menu {
   position: absolute;
   left: 100px;
   font-family: sans-serif;
   z-index: 1;
 }
 
-#section-nav li {
+#main-menu li {
     margin: 85px 0;
     left: -550px;
     position: relative;
     display: none;
   }
 
-#section-nav a {
+#main-menu a {
     color: #FFF;
     text-shadow: 2px 2px 0 #000;
     text-decoration: none;
@@ -32,7 +32,7 @@
   }
 }
 
-#overlay {
+#menu-overlay {
   left: 100px;
   width: 270px;
   height: 100%;
