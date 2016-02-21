@@ -27,6 +27,8 @@ $(document).ready(function() {
   // Create new experience
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
+  $('#main-menu').on('click', '#manage', renderEditExperienceForm)
+
   $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();
     createExperience(this)

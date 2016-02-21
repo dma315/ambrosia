@@ -1,4 +1,11 @@
 class AssetsController < ApplicationController
+
+  def new
+    @user = User.find(session[:user_id])
+    @asset = Asset.new()
+    render "assets/new"
+  end
+
   def create
     user = User.find(params[:user_id])
     @asset = user.assets.create!(asset_params)
