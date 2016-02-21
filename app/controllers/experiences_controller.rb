@@ -6,6 +6,8 @@ class ExperiencesController < ApplicationController
   end
 
   def new
+    p "It's a hit!"
     @experience = Experience.new
+    render "experiences/new", layout: false
   end
 end
