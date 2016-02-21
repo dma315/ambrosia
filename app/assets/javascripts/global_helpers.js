@@ -32,3 +32,8 @@ function setCurrentUser() {
       getCurrentUser()
     })
 }
+
+function clearCurrentUser() {
+  $('#session').text("")
+  CURRENTUSER = ""
+}
