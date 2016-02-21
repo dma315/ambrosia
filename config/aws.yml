@@ -1,0 +1,13 @@
+defaults: &defaults
+  access_key_id: "AKIAIKDPGA2PH4UEAD5Q"
+  secret_access_key: "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"
+development:
+  <<: *defaults
+  bucket: "dbc-ambrosia88"
+test:
+  <<: *defaults
+  bucket: "dbc-ambrosia88"
+production:
+  access_key_id: <%=ENV["AWS_ACCESS_KEY_ID"]%>
+  secret_access_key: <%=ENV["AWS_SECRET_ACCESS_KEY"]%>
+  bucket: "dbc-ambrosia88"

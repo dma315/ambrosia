@@ -15,4 +15,3 @@ vendor/.DS_Store
 app/assets/.DS_Store
 app/assets/stylesheets/.DS_Store
 db/schema.rb
-config/aws.yml
