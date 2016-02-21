@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root to: 'application#index'
   resources :sessions
 
+  get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session
+
   resources :users do
     resources :assets, only: [:create, :index, :show]
     resources :experiences do

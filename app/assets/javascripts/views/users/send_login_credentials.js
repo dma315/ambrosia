@@ -12,8 +12,7 @@ function sendLoginCredentials(form) {
     }
     setTimeout(removeLoginBox, 1000)
     $("#login").remove();
-    var $logoutButton = $("<li>").append($("<a>").attr("href", "#/logout").text("Logout"))
-    $('#main-menu ul').append($logoutButton)
+    $('#main-menu ul').append("<li><a id='logout' href='#/logout'>Logout</a></li>")
   })
   request.fail(function(response) {
     var $error = $("<p>").text("Login credentials invalid")

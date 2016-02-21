@@ -18,13 +18,20 @@ $(document).ready(function() {
   });
 
   // Login stuff
-  $('#main-menu').on('click', '#login', function(event) {
+  $('#main-menu').on('click', '#login', function() {
     renderLoginForm()
   });
+
+  $('#main-menu').on('click', '#logout', function() {
+    userLogout()
+  });
+
   $('main').on('submit', '.login-form', function(event) {
     event.preventDefault();
     sendLoginCredentials(this)
-  })
+  });
+
+
 
 
 
