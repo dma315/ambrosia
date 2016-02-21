@@ -20,6 +20,7 @@ function mainFrameContains(idString) {
 
 function getCurrentUser() {
   CURRENTUSER = $('#session').text()
+  return CURRENTUSER
 }
 
 function setCurrentUser() {
