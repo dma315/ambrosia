@@ -17,3 +17,24 @@ function mainFrameContains(idString) {
   var elementToLookFor = $(idString)[0]
   return $.contains(mainFrameDOM, elementToLookFor)
 }
+
+function getCurrentUser() {
+  CURRENTUSER = $('#session').text()
+  return CURRENTUSER
+}
+
+function setCurrentUser() {
+  $.ajax({
+      method: "get",
+      url: "/sessions/uid"
+    })
+    .done(function(response) {
+      $('#session').text(response)
+      getCurrentUser()
+    })
+}
+
+function clearCurrentUser() {
+  $('#session').text("")
+  CURRENTUSER = ""
+}
