@@ -10,4 +10,11 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new
     render "experiences/new", layout: false
   end
+
+
+  private
+
+   def experience_params
+      params.require(:experience).permit(:title, :start_date, :end_date, :description)
+    end
 end
