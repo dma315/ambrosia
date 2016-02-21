@@ -8,3 +8,9 @@ function loadImagesToDOM(){
     $(".assets-screen").append(response)
   });
 }
+
+function findScrollPosition(){
+  return $(".assets-screen").scrollTop()
+}
+
+
