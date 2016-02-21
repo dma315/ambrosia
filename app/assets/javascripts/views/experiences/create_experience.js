@@ -8,6 +8,9 @@ function renderCreateExperienceForm() {
       clearMainFrame();
       hideMainMenu();
       appendToMainFrame($createExperienceForm);
+      $(".experience-form-input-title").on("keyup", function(){
+        var textAreaValue = $(".experience-form-input-title").val();
+      $("#experience-title").html(textAreaValue)
+  })
     })
-
 }
