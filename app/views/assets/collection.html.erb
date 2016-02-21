@@ -1,3 +1,5 @@
-<% @assets.each do |asset| %>
-  <img src="<%= asset.direct_upload_url %>">
+<% @assets.each_with_index do |asset,index| %>
+  <img width="600" id="asset<%=index%>" src="<%= asset.direct_upload_url %>">
 <% end %>
+
+<!-- <div id="some-text">Hello World</div> -->

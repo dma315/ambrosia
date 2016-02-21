@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :experiences, only: [:new, :create, :edit, :show]
 
   resources :users do
-    resources :assets, only: [:create, :index, :show]
+    resources :assets, only: [:create, :index, :show, :new]
   end
 
   # Example of regular route:
