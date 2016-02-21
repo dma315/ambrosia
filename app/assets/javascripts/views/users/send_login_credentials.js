@@ -1,19 +1,15 @@
 function sendLoginCredentials(form) {
   formData = $(form).serialize();
+  console.log(formData)
   var request = $.ajax({
     method: 'post',
     url: '/sessions',
     data: formData
   })
   request.done(function(response){
-    $("#user-login-box").fadeOut()
-    function removeLoginBox() {
-      $('#user-login-box').remove()
-    }
-    setTimeout(removeLoginBox, 1000)
-    $('#main-menu').find('#register').remove()
-    $("#login").remove();
-    $('#main-menu ul').append("<li><a id='logout' href='#/logout'>Logout</a></li>")
+    console.log(response)
+    clearMainFrame()
+    $('.logged-in').show()
   })
   request.fail(function(response) {
     var $error = $("<p>").text("Login credentials invalid")

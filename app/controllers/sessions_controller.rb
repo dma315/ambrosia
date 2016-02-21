@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:user][:username])
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
+      @session = session[:user_id]
       respond_to do |format|
+        format.js { }
         format.html { render nothing: true }
       end
     else

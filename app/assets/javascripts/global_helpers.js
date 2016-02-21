@@ -1,4 +1,4 @@
-function clearMainFrame($element) {
+function clearMainFrame() {
   $allChildren = $('#main-frame').children()
   $allChildren.fadeOut();
   $allChildren.promise().done(function() {

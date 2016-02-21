@@ -5,47 +5,27 @@ $(document).ready(function() {
   // Load navBubbles
   var nav = new NavScroll().initialize()
   $('nav').on('scroll', function () { nav.resizeBubbles() })
-
-  $(window).on('resize', function() {
-    nav.recalibrateBubbles()
-  })
+  $(window).on('resize', nav.recalibrateBubbles)
 
   // Load Hidden Navbar
-  $(document).on('click', '.fa-bars', function(event) {
-    event.preventDefault()
-    showMainMenu()
-  });
-
-  $(document).on('click', '#menu-overlay, .fa-times', function() {
-    hideMainMenu()
-  });
+  $(document).on('click', '.fa-bars', showMainMenu)
+  $(document).on('click', '#menu-overlay, .fa-times', hideMainMenu)
 
   // Login stuff
-  $(document).on('click', '#login', function() {
-    renderLoginForm()
-  });
-
-  $('#main-menu').on('click', '#logout', function() {
-    userLogout()
-  });
-
+  $(document).on('click', '#login', renderLoginForm)
+  $('#main-menu').on('click', '#logout', userLogout)
   $('main').on('submit', '.login-form', function(event) {
     event.preventDefault();
     sendLoginCredentials(this)
   });
-
-  $(document).on('click', '#register', function(event) {
-    renderRegisterForm()
-  });
-
-  $('main').on('submit', '#new_user', function(event) {
+  $(document).on('click', '#register', renderRegisterForm)
+  $('main').on('submit', '.register-form', function(event) {
     event.preventDefault();
     submitRegistration(this)
   });
 
-  $('#main-menu').on('click', '#create', function() {
-    renderCreateExperienceForm()
-  });
+  // Create new experience
+  $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
   $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();

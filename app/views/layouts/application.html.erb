@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+  <div id="session"></div>
   <div id="nav-overlay">
     <div class='hamb'>
         <a href='#'><i class='fa fa-bars'></i></a>
@@ -24,13 +24,10 @@
   <!-- Foldable navbar -->
   <div id='main-menu'>
     <ul>
-      <li><a id="create" href='#?'>Create</a></li>
-      <li><a href='#?'>Manage</a></li>
+        <%= render partial: 'layouts/logged_in_menu' %>
+        <%= render partial: 'layouts/logged_out_menu' %>
       <% if session[:user_id] %>
-        <li><a id="logout" href='#/logout'>Logout</a></li>
       <% else %>
-        <li><a id="register" href='#/register'>Register</a></li>
-        <li><a id='login' href='#/login'>Login</a></li>
       <% end %>
     </ul>
   </div>
