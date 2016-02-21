@@ -1,9 +1,12 @@
 function renderEditExperienceForm() {
 
-  var assetURL = "assets/" +
-  $.ajax{
+  var assetURL = "users/" + getCurrentUser() + "/assets/new"
+  $.ajax({
     method: "get",
-    url: "assets"
-  }
-
+    url: assetURL,
+  }).done(function(response){
+    console.log(response)
+    appendToMainFrame($(response))
+  })
 }
+
