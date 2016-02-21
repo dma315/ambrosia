@@ -14,6 +14,5 @@ function submitRegistration(form){
     $('#main-menu').find('#register').remove()
     $('#main-menu').find('#login').remove()
     $('#main-menu ul li:last').append("<a id='logout' href='#/logout'>Logout</a>");
-
   })
 }
