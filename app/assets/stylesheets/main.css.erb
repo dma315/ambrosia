@@ -1,3 +1,7 @@
+* {
+  font-family: 'Asap', sans-serif;
+}
+
 body {
   height: 100%;
   background-color: black;
@@ -13,7 +17,18 @@ main {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("<%= asset_path('elephants.jpg') %>");
   background-size: cover;
   transition: background 1s linear;
-  position: fixed;
+  padding-left: 120px
+}
+
+a:hover {
+  color: #00FFFF !important;
+  opacity: 0.8;
+  transition: 0.5s
+}
+
+#main-frame {
+  height: 100vh;
+  width: 100%;
   display: flex;
   align-content: center;
   align-items: center;

@@ -7203,6 +7203,18 @@ th {
   height: 10px;
   background: #3EC144;
 }
+.assets-screen{
+  font-family: sans-serif;
+  color: white;
+  margin-left: 120px;
+  text-align: center;
+  background-color: white;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  border-radius: 4%;
+  width: calc(100% - 150px);
+  height: 90%;
+  overflow-y:scroll;
+}
 body {
   height: 100%;
   background-color: black;
@@ -7215,7 +7227,7 @@ main {
 }
 
 .background-images {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/assets/northern-lights-ae76daeb109f04c3a201dbe5e0561ffd40dc4b60402ca614337b8790f61aab0c.jpg");
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/assets/elephants-7919a7a1d495b0abf18e2948fe4e2640485e5f6035e8e9935e8830285b0e8c84.jpg");
   background-size: cover;
   transition: background 1s linear;
   position: fixed;
@@ -7242,13 +7254,21 @@ main {
 nav {
   width: 120px;
   height: 100vh;
+  top: 75px;
   overflow: auto;
   position: fixed;
-  margin: 10px;
   background-color: transparent;
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: 10;
+}
+
+#nav-overlay {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  height: 100vh;
+  position: fixed;
   z-index: 1;
+  width: 120px;
 }
 
 ::-webkit-scrollbar {
@@ -7281,7 +7301,7 @@ nav {
 
 .hamb {
   position: fixed;
-  left: 55px;
+  left: 45px;
   top: 20px;
   font-size: 2.5em;
   z-index: 1;

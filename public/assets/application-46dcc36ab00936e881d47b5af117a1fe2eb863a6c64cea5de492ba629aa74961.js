@@ -32427,7 +32427,9 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 $(document).ready(function() {
-
+  if ($(document).find('#logout').length != 0) {
+    loadImagesToDOM()
+  }
   // Load navBubbles
   var nav = new NavScroll().initialize()
   $('nav').on('scroll', function () { nav.resizeBubbles() })
@@ -32484,6 +32486,23 @@ $(function() {
     return alert(content.filename + ' failed to upload');
   });
 });
+function loadImagesToDOM(){
+  console.log("loaded")
+  $('main').append("<div class='assets-screen'></div>").hide().fadeIn(2000)
+  $.ajax({
+    method: "get",
+    url: "/assets/collection"
+  }).done(function(response) {
+    $(".assets-screen").append(response)
+  });
+}
+
+function findScrollPosition(){
+  return $(".assets-screen").scrollTop()
+}
+
+
+;
 function ExperienceBubbleView(element, navCenterY) {
   this.navCenterY = navCenterY
   this.$element = $(element)
@@ -32497,7 +32516,7 @@ function ExperienceBubbleView(element, navCenterY) {
 ExperienceBubbleView.prototype.recalculate = function() {
   this.positionY = this.element.getBoundingClientRect().top
   this.distanceFromCenter = Math.abs(this.positionY - this.navCenterY)
-  this.magnifyRatio = (1 - (this.distanceFromCenter / this.navCenterY))
+  this.magnifyRatio = (1 - (this.distanceFromCenter / this.navCenterY) * 0.8)
   return this
 };
 
@@ -32651,6 +32670,7 @@ function userLogout() {
     $('#main-menu ul li:last').append("<a id='login' href='#/login'>Login</a>");
   });
 };
+
 function submitRegistration(form){
   formData = $(form).serialize();
   var request = $.ajax({
