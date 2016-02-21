@@ -1,5 +1,7 @@
 $(document).ready(function() {
-
+  if ($(document).find('#logout').length != 0) {
+    loadImagesToDOM()
+  }
   // Load navBubbles
   var nav = new NavScroll().initialize()
   $('nav').on('scroll', function () { nav.resizeBubbles() })

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       respond_to do |format|
         format.html { render nothing: true }
       end
-      return 202
+
     else
       return 406
     end
