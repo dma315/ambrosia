@@ -8,3 +8,4 @@ function userLogout() {
     $('#main-menu ul li:last').append("<a id='login' href='#/login'>Login</a>");
   });
 };
+

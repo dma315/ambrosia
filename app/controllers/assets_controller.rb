@@ -15,6 +15,11 @@ class AssetsController < ApplicationController
     @asset = user.assets.find(params[:id]).direct_upload_url
   end
 
+  def collection
+    @assets = Asset.where(user_id: session[:user_id])
+    render 'assets/collection', layout: false
+  end
+
   private
 
   def asset_params

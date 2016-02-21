@@ -9,19 +9,11 @@
 User.destroy_all
 Experience.destroy_all
 
-u = User.create!(
-  first_name: "John",
-  last_name: "Smith",
-  email: "john@smith.com",
-  username: "jsmith",
-  password_digest: "password"
-  )
 
-u.experiences.create!(
-  title: "Trip to Hot Doug's",
-  start_date: DateTime.now.to_date,
-  end_date: DateTime.now.to_date,
-  description: "Hot Doug's is closed now :("
-  )
+User.create!(first_name: "calvin", last_name: "lang", email: "c@c.com" , username: "calvin", password: "password")
 
-User.create(first_name: "calvin", last_name: "lang", email: "c@c.com" , username: "calvin", password: "password")
+Asset.create!(link: "http://www.ucreative.com/wp-content/uploads/2014/11/Landscape-Photography-Banner1.jpg", caption: "This is some stuff", experience_id: 1, direct_upload_url: "http://www.ucreative.com/wp-content/uploads/2014/11/Landscape-Photography-Banner1.jpg", user_id: 1, upload_file_name: "string")
+
+Asset.create!(link: "https://porelplanetaphoto.com/noticias/wp-content/uploads/2015/10/34059861vEE.jpg", caption: "This is some stuff", experience_id: 1, direct_upload_url: "https://porelplanetaphoto.com/noticias/wp-content/uploads/2015/10/34059861vEE.jpg", user_id: 1, upload_file_name: "string")
+
+Asset.create!(link: "http://img08.deviantart.net/cb77/i/2012/122/1/a/landscape_wallpaper_by_nickchoubg-d4yaep3.png", caption: "This is some stuff", experience_id: 1, direct_upload_url: "http://img08.deviantart.net/cb77/i/2012/122/1/a/landscape_wallpaper_by_nickchoubg-d4yaep3.png", user_id: 1, upload_file_name: "string")
