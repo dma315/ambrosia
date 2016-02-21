@@ -1,9 +1,9 @@
 
 <div id="user-registration-box">
   <h1 id="user-registration-title">Register</h1>
-  <h4>Have a login already? <a href="#">Click here.</a></h4>
+  <h4>Have a login already? <a id="login" href="#/login">Click here.</a></h4>
 
-    <%=form_for @user do |f| %>
+    <%=form_for @user, :html => {:class => "register-form"} do |f| %>
       <%=f.text_field :first_name, class: "form-input", placeholder: 'First Name'  %>
       <%=f.text_field :last_name, class: "form-input", placeholder: 'Last Name' %>
       <%=f.text_field :email, class: "form-input", placeholder: 'johnsmith@gmail.com' %>

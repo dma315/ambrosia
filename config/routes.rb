@@ -4,16 +4,20 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'application#index'
+  get 'sessions/uid', to: 'sessions#uid', as: :get_session_uid
+
   resources :sessions
 
   get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session
 
   get 'assets/collection', to: 'assets#collection'
 
+  # get 'experiences/new', to: 'experiences#new'
+
+  resources :experiences, only: [:new, :create, :edit, :show]
+
   resources :users do
     resources :assets, only: [:create, :index, :show]
-    resources :experiences do
-    end
   end
 
   # Example of regular route:
