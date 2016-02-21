@@ -6,9 +6,13 @@ class ExperiencesController < ApplicationController
   end
 
   def new
-    p "It's a hit!"
     @experience = Experience.new
     render "experiences/new", layout: false
+  end
+
+  def create
+    p experience_params
+    @experience = Experience.new(experience_params)
   end
 
 

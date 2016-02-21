@@ -12,7 +12,6 @@ var userRegister = function(){
       url: "/users/new"
     })
     .done(function(response) {
-      console.log("DONE!")
       var $loginForm = $(response).hide()
       hideMainMenu()
       $('main').append($loginForm)
