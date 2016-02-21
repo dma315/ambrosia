@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
   get 'assets/collection', to: 'assets#collection'
 
-  get 'experiences/new', to: 'experiences#new'
+  # get 'experiences/new', to: 'experiences#new'
+
+  resources :experiences, only: [:new, :create, :edit, :show]
 
   resources :users do
     resources :assets, only: [:create, :index, :show]
-    resources :experiences do
-    end
   end
 
   # Example of regular route:
