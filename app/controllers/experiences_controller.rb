@@ -4,4 +4,8 @@ class ExperiencesController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @experience = Experience.find_by(id: params[:id])
   end
+
+  def new
+    @experience = Experience.new
+  end
 end
