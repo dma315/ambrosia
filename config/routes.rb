@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'application#index'
+  get 'sessions/uid', to: 'sessions#uid', as: :get_session_uid
+
   resources :sessions
 
   get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session

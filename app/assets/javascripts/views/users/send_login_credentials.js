@@ -7,7 +7,13 @@ function sendLoginCredentials(form) {
     data: formData
   })
   request.done(function(response){
-    console.log(response)
+    $.ajax({
+      method: "get",
+      url: "/sessions/uid"
+    })
+    .done(function(response) {
+      $('#session').text(response)
+    })
     clearMainFrame()
     $('.logged-in').show()
   })
