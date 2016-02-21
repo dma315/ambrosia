@@ -21,7 +21,7 @@ $(document).ready(function() {
   });
 
   // Login stuff
-  $('#main-menu').on('click', '#login', function() {
+  $(document).on('click', '#login', function() {
     renderLoginForm()
   });
 
