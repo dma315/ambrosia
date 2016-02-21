@@ -1,0 +1,29 @@
+#black-background {
+	height: 100px;
+	width: 100px;
+	background-color: black;
+}
+
+img {
+    display: block;
+    max-width:500;
+    max-height:500px;
+    width: auto;
+    height: auto;
+}
+
+#animation-container {
+	position: relative;
+	bottom: 100px;
+}
+
+#animate {
+	position: absolute;
+}
+
+/*div.polaroid {
+  max-width: 50%;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
