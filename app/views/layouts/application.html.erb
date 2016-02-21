@@ -24,10 +24,10 @@
   <!-- Foldable navbar -->
   <div id='main-menu'>
     <ul>
-      <% if session[:user_id] %>
         <%= render partial: 'layouts/logged_in_menu' %>
-      <% else %>
         <%= render partial: 'layouts/logged_out_menu' %>
+      <% if session[:user_id] %>
+      <% else %>
       <% end %>
     </ul>
   </div>

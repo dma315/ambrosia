@@ -38,7 +38,7 @@ $(document).ready(function() {
     renderRegisterForm()
   });
 
-  $('main').on('submit', '#new_user', function(event) {
+  $('main').on('submit', '.register-form', function(event) {
     event.preventDefault();
     submitRegistration(this)
   });

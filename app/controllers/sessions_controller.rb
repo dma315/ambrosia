@@ -10,9 +10,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       respond_to do |format|
+        format.js { render nothing: true }
         format.html { render nothing: true }
       end
-
     else
       return 406
     end
