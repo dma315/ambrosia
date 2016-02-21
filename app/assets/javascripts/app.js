@@ -11,7 +11,8 @@ $(document).ready(function() {
   })
 
   // Load Hidden Navbar
-  $(document).on('click', '.fa-bars', function() {
+  $(document).on('click', '.fa-bars', function(event) {
+    event.preventDefault()
     showMainMenu()
   });
 
@@ -20,7 +21,7 @@ $(document).ready(function() {
   });
 
   // Login stuff
-  $('#main-menu').on('click', '#login', function() {
+  $(document).on('click', '#login', function() {
     renderLoginForm()
   });
 
@@ -33,8 +34,8 @@ $(document).ready(function() {
     sendLoginCredentials(this)
   });
 
-  $('#main-menu').on('click', '#register', function(event) {
-    userRegister()
+  $(document).on('click', '#register', function(event) {
+    renderRegisterForm()
   });
 
   $('main').on('submit', '#new_user', function(event) {
