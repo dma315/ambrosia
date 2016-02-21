@@ -1,4 +1,5 @@
-var showMainMenu = function() {
+var showMainMenu = function(event) {
+  event.preventDefault()
   $('nav').after($('#menu-overlay'));
   $('#menu-overlay').fadeIn();
 
