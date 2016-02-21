@@ -11,8 +11,19 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    p experience_params
     @experience = Experience.new(experience_params)
+    return 406 if @experience.title == ""
+    @experience.user_id = session[:user_id]
+    @experience.start_date = Time.now
+    @experience.save
+    if @experience.save
+      respond_to do |format|
+        format.html { render nothing: true }
+      end
+      return 202
+    else
+      return 406
+    end
   end
 
 

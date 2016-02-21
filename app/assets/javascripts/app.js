@@ -47,7 +47,7 @@ $(document).ready(function() {
     renderCreateExperienceForm()
   });
 
-  $('main').on('submit', '.create-experience-submit', function(event) {
+  $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();
     createExperience(this)
   });
