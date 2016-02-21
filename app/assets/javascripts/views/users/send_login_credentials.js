@@ -7,6 +7,7 @@ function sendLoginCredentials(form) {
     data: formData
   })
   request.done(function(response){
+    console.log(response)
     clearMainFrame()
     $('.logged-in').show()
   })
