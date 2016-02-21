@@ -11,3 +11,9 @@ function appendToMainFrame($element) {
   $('#main-frame').append($element)
   $element.fadeIn()
 }
+
+function slideIntoMF($element) {
+	$element.hide();
+	$('#main-frame').append($element);
+	$element.slideDown();
+}
