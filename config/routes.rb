@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session
 
+  get 'assets/collection', to: 'assets#collection'
+
   resources :users do
     resources :assets, only: [:create, :index, :show]
     resources :experiences do
