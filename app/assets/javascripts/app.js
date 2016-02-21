@@ -6,9 +6,7 @@ $(document).ready(function() {
   var nav = new NavScroll().initialize()
   $('nav').on('scroll', function () { nav.resizeBubbles() })
 
-  $(window).on('resize', function() {
-    nav.recalibrateBubbles()
-  })
+  $(window).on('resize', nav.recalibrateBubbles)
 
   // Load Hidden Navbar
   $(document).on('click', '.fa-bars', function(event) {
@@ -16,36 +14,27 @@ $(document).ready(function() {
     showMainMenu()
   });
 
-  $(document).on('click', '#menu-overlay, .fa-times', function() {
-    hideMainMenu()
-  });
+  $(document).on('click', '#menu-overlay, .fa-times', hideMainMenu)
 
   // Login stuff
-  $(document).on('click', '#login', function() {
-    renderLoginForm()
-  });
+  $(document).on('click', '#login', renderLoginForm)
 
-  $('#main-menu').on('click', '#logout', function() {
-    userLogout()
-  });
+  $('#main-menu').on('click', '#logout', userLogout)
 
   $('main').on('submit', '.login-form', function(event) {
     event.preventDefault();
     sendLoginCredentials(this)
   });
 
-  $(document).on('click', '#register', function(event) {
-    renderRegisterForm()
-  });
+  $(document).on('click', '#register', renderRegisterForm)
+
 
   $('main').on('submit', '.register-form', function(event) {
     event.preventDefault();
     submitRegistration(this)
   });
 
-  $('#main-menu').on('click', '#create', function() {
-    renderCreateExperienceForm()
-  });
+  $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
 })
 
