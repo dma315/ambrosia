@@ -1,5 +1,5 @@
 function renderLoginForm() {
-  if ($(document).find('#user-login-box').length === 0) {
+  if ($(document).find('#user-login-box').length === 0 && $(document).find('#user-registration-box').length === 0) {
     $.ajax({
       method: "GET",
       url: "/sessions/new"

@@ -11,6 +11,7 @@ function sendLoginCredentials(form) {
       $('#user-login-box').remove()
     }
     setTimeout(removeLoginBox, 1000)
+    $('#main-menu').find('#register').remove()
     $("#login").remove();
     $('#main-menu ul').append("<li><a id='logout' href='#/logout'>Logout</a></li>")
   })
