@@ -27,8 +27,7 @@
 }
 
 .form-input:focus {
-  /*border: 2px solid black;*/
-  box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;;
+  box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
 }
 
 .form-input {
@@ -47,7 +46,7 @@
 
 .form-submit {
   border: 2px solid transparent;
-  background: black;
+  background: transparent;
   color: #ffffff;
   font-size: 16px;
   padding: 10px 0;
@@ -59,6 +58,8 @@
 }
 
 .form-submit:hover {
-  background-color: grey;
+  background-color: black;
   cursor: pointer;
+  box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
+  color: #00FFFF;
 }
