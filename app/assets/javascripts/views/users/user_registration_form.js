@@ -1,21 +1,24 @@
-function renderLoginForm() {
+var userRegister = function(){
   if ($(document).find('#user-login-box').length === 0 && $(document).find('#user-registration-box').length === 0) {
-    // $('body > *').not("#user-login-box").on('click', function(){
-    //   $('#user-login-box').fadeOut()
-    //   function removeLoginBox() {
-    //     $('#user-login-box').remove()
+    // $('body > *').not("#user-registration-box").on('click', function(){
+    //   $('#user-registration-box').fadeOut()
+    //   function removeRegistrationBox() {
+    //     $('#user-registration-box').remove()
     //   }
-    //   setTimeout(removeLoginBox, 1000)
+    //   setTimeout(removeRegistrationBox, 1000)
     // })
     $.ajax({
       method: "GET",
-      url: "/sessions/new"
+      url: "/users/new"
     })
     .done(function(response) {
+      console.log("DONE!")
       var $loginForm = $(response).hide()
       hideMainMenu()
       $('main').append($loginForm)
       $loginForm.fadeIn()
     })
   };
+
+
 }

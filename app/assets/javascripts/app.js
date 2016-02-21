@@ -31,7 +31,14 @@ $(document).ready(function() {
     sendLoginCredentials(this)
   });
 
+  $('#main-menu').on('click', '#register', function(event) {
+    userRegister()
+  });
 
+  $('main').on('submit', '#new_user', function(event) {
+    event.preventDefault();
+    submitRegistration(this)
+  });
 
 
 

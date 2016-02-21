@@ -3,10 +3,10 @@
     <h1 id="user-login-title">User Login</h1>
     <h4>New user? Register <a href="#">here</a></h4>
     <%=form_for @user, :html => {:class => "login-form"} do |f| %>
-		<%=f.text_field :username, class: "form-input" %>
-		<%=f.password_field :password, class: "form-input"%>
-		<%= f.submit "Login", class: 'form-submit' %>
-	<% end %>
+  		<%=f.text_field :username, class: "form-input", placeholder: 'Username' %>
+  		<%=f.password_field :password, class: "form-input", placeholder: 'Password'%>
+  		<%= f.submit "Login", class: 'form-submit' %>
+	   <% end %>
   </div>
 
 

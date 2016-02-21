@@ -1,0 +1,26 @@
+#user-registration-title{
+  font-size: 5em;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+#user-registration-holder{
+  margin-top: 10%;
+}
+
+#user-registration-box{
+  font-family: sans-serif;
+  color: white;
+  margin-left: 30%;
+  width: 510px;
+  text-align: center;
+  background-color: black;
+  padding: 35px;
+  opacity: 0.7;
+  border-radius: 4%;
+}
+
+#user-registration-box a{
+  color: white;
+  text-decoration: none;
+}

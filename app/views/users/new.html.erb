@@ -1,2 +1,15 @@
-<h1>Sign up!</h1>
-<%= %>
+
+<div id="user-registration-box">
+  <h1 id="user-registration-title">Register</h1>
+  <h4>Have a login already? <a href="#">Click here.</a></h4>
+
+    <%=form_for @user do |f| %>
+      <%=f.text_field :first_name, class: "form-input", placeholder: 'First Name'  %>
+      <%=f.text_field :last_name, class: "form-input", placeholder: 'Last Name' %>
+      <%=f.text_field :email, class: "form-input", placeholder: 'johnsmith@gmail.com' %>
+      <%=f.text_field :username, class: "form-input", placeholder: 'Username' %>
+      <%=f.password_field :password, class: "form-input", placeholder: 'Password' %>
+      <%=f.submit "Register", class: 'form-submit' %>
+    <% end %>
+</div>
+
