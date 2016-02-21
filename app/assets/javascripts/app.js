@@ -42,7 +42,9 @@ $(document).ready(function() {
     submitRegistration(this)
   });
 
-
+  $('#main-menu').on('click', '#create', function() {
+    renderCreateExperienceForm()
+  });
 
 })
 

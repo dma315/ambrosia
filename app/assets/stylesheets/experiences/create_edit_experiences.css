@@ -1,0 +1,65 @@
+#experience-title{
+  font-size: 5em;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+
+#experience-box{
+  font-family: sans-serif;
+  color: white;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+  background-color: black;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  padding: 35px;
+  opacity: 0.7;
+  border-radius: 4%;
+
+}
+
+#experience-box a{
+  color: white;
+  text-decoration: none;
+}
+
+form.experience-form{
+  margin-top: -30px;
+  padding-sides: 20px;
+}
+
+.experience-form{
+  margin-top: -30px;
+}
+
+.experience-form-input{
+  text-align: center;
+  background-color: #ECF0F1;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 200;
+  margin:10px;
+  padding: 10px 0;
+  transition: border .5s;
+  color: black;
+}
+
+
+.experience-form-input-title {
+  width: 535px;
+}
+.experience-form-input-description {
+  height:100px;
+  width: 535px;
+}
+
+.experience-form-input-start-date{
+  width:245px;
+  margin-right: 35px;
+}
+
+.experience-form-input-end-date{
+  width:245px;
+}
