@@ -1,4 +1,7 @@
+
 <div id="experience-box">
+  <%= @experience.title %>
+  <%= @experience.id %>
   <%= s3_uploader_form callback_url: @assets_url,
     id: "s3_uploader",
     callback_param: "asset[direct_upload_url]",
