@@ -1,4 +1,13 @@
 $(document).ready(function() {
+
+  getCurrentUser()
+
+  if (CURRENTUSER) {
+    $('.logged-out').hide()
+  } else {
+    $('.logged-in').hide()
+  }
+
   if ($(document).find('#logout').length != 0) {
     loadImagesToDOM()
   }

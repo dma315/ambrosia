@@ -7,14 +7,9 @@ function sendLoginCredentials(form) {
     data: formData
   })
   request.done(function(response){
-    $.ajax({
-      method: "get",
-      url: "/sessions/uid"
-    })
-    .done(function(response) {
-      $('#session').text(response)
-    })
-    clearMainFrame()
+    setCurrentUser();
+    clearMainFrame();
+    $('.logged-out').hide()
     $('.logged-in').show()
   })
   request.fail(function(response) {
