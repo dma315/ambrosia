@@ -1,13 +1,14 @@
 function renderLoginForm() {
-  if ($(document).find('#user-login-box').length === 0 && $(document).find('#user-registration-box').length === 0) {
+  var loginFormID = '#user-login-box'
+  if (!mainFrameContains(loginFormID)) {
     $.ajax({
       method: "GET",
       url: "/sessions/new"
     })
     .done(function(response) {
       $loginForm = $(response);
-      clearMainFrame();
       hideMainMenu();
+      clearMainFrame();
       appendToMainFrame($loginForm);
     })
   };

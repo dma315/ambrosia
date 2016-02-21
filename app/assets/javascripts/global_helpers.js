@@ -1,4 +1,4 @@
-function clearMainFrame() {
+function clearMainFrame($element) {
   $allChildren = $('#main-frame').children()
   $allChildren.fadeOut();
   $allChildren.promise().done(function() {
@@ -10,4 +10,10 @@ function appendToMainFrame($element) {
   $element.hide()
   $('#main-frame').append($element)
   $element.fadeIn()
+}
+
+function mainFrameContains(idString) {
+  var mainFrameDOM = $('#main-frame')[0]
+  var elementToLookFor = $(idString)[0]
+  return $.contains(mainFrameDOM, elementToLookFor)
 }

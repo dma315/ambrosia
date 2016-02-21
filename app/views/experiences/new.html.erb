@@ -3,7 +3,7 @@
   <h1 id="experience-title">Your Experience</h1>
 
     <%=form_for "/experience/new" do |f| %>
-      <%=f.text_field :title, class: "experience-form-input-title experience-form-input ", placeholder: 'Title'  %>
+      <%=f.text_field :title, class: "experience-form-input-title experience-form-input", placeholder: 'Title'  %>
       <%=f.date_field :start_date, class: "experience-form-input experience-form-input-start-date", placeholder: 'Start Date' %>
       <%=f.date_field :end_date, class: "experience-form-input experience-form-input-end-date", placeholder: 'End Date' %>
       <%=f.text_area :description, class: "experience-form-input experience-form-input-description", placeholder: 'Description' %>
