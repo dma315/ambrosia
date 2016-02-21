@@ -9,14 +9,16 @@
 </head>
 <body>
 
-  <nav>
+  <div id="nav-overlay">
     <div class='hamb'>
-      <a href='#'><i class='fa fa-bars'></i></a>
+        <a href='#'><i class='fa fa-bars'></i></a>
     </div>
-    <% 60.times do %>
-      <div class="experience-bubble round-button-circle"></div>
-    <% end %>
-  </nav>
+    <nav>
+      <% 60.times do %>
+        <div class="experience-bubble round-button-circle"></div>
+      <% end %>
+    </nav>
+  </div>
 
   <!-- Foldable navbar -->
   <div id='main-menu'>

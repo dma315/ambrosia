@@ -11,7 +11,7 @@ function ExperienceBubbleView(element, navCenterY) {
 ExperienceBubbleView.prototype.recalculate = function() {
   this.positionY = this.element.getBoundingClientRect().top
   this.distanceFromCenter = Math.abs(this.positionY - this.navCenterY)
-  this.magnifyRatio = (1 - (this.distanceFromCenter / this.navCenterY))
+  this.magnifyRatio = (1 - (this.distanceFromCenter / this.navCenterY) * 0.8)
   return this
 };
 

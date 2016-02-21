@@ -15,13 +15,21 @@
 nav {
   width: 120px;
   height: 100vh;
+  top: 75px;
   overflow: auto;
   position: fixed;
-  margin: 10px;
   background-color: transparent;
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: 10;
+}
+
+#nav-overlay {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  height: 100vh;
+  position: fixed;
   z-index: 1;
+  width: 120px;
 }
 
 ::-webkit-scrollbar {
