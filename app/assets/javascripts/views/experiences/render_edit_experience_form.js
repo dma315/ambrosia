@@ -6,6 +6,7 @@ function renderEditExperienceForm(event) {
     url: assetURL,
   }).done(function(response){
     // console.log(response)
+    clearMainFrame()
     hideMainMenu()
     appendToMainFrame($(response))
     s3Run()
