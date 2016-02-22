@@ -45,5 +45,10 @@ $(document).ready(function() {
     createExperience(this)
   });
 
+  // Load experiences
+  $("nav").on('click', ".experience-bubble", function(event) {
+    console.log("hello")
+  })
+
 })
 

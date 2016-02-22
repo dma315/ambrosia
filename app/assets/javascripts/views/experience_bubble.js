@@ -27,5 +27,7 @@ ExperienceBubbleView.prototype.loadImage = function(experience) {
     var url = experience.assets[0].link
     var $img = $("<img>").attr('src', url)
     this.$element.append($img)
+    this.experienceID = experience.id
+    this.$element.attr('id', this.experienceID)
   };
 }
