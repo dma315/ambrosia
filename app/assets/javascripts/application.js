@@ -16,5 +16,6 @@
 //= require jquery.kinetic
 //= require z.jquery.fileupload
 // require s3_direct_upload
+//= require dropzone
 //= require bootstrap
 //= require_tree .
