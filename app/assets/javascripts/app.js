@@ -9,13 +9,13 @@ $(document).ready(function() {
   }
 
   if ($(document).find('#logout').length != 0) {
-    loadImagesToDOM()
+    // loadImagesToDOM()
   }
   // Load navBubbles
-  var nav = new NavScroll().initialize()
-  $('nav').on('scroll', function () { nav.resizeBubbles() })
+  NAVSCROLL = new NavScroll().initialize()
+  $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })
   $(window).on('resize', function() {
-    nav.recalibrateBubbles()
+    NAVSCROLL.recalibrateBubbles()
   })
 
   // Load Hidden Navbar
@@ -37,6 +37,8 @@ $(document).ready(function() {
 
   // Create new experience
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
+
+  $('#main-menu').on('click', '#manage', renderEditExperienceForm)
 
   $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();
