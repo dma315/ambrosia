@@ -15,7 +15,7 @@ function loadUserExperienceBubbles() {
   })
   .done(function(experiences) {
     EXPERIENCES.forEach(function(experience, index) {
-      NAVSCROLL.experienceBubbles[index].loadImage(experience)
+      NAVSCROLL.experienceBubbles[index].loadExperience(experience)
     })
   })
 }

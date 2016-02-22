@@ -44,3 +44,9 @@ function clearCurrentUser() {
   $('#session').text("")
   CURRENTUSER = ""
 }
+
+function getExperienceByID(id) {
+  return EXPERIENCES.find(function(experience) {
+    if (experience.id === id) { return experience }
+  })
+}
