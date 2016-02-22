@@ -12,10 +12,10 @@ $(document).ready(function() {
     // loadImagesToDOM()
   }
   // Load navBubbles
-  var nav = new NavScroll().initialize()
-  $('nav').on('scroll', function () { nav.resizeBubbles() })
+  NAVSCROLL = new NavScroll().initialize()
+  $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })
   $(window).on('resize', function() {
-    nav.recalibrateBubbles()
+    NAVSCROLL.recalibrateBubbles()
   })
 
   // Load Hidden Navbar
