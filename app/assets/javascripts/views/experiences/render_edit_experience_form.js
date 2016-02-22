@@ -1,6 +1,6 @@
-function renderEditExperienceForm() {
-
-  var assetURL = "users/" + getCurrentUser() + "/assets/new"
+function renderEditExperienceForm(event) {
+  event.preventDefault()
+  var assetURL = "/users/" + getCurrentUser() + "/assets/new"
   $.ajax({
     method: "get",
     url: assetURL,

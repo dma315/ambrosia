@@ -5,7 +5,7 @@ class AssetsController < ApplicationController
     @user = User.find(session[:user_id])
     @asset = Asset.new
     # @experience = Experience.find(1)
-    render "assets/new"
+    render "assets/new", layout: false
   end
 
   def create
