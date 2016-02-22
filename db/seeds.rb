@@ -74,11 +74,9 @@ Experience.all.each do |experience|
   5.times do
     url = images.sample
     experience.assets.create!(
-      link: url,
       caption: Faker::Hipster.sentence,
       user: experience.user,
-      direct_upload_url: url,
-      upload_file_name: Faker::Hipster.word
+      direct_upload_url: url
       )
   end
 end

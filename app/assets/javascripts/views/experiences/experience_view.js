@@ -12,9 +12,9 @@ ExperienceView.prototype.loadAssets = function() {
   var $gridSizer = $("<div>").addClass("grid-sizer")
   $element.append($gridSizer);
   this.experience.assets.forEach(function(asset) {
-    var $img = $("<img>").attr('src', asset.link)
-    var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-    $element.append($div) // These need to be individual assetViews maybe?
+  var $img = $("<img>").attr('src', asset.direct_upload_url)
+  var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
+  $element.append($div) // These need to be individual assetViews maybe?
   })
   return $element
 }
