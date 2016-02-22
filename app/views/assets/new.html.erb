@@ -1,4 +1,5 @@
-<div class="photo-upload">
+<div id="asset-upload-box">
+  <h1 id="asset-upload-title">Upload Images</h1>
   <%= form_for(:asset, multipart: true, as: :asset, html: {
     class: 'directUpload',
     data: { 'form-data' => (@s3_direct_post.fields),
@@ -7,13 +8,13 @@
     }) do |f| %>
 
   <div class="file-upload">
-    <%= f.file_field :direct_upload_url %>
+    <%= f.file_field :direct_upload_url, class: "file-upload" %>
   </div>
   <div class="photo-caption">
-    <%= f.text_field :caption, placeholder: "What do you want to say about this photo?" %>
+    <%= f.text_field :caption, class: "experience-form-input-title experience-form-input", placeholder: "What do you want to say about this photo?" %>
   </div>
   <div class="photo-caption">
-    <%= submit_tag("Submit") %>
+    <%= submit_tag "Submit", class: "form-submit" %>
   </div>
 
   <% end %>
