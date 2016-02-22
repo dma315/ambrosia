@@ -10,8 +10,13 @@ class AssetsController < ApplicationController
 
   def create
     p params
-    # user = User.find(params[:user_id])
-    # @asset = user.assets.create!(asset_params)
+    user = User.find(params[:user_id])
+    @asset = user.assets.new(asset_params)
+    @asset.experience_id = user.experiences.first.id # Lol hack
+    @asset.save
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
     # redirect_to "/users/#{user.id}/assets"
   end
 
@@ -33,7 +38,7 @@ class AssetsController < ApplicationController
   private
 
   def asset_params
-    params.require(:asset).permit(:direct_upload_url)
+    params.require(:asset).permit(:direct_upload_url, :caption)
   end
 
   def set_s3_direct_post
