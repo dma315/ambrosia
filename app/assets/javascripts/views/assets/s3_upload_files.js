@@ -57,3 +57,7 @@ function s3Run() {
     });
   });
 };
+
+function persistAssetToDatabase() {
+
+}
