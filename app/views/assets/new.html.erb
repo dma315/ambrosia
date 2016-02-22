@@ -1,20 +1,5 @@
-<div class="photo-upload">
-  <%= form_for(:asset, multipart: true, as: :asset, html: {
-    class: 'directUpload',
-    data: { 'form-data' => (@s3_direct_post.fields),
-            'url' => @s3_direct_post.url,
-            'host' => URI.parse(@s3_direct_post.url).host }
-    }) do |f| %>
-
-  <div class="file-upload">
-    <%= f.file_field :direct_upload_url %>
-  </div>
-  <div class="photo-caption">
-    <%= f.text_field :caption, placeholder: "What do you want to say about this photo?" %>
-  </div>
-  <div class="photo-caption">
-    <%= submit_tag("Submit") %>
-  </div>
-
+<div id="asset-upload-box">
+  <h1 id="asset-upload-title">Upload Images</h1>
+  <%= form_for(:asset, multipart: true, as: :asset, html: {id: 'directUpload', class: 'dropzone'}) do |f| %>
   <% end %>
 </div>
