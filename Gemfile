@@ -24,10 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # S3 direct upload stuff
-gem 'aws-sdk', '~> 1'
-gem 'aws-sdk-resources', '~> 2'
-gem 'paperclip'
-gem 's3_direct_upload'
+gem 'aws-sdk', '~> 2'
+# gem 'aws-sdk-resources', '~> 2'
+# gem 'paperclip'
+# gem 's3_direct_upload'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

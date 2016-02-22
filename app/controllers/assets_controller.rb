@@ -1,16 +1,23 @@
 class AssetsController < ApplicationController
 
   def new
+    set_s3_direct_post
     @user = User.find(session[:user_id])
-    @asset = Asset.new()
-    @experience = Experience.find(1)
+    @asset = Asset.new
+    # @experience = Experience.find(1)
     render "assets/new", layout: false
   end
 
   def create
+    p params
     user = User.find(params[:user_id])
-    @asset = user.assets.create!(asset_params)
-    redirect_to "/users/#{user.id}/assets"
+    @asset = user.assets.new(asset_params)
+    @asset.experience_id = user.experiences.first.id # Lol hack
+    @asset.save
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
+    # redirect_to "/users/#{user.id}/assets"
   end
 
   def index
@@ -31,7 +38,11 @@ class AssetsController < ApplicationController
   private
 
   def asset_params
-    params.require(:asset).permit(:direct_upload_url)
+    params.require(:asset).permit(:direct_upload_url, :caption)
+  end
+
+  def set_s3_direct_post
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
   end
 
 end
