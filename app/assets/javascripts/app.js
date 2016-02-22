@@ -49,6 +49,7 @@ $(document).ready(function() {
   $("nav").on('click', ".experience-bubble", function(event) {
     var experienceID = +$(this).attr('id')
     var experienceView = new ExperienceView(experienceID)
+    experienceView.render();
   })
 
 })
