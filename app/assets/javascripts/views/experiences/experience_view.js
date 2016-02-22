@@ -8,7 +8,8 @@ function ExperienceView(id) {
 ExperienceView.prototype.loadAssets = function() {
   var $element = this.$element
   this.experience.assets.forEach(function(asset) {
-    var $img = $("<img>").attr('src', asset.link)
+    console.log(asset.direct_upload_url)
+    var $img = $("<img>").attr('src', asset.direct_upload_url)
     var $div = $("<div>").attr('id', asset.id).addClass("sample-image").append($img)
     $element.append($div) // These need to be individual assetViews maybe?
   })

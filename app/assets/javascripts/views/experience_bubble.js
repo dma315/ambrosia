@@ -24,7 +24,7 @@ ExperienceBubbleView.prototype.resizeToPosition = function(position) {
 
 ExperienceBubbleView.prototype.loadExperience = function(experience) {
   if (experience.assets.length > 0) {
-    var url = experience.assets[0].link
+    var url = experience.assets[0].direct_upload_url
     var $img = $("<img>").attr('src', url)
     this.$element.append($img)
     this.experienceID = experience.id
