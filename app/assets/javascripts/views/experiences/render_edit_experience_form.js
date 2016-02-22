@@ -5,8 +5,10 @@ function renderEditExperienceForm(event) {
     method: "get",
     url: assetURL,
   }).done(function(response){
-    console.log(response)
+    // console.log(response)
+    hideMainMenu()
     appendToMainFrame($(response))
+    s3Run()
   })
 }
 
