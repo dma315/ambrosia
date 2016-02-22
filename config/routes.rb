@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   # get 'experiences/new', to: 'experiences#new'
 
-  resources :experiences, only: [:new, :create, :edit, :show]
+  get 'experiences/my-experiences' => 'experiences#my_experiences'
+
+  resources :experiences, only: [:new, :create, :edit, :show, :index]
 
   resources :users do
     resources :assets, only: [:create, :index, :show, :new]
