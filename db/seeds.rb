@@ -16,7 +16,14 @@ User.create!(
   username: "dma315",
   password: "password")
 
-10.times do
+User.create!(
+  first_name: "Calvin",
+  last_name: "Lang",
+  email: "langcalvin@gmail.com",
+  username: "calvin",
+  password: "password")
+
+5.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   User.create!(
