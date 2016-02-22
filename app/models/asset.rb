@@ -3,6 +3,7 @@ class Asset < ActiveRecord::Base
   belongs_to :user
   belongs_to :experience
 
+  # Steve -- delete this when you're comfortable deleting it?
   # Prior methodology, ignoring for now
 
   # # Environment-specific direct upload url verifier screens for malicious posted upload locations.

@@ -39,9 +39,6 @@ class ExperiencesController < ApplicationController
     end
   end
 
-
-
-
   private
 
    def experience_params
