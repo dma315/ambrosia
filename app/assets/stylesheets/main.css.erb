@@ -8,6 +8,8 @@ body {
 }
 
 main {
+  box-sizing: border-box;
+  padding-left: 120px;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -17,7 +19,6 @@ main {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("<%= asset_path('elephants.jpg') %>");
   background-size: cover;
   transition: background 1s linear;
-  padding-left: 120px
 }
 
 a:hover {
@@ -37,5 +38,18 @@ a:hover {
 #session {
   display: none
 }
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+  <!-- float: left; -->
+}
+<!-- .grid-item--width3 { width: 33%; } -->
+
+
+
+
+
+
 
 
