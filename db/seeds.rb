@@ -29,7 +29,7 @@ User.create!(
 end
 
 User.all.each do |user|
-  10.times do
+  20.times do
     user.experiences.create!(
       title: Faker::Hipster.sentence,
       description: Faker::Hipster.paragraph,
@@ -42,7 +42,32 @@ end
 images = [
   "http://www.ucreative.com/wp-content/uploads/2014/11/Landscape-Photography-Banner1.jpg",
   "https://porelplanetaphoto.com/noticias/wp-content/uploads/2015/10/34059861vEE.jpg",
-  "http://img08.deviantart.net/cb77/i/2012/122/1/a/landscape_wallpaper_by_nickchoubg-d4yaep3.png"
+  "http://img08.deviantart.net/cb77/i/2012/122/1/a/landscape_wallpaper_by_nickchoubg-d4yaep3.png",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper_279.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-1.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-2.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-3.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-4.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-5.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-6.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-8.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-9.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-10.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-11.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-12.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-13.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-15.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-16.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-17.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-18.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-19.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-20.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-21.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-22.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-23.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-24.jpg",
+  "http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-25.jpg"
 ]
 
 Experience.all.each do |experience|
