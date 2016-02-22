@@ -21,3 +21,11 @@ ExperienceBubbleView.prototype.resizeToPosition = function(position) {
     'transform': scaleFactor
   })
 };
+
+ExperienceBubbleView.prototype.loadImage = function(experience) {
+  if (experience.assets.length > 0) {
+    var url = experience.assets[0].link
+    var $img = $("<img>").attr('src', url)
+    this.$element.append($img)
+  };
+}

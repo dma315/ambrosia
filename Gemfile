@@ -35,6 +35,10 @@ gem 'bcrypt', '~> 3.1.7'
 # For Heroku deployment
 gem 'rails_12factor', group: :production
 
+# For seeds
+gem 'faker'
+gem 'image_suckr'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

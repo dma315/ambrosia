@@ -1,5 +1,13 @@
 class ExperiencesController < ApplicationController
 
+  def my_experiences
+    @experiences = Experience.where(user_id: session[:user_id])
+    p @experiences
+    respond_to do |format|
+      format.json { render json: @experiences.to_json(include: :assets) }
+    end
+  end
+
   def show
     @user = User.find_by(id: params[:user_id])
     @experience = Experience.find_by(id: params[:id])
@@ -30,6 +38,8 @@ class ExperiencesController < ApplicationController
       return 406
     end
   end
+
+
 
 
   private
