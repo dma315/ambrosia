@@ -10,11 +10,25 @@ class AssetsController < ApplicationController
 
   def create
     p params
+    obj = S3_BUCKET.objects[params[:file].original_filename]
+    obj.write(
+      file: params[:file],
+      acl: :public_read
+    )
     user = User.find(params[:user_id])
-    @asset = user.assets.new(asset_params)
-    @asset.experience_id = user.experiences.first.id # Lol hack
-    @asset.save
+    @upload = Asset.create!(
+      user: user,
+      experience_id: user.experiences.first.id,
+      direct_upload_url: obj.public_url,
+      caption: ""
+      )
+
+    # @asset = user.assets.new(asset_params)
+    # @asset.experience_id = user.experiences.first.id # Lol hack
+    # @asset.save
     respond_to do |format|
+      format.json { render nothing: true }
+      format.html { render nothing: true }
       format.js { render nothing: true }
     end
     # redirect_to "/users/#{user.id}/assets"
