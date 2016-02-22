@@ -1,10 +1,11 @@
 class AssetsController < ApplicationController
 
   def new
+    p S3_BUCKET
     @user = User.find(session[:user_id])
     @asset = Asset.new()
-    @experience = Experience.find(1)
-    render "assets/new", layout: false
+    # @experience = Experience.find(1)
+    render "assets/new"
   end
 
   def create
