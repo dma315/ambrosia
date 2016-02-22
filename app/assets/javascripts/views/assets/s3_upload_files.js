@@ -59,5 +59,11 @@ function s3Run() {
 };
 
 function persistAssetToDatabase() {
-
+  var assetURL = "/users/" + getCurrentUser() + "/assets"
+  var data = $('.directUpload').serialize();
+  $.ajax({
+    method: "POST",
+    url: assetURL,
+    data: data
+  })
 }

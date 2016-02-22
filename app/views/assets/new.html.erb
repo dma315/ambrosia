@@ -1,5 +1,5 @@
 <div class="photo-upload">
-  <%= form_for(user_assets_path(session[:user_id]), multipart: true, html: {
+  <%= form_for(:asset, multipart: true, as: :asset, html: {
     class: 'directUpload',
     data: { 'form-data' => (@s3_direct_post.fields),
             'url' => @s3_direct_post.url,

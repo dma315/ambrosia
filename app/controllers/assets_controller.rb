@@ -9,9 +9,10 @@ class AssetsController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
-    @asset = user.assets.create!(asset_params)
-    redirect_to "/users/#{user.id}/assets"
+    p params
+    # user = User.find(params[:user_id])
+    # @asset = user.assets.create!(asset_params)
+    # redirect_to "/users/#{user.id}/assets"
   end
 
   def index
