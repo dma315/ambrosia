@@ -1,9 +1,9 @@
 class AssetsController < ApplicationController
 
   def new
-    p S3_BUCKET
+    set_s3_direct_post
     @user = User.find(session[:user_id])
-    @asset = Asset.new()
+    @asset = Asset.new
     # @experience = Experience.find(1)
     render "assets/new"
   end

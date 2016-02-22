@@ -1,8 +1,9 @@
-<%= form_for(@asset, html: {
+<%= form_for(user_assets_path(session[:user_id]), html: {
   class: 'directUpload',
   data: { 'form-data' => (@s3_direct_post.fields),
           'url' => @s3_direct_post.url,
-          'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+          'host' => URI.parse(@s3_direct_post.url).host }
+  }) do |f| %>
 
 <div class="file=upload">
   <% f.file_field :direct_upload_url %>

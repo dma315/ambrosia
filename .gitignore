@@ -16,3 +16,6 @@ app/assets/.DS_Store
 app/assets/stylesheets/.DS_Store
 db/schema.rb
 .env
+
+# Ignore application configuration
+/config/application.yml
