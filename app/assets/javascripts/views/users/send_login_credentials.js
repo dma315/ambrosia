@@ -10,6 +10,7 @@ function sendLoginCredentials(form) {
     clearMainFrame();
     $('.logged-out').hide()
     $('.logged-in').show()
+    loadUserExperienceBubbles()
   })
   request.fail(function(response) {
     var $error = $("<p>").text("Login credentials invalid")
