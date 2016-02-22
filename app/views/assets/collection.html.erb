@@ -1,5 +1,24 @@
-<% @assets.each_with_index do |asset,index| %>
-  <img width="600" id="asset<%=index%>" src="<%= asset.direct_upload_url %>">
-<% end %>
 
-<!-- <div id="some-text">Hello World</div> -->
+
+<section class="height100p"></section>
+<section class="height100p">
+	<div id="trigger"></div>
+	<img id="animate" class="asset-image" src="<%= @assets[0].direct_upload_url %>">
+</section>
+<section class="height100p"></section>
+
+
+<script>
+	// init controller
+	var controller = new ScrollMagic.Controller();
+
+	// build tween
+	var tween = TweenMax.to("#animate", 5, {scale: 1.2});
+
+	// build scene and set duration to window height
+	var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: "100px"})
+					.setTween(tween)
+					.addIndicators() // add indicators (requires plugin)
+					.addTo(controller);
+</script>
+
