@@ -1,9 +1,13 @@
 <%= form_for asset, :html => { class: "edit-caption" } do |f| %>
   <div class="edit-image-container">
     <img class="edit-image" src="<%= asset.direct_upload_url %>">
+    <div class="click-to-edit">
+      <p class="click-to-edit-text">Click to add caption</p>
+    </div>
+    <div class="edit-image-form hidden">
+      <%= f.text_area :caption, placeholder: "What do you want to say about this photo?", class: "transparent-input", rows: 4 %>
+      <%= f.submit "Add caption", class: "caption-submit" %>
+    </div>
   </div>
-  <div class="edit-image-form hidden">
-    <%= f.text_field :caption, placeholder: "What do you want to say about this photo?" %>
-    <%= f.submit "Add caption" %>
-  </div>
+  
 <% end %> 
