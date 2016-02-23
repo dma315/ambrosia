@@ -5,6 +5,12 @@ function renderAssetCaptionForm(experienceID) {
     url: url
   })
   .done(function(response) {
+    clearMainFrame().done(function() {
+      clearFullpage();
+      hideFullpage();
+      showMainFrame();
+    });
+    hideMainMenu();
     appendToMainFrame($(response))
   })
 }

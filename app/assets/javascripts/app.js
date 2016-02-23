@@ -48,6 +48,7 @@ $(document).ready(function() {
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     hideMainFrame();
+    showFullpage();
     var experienceID = +$(this).attr('id')
     // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
@@ -68,6 +69,8 @@ $(document).ready(function() {
   })
 
   //Close button on forms
-  $(document).on('click', '.close-button', clearMainFrame)
+  $(document).on('click', '.close-button', function() {
+    clearMainFrame().done(hideMainFrame)
+  })
 })
 

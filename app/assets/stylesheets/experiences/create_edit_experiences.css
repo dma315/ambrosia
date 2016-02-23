@@ -4,7 +4,6 @@
   margin-bottom: 60px;
 }
 
-
 #experience-box{
   font-family: sans-serif;
   color: white;
@@ -59,4 +58,18 @@ form.experience-form{
 
 .experience-form-input-end-date{
   width:245px;
+}
+
+/* Image edit form */
+
+.edit-image-container {
+  width: 50%;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.edit-image {
+  max-height: 100%;
+  max-width: 100%;
 }
