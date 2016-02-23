@@ -786,7 +786,7 @@
         */
         function addVerticalNavigation(){
             //THis is a custom change by Calvin Lang
-            $("#main-frame").append('<div id="' + SECTION_NAV + '"><ul></ul></div>');
+            $(".background-images").append('<div id="' + SECTION_NAV + '"><ul></ul></div>');
             var nav = $(SECTION_NAV_SEL);
 
             nav.addClass(function() {
