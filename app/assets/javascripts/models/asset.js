@@ -9,3 +9,4 @@ function Asset(object) {
   // this.upload_file_size = object.upload_file_size
   this.user_id = object.user_id
 }
+
