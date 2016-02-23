@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: 'application#index'
+
   get 'sessions/uid', to: 'sessions#uid', as: :get_session_uid
 
   resources :sessions
@@ -11,8 +12,6 @@ Rails.application.routes.draw do
   get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session
 
   get 'assets/collection', to: 'assets#collection'
-
-  # get 'experiences/new', to: 'experiences#new'
 
   get 'experiences/my-experiences' => 'experiences#my_experiences'
 

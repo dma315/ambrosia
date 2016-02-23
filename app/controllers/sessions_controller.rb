@@ -22,8 +22,6 @@ class SessionsController < ApplicationController
     end
   end
 
-
-
   def destroy
     session[:user_id] = nil
     respond_to do |format|
