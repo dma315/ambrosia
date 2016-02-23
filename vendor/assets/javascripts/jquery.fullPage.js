@@ -805,6 +805,7 @@
                 var tooltip = options.navigationTooltips[i];
 
                 if (typeof tooltip !== 'undefined' && tooltip !== '') {
+                    // Removed by Calvin Lang
                     // li += '<div class="' + SECTION_NAV_TOOLTIP + ' ' + options.navigationPosition + '">' + tooltip + '</div>';
                 }
 
@@ -1877,7 +1878,7 @@
                     afterSlideLoads();
                 });
             }
-            
+
             slidesNav.find(ACTIVE_SEL).removeClass(ACTIVE);
             slidesNav.find('li').eq(slideIndex).find('a').addClass(ACTIVE);
         }
