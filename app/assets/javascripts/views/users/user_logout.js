@@ -7,6 +7,7 @@ function userLogout() {
     clearCurrentUser()
     hideMainMenu();
     clearMainFrame();
+    fadeOutExperienceBubbles();
     renderLoginForm();
     $('.logged-in').hide();
     $('.logged-out').show();
