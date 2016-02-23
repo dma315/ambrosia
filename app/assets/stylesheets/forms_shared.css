@@ -35,3 +35,26 @@
   box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
   color: #00FFFF;
 }
+
+/*Everything below is for the close buttons on forms*/
+
+.close-button {
+  margin-left: 98%px;
+  background-color: black;
+  border-radius: 25px;
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  font-size: 24px;
+  padding-left: 0px;
+  float: right;
+  vertical-align: center;
+}
+
+.close-button:hover {
+  color: #00FFFF !important;
+  border: 3px solid #00FFFF;
+  opacity: 0.8;
+  transition: all .3s;
+  cursor:pointer;
+}
