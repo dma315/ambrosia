@@ -2,6 +2,7 @@ class Asset < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :experience
+  validates :experience_id, :direct_upload_url, :user_id, presence: true
 
   # Steve -- delete this when you're comfortable deleting it?
   # Prior methodology, ignoring for now
