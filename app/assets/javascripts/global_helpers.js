@@ -6,6 +6,14 @@ function clearMainFrame() {
   });
 }
 
+function hideMainFrame() {
+  $('#main-frame').hide()
+}
+
+function showMainFrame() {
+  $('#main-frame').show() 
+}
+
 function clearFullpage() {
   $allChildren = $('#fullpage').children()
   $allChildren.fadeOut();

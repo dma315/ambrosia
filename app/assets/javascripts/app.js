@@ -45,6 +45,7 @@ $(document).ready(function() {
 
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
+    hideMainFrame();
     var experienceID = +$(this).attr('id')
     // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
@@ -56,8 +57,9 @@ $(document).ready(function() {
   // Adds new experience and reloads river
   $(document).on('click', '#submit-images', function(event) {
     event.preventDefault();
-    fadeOutExperienceBubbles();
+    clearUserExperienceBubbles();
     loadUserExperienceBubbles();
+    hideMainFrame();
     clearMainFrame();
   })
 })
