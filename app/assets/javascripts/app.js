@@ -4,13 +4,11 @@ $(document).ready(function() {
 
   if (CURRENTUSER) {
     $('.logged-out').hide()
+    loadUserExperienceBubbles()
   } else {
     $('.logged-in').hide()
   }
 
-  if ($(document).find('#logout').length != 0) {
-    // loadImagesToDOM()
-  }
   // Load navBubbles
   NAVSCROLL = new NavScroll().initialize()
   $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })
