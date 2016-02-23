@@ -20,35 +20,11 @@ ExperienceView.prototype.loadAssets = function() {
 ExperienceView.prototype.render = function() {
   var that = this
   var $fullpage = this.$fullpage
-  // clearFullpage().done(function() {
-    // console.log($('#fullpage'))
-    // clearMainFrame().done(function() {
-    //   appendToMainFrame(that.$element).done(that.remasonify.bind(that));
-    // });
-
     clearFullpage().done(function() {
-      // $('#fp-nav').remove();
-      // $('html').removeClass('fp-enabled').promise().done(function(){
-
-      var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the second page"))
-      appendToFullPage($section2)
-      appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
-      // })
+    var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
+    appendToFullPage($section2)
+    appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
     })
-
-
-    // This doesn't work
-    // $('#fullpage').append(that.$element).done(that.remasonify.bind(that));
-
-    // This doens't work
-    // var $element = that.$element.hide()
-    // $('#fullpage').append($element)
-    // $element.fadeIn(400, function() {
-    //   that.remasonify.bind(that)
-    // })
-  // });
-
-  // applyFullpage()
   this.$element.kinetic()
 }
 
