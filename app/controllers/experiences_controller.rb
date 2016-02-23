@@ -2,16 +2,19 @@ class ExperiencesController < ApplicationController
 
   def my_experiences
     @experiences = Experience.where(user_id: session[:user_id]).order(start_date: :desc)
-    p @experiences
     respond_to do |format|
       format.json { render json: @experiences.to_json(include: :assets) }
     end
   end
 
   def show
-    @user = User.find_by(id: params[:user_id])
-    @experience = Experience.find_by(id: params[:id])
-    render :'layouts/application'
+    @experience = Experience.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @experience.to_json(include: :assets) }
+    end
+    # @user = User.find_by(id: params[:user_id])
+    # @experience = Experience.find_by(id: params[:id])
+    # render :'layouts/application'
   end
 
   def index
@@ -40,5 +43,5 @@ class ExperiencesController < ApplicationController
 
    def experience_params
       params.require(:experience).permit(:title, :start_date, :end_date, :description)
-    end
+   end
 end

@@ -43,7 +43,7 @@ $(document).ready(function() {
     createExperience(this)
   });
 
-  // Load experiences -- needs refactoring
+  // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     var experienceID = +$(this).attr('id')
     // $('.background-images').css({'background': 'black'})
@@ -56,7 +56,9 @@ $(document).ready(function() {
   //
   $(document).on('click', '#submit-images', function(event) {
     event.preventDefault();
-    loadLastExperienceBubble();
+    fadeOutExperienceBubbles();
+    loadUserExperienceBubbles();
+    clearMainFrame();
   })
 
 })
