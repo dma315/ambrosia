@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
 
   def my_experiences
-    @experiences = Experience.where(user_id: session[:user_id])
+    @experiences = Experience.where(user_id: session[:user_id]).order(start_date: :desc)
     p @experiences
     respond_to do |format|
       format.json { render json: @experiences.to_json(include: :assets) }

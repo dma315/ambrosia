@@ -53,5 +53,11 @@ $(document).ready(function() {
     experienceView.render();
   })
 
+  //
+  $(document).on('click', '#submit-images', function(event) {
+    event.preventDefault();
+    loadLastExperienceBubble();
+  })
+
 })
 
