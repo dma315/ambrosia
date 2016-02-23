@@ -8,8 +8,9 @@ var renderRegisterForm = function(){
     .done(function(response) {
       var $registerForm = $(response)
       hideMainMenu();
-      clearMainFrame()
-      appendToMainFrame($registerForm)
+      clearMainFrame().done(function() {
+        appendToMainFrame($registerForm);
+      })
     })
   };
 }

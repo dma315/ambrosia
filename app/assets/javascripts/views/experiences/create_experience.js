@@ -4,10 +4,14 @@ function renderCreateExperienceForm() {
       url: "/experiences/new"
     })
     .done(function(response) {
-      $createExperienceForm = $(response);
-      clearMainFrame();
-      hideMainMenu();
-      appendToMainFrame($createExperienceForm);
+      var experienceBoxID = "#experience-box"
+      if (!mainFrameContains(experienceBoxID)) {
+        $createExperienceForm = $(response);
+        hideMainMenu();
+        clearMainFrame().done(function() {
+          appendToMainFrame($createExperienceForm);
+        })
+      }
       $(".experience-form-input-title").on("keyup", function(){
         var textAreaValue = $(".experience-form-input-title").val();
       $("#experience-title").html(textAreaValue)

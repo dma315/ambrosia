@@ -8,8 +8,9 @@ function renderLoginForm() {
     .done(function(response) {
       $loginForm = $(response);
       hideMainMenu();
-      clearMainFrame();
-      appendToMainFrame($loginForm);
+      clearMainFrame().done(function() {
+        appendToMainFrame($loginForm);
+      });
     })
   };
 }
