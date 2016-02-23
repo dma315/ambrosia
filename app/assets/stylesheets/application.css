@@ -12,7 +12,8 @@
  *
  *= require bootstrap/dist/css/bootstrap
  *= require normalize
- *= require s3_direct_upload_progress_bars
+ * require s3_direct_upload_progress_bars
+ *= require dropzone
  *= require_tree .
  *= require_self
  */

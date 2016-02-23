@@ -1,20 +1,5 @@
-
-<div id="experience-box">
-  <%= @experience.title %>
-  <%= @experience.id %>
-  <%= s3_uploader_form callback_url: @assets_url,
-    id: "s3_uploader",
-    callback_param: "asset[direct_upload_url]",
-    expiration: 24.hours.from_now.utc.iso8601,
-    max_file_size: 100.megabytes do %>
-    <%= file_field_tag :file, multiple: true %>
+<div id="asset-upload-box">
+  <h1 id="asset-upload-title">Upload Images</h1>
+  <%= form_for(:asset, multipart: true, as: :asset, html: {id: 'directUpload', class: 'dropzone'}) do |f| %>
   <% end %>
-
-  <div id="uploads_container"></div>
-  <script id="template-upload" type="text/x-tmpl">
-    <div id="upload_{%=o.unique_id%}" class="upload">
-      <h5>{%=o.name%}</h5>
-      <div class="progress progress-striped active"><div class="bar" style="width: 0%"></div></div>
-    </div>
-  </script>
 </div>

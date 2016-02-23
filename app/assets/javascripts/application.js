@@ -14,6 +14,8 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.kinetic
-//= require s3_direct_upload
+//= require z.jquery.fileupload
+// require s3_direct_upload
+//= require dropzone
 //= require bootstrap
 //= require_tree .

@@ -10,7 +10,6 @@ function loadUserExperienceBubbles() {
       experienceObject.loadAssets()
       EXPERIENCES.push(experienceObject)
     })
-    console.log(EXPERIENCES)
     return EXPERIENCES
   })
   .done(function(experiences) {
