@@ -6,7 +6,7 @@ function userLogout() {
   .done(function(response) {
     clearCurrentUser()
     hideMainMenu();
-    fadeOutExperienceBubbles();
+    clearUserExperienceBubbles();
     clearMainFrame().done(function() {
       renderLoginForm();
     })

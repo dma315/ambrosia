@@ -53,13 +53,12 @@ $(document).ready(function() {
     experienceView.render();
   })
 
-  //
+  // Adds new experience and reloads river
   $(document).on('click', '#submit-images', function(event) {
     event.preventDefault();
     fadeOutExperienceBubbles();
     loadUserExperienceBubbles();
     clearMainFrame();
   })
-
 })
 
