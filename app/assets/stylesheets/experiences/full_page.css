@@ -181,6 +181,7 @@ html.fp-enabled,
     }
 }
 #fp-nav {
+    right: 15px;
     position: fixed;
     z-index: 100;
     margin-top: -32px;
