@@ -7,7 +7,9 @@ function createExperience(form){
   })
   request.done(function(response){
     var experienceID = response
-    addImageToExperienceForm(experienceID) // This file doesn't know which experience to add stuff to
+    clearMainFrame().done(function() {
+      addImageToExperienceForm(experienceID)
+    });
   })
   request.fail(function(response) {
     console.log('nope')
