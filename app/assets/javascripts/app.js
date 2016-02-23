@@ -65,5 +65,6 @@ $(document).ready(function() {
 
   //Close button on forms
   $(document).on('click', '.close-button', clearMainFrame)
+
 })
 
