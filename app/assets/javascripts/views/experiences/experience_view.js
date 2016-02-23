@@ -38,6 +38,7 @@ ExperienceView.prototype.masonify = function() {
     that.$element.masonry({
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
+      gutter: 10,
       percentPosition: true
     });
   });
