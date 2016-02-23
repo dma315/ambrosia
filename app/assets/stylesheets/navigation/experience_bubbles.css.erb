@@ -6,6 +6,10 @@
   box-shadow: 0 0 5px white;
   transition: box-shadow .2s ease;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }
 
 .experience-bubble:hover {
@@ -44,5 +48,3 @@ nav {
 .active-bubble {
   box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
 }
-
-

@@ -6,7 +6,7 @@ class CreateAssets < ActiveRecord::Migration
       t.references :experience, null: false
       t.string :direct_upload_url, null: false 
       t.integer :user_id, null: false
-      t.attachment :upload
+      # t.attachment :upload
       t.boolean :processed, default: false, null: false
       t.timestamps null: false
     end

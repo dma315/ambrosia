@@ -4,13 +4,11 @@ $(document).ready(function() {
 
   if (CURRENTUSER) {
     $('.logged-out').hide()
+    loadUserExperienceBubbles()
   } else {
     $('.logged-in').hide()
   }
 
-  if ($(document).find('#logout').length != 0) {
-    // loadImagesToDOM()
-  }
   // Load navBubbles
   NAVSCROLL = new NavScroll().initialize()
   $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })
@@ -45,15 +43,22 @@ $(document).ready(function() {
     createExperience(this)
   });
 
-  // Load experiences -- needs refactoring
+  // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     var experienceID = +$(this).attr('id')
-    $('.background-images').css({'background': 'black'})
+    // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
     $(this).addClass("active-bubble")
     var experienceView = new ExperienceView(experienceID)
     experienceView.render();
   })
 
+  // Adds new experience and reloads river
+  $(document).on('click', '#submit-images', function(event) {
+    event.preventDefault();
+    fadeOutExperienceBubbles();
+    loadUserExperienceBubbles();
+    clearMainFrame();
+  })
 })
 

@@ -6,8 +6,10 @@ function userLogout() {
   .done(function(response) {
     clearCurrentUser()
     hideMainMenu();
-    clearMainFrame();
-    renderLoginForm();
+    clearUserExperienceBubbles();
+    clearMainFrame().done(function() {
+      renderLoginForm();
+    })
     $('.logged-in').hide();
     $('.logged-out').show();
   });

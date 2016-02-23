@@ -26,8 +26,11 @@ ExperienceBubbleView.prototype.loadExperience = function(experience) {
   if (experience.assets.length > 0) {
     var url = experience.assets[0].direct_upload_url
     var $img = $("<img>").attr('src', url)
-    this.$element.append($img)
+    // var $experienceTitle = $("<span>").addClass("experience-title").text(experience.title).hide();
     this.experienceID = experience.id
-    this.$element.attr('id', this.experienceID)
+    this.$element.attr('id', this.experienceID).hide()
+    this.$element.append($img)
+    // this.$element.append($experienceTitle)
+    this.$element.fadeIn(800)
   };
 }

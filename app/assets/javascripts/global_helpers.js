@@ -50,3 +50,10 @@ function getExperienceByID(id) {
     if (experience.id === id) { return experience }
   })
 }
+
+function clearUserExperienceBubbles() {
+  $('.experience-bubble').removeAttr('id');
+  $('.experience-bubble').children().fadeOut(400, function() {
+    $(this).remove()
+  });
+}
