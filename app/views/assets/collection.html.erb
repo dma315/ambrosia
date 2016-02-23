@@ -1,5 +1,44 @@
-<% @assets.each_with_index do |asset,index| %>
-  <img width="600" id="asset<%=index%>" src="<%= asset.direct_upload_url %>">
-<% end %>
+<div id="fullpage">
+	<% @assets.each_with_index do |asset,index| %>
+	    <div class="section"> <img id="asset<%=index+1%>" class="asset-image" src="<%= asset.direct_upload_url %>"> </div>
+	    <% break if index > 4 %>
+	<% end %>
+	<div class="section"> 
+		<img id="asset20" width="700" data-animation="flipInX" data-timeout="800" src="<%= @assets[20].direct_upload_url %>"> 
+		<img id="asset21" width="700" src="<%= @assets[21].direct_upload_url %>"> 
+		<img id="asset22" width="700" src="<%= @assets[22].direct_upload_url %>"> 
+	</div>
+	<div class="section"> 
+		<img id="asset20" class="asset-image" src="<%= @assets[24].direct_upload_url %>"> 
+	</div>
+</div>
 
-<!-- <div id="some-text">Hello World</div> -->
+<span id="assets-length" display="none">
+	<%= @assets.length %>
+</span>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var assList = [];
+		var assLength = $("#assets-length").text();
+		for ( var i = 0 ; i < assLength ; i ++) {
+			assList.push("x")
+		};
+		$('#fullpage').fullpage({
+				anchors: assList,
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: assList,
+				css3: true,
+				verticalCentered: true,
+				scrollOverflow: true,
+				'afterLoad': function(anchorLink, index){
+					if(index == 5){
+						console.log("this is 2")
+						$("#asset21").addClass('active2')
+					}
+				},
+
+		});
+	});
+</script>
