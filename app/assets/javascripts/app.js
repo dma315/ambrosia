@@ -72,5 +72,23 @@ $(document).ready(function() {
   $(document).on('click', '.close-button', function() {
     clearMainFrame().done(hideMainFrame)
   })
+
+  // Edit image caption
+  $(document).on('click', '.click-to-edit', function() {
+    $(this).closest('.edit-image-container').find('.click-to-edit').css({
+      'color': 'transparent'
+    })
+    $(this).closest('.edit-image-container').find('.edit-image-form').css({
+      'background': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))'
+    }).fadeIn();
+  })
+
+  $(document).on('mouseover', '.click-to-edit', function() {
+    addClickToEditOpacity(this)
+  });
+
+  $(document).on('mouseleave', '.click-to-edit', function() {
+    removeClickToEditOpacity(this)
+  });
 })
 

@@ -12,5 +12,6 @@ function renderAssetCaptionForm(experienceID) {
     });
     hideMainMenu();
     appendToMainFrame($(response))
+    $(".edit-image-form").hide();
   })
 }
