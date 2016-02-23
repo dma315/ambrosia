@@ -71,7 +71,7 @@ images = [
 ]
 
 Experience.all.each do |experience|
-  5.times do
+  50.times do
     url = images.sample
     experience.assets.create!(
       caption: Faker::Hipster.sentence,

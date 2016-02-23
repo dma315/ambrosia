@@ -4,7 +4,6 @@ function ExperienceView(id) {
   this.loadAssets();
   this.masonify();
 
-  console.log(this.experience)
 }
 
 ExperienceView.prototype.loadAssets = function() {
@@ -29,7 +28,6 @@ ExperienceView.prototype.render = function() {
 
 ExperienceView.prototype.gridify = function() {
   var $element = this.$element;
-  console.log($element);
 }
 
 ExperienceView.prototype.masonify = function() {
@@ -39,7 +37,7 @@ ExperienceView.prototype.masonify = function() {
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
       gutter: 10,
-      percentPosition: true
+      percentPosition: true,
     });
   });
 }
