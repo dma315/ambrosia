@@ -8,8 +8,15 @@ function addImageToExperienceForm(experienceID) {
     var postURL = "/users/" + getCurrentUser() + "/assets"
     clearMainFrame()
     hideMainMenu()
-    $dropzone = $(response).dropzone({postURL})
+    var $experienceID = $("<input>").attr({
+      type: "hidden",
+      value: experienceID,
+      name: "assets[experience_id]"
+    })
+    $dropzone = $(response)
+    $dropzone.find('#multi-upload').append($experienceID)
     appendToMainFrame($dropzone)
+    var dropzone = new Dropzone("#multi-upload", { url: postURL });
     // s3Run()
   })
 }

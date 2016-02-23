@@ -14,16 +14,22 @@ class AssetsController < ApplicationController
       acl: :public_read
     )
     user = User.find(params[:user_id])
-    @upload = Asset.create!(
-      user: user,
-      experience_id: user.experiences.first.id, # Refactor this later
-      direct_upload_url: obj.public_url,
-      caption: ""
-      )
-    respond_to do |format|
-      format.json { render nothing: true }
-      format.html { render nothing: true }
-      format.js { render nothing: true }
+    # @upload = Asset.create!(
+    #   user: user,
+    #   experience_id: user.experiences.first.id, # Refactor this later
+    #   direct_upload_url: obj.public_url,
+    #   caption: ""
+    #   )
+    @asset = user.assets.new(asset_params)
+    @asset.direct_upload_url = obj.public_url
+    if @asset.save
+      respond_to do |format|
+        format.json { render nothing: true }
+        format.html { render nothing: true }
+        format.js { render nothing: true }
+      end
+    else
+      return 418
     end
   end
 
@@ -46,7 +52,7 @@ class AssetsController < ApplicationController
   private
 
   def asset_params
-    params.require(:asset).permit(:direct_upload_url, :caption)
+    params.require(:assets).permit(:direct_upload_url, :caption, :experience_id)
   end
 
   def set_s3_direct_post
