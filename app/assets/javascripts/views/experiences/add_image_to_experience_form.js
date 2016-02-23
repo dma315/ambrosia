@@ -3,10 +3,13 @@ function addImageToExperienceForm(experienceID) {
   $.ajax({
     method: "get",
     url: assetURL,
-  }).done(function(response){
+  })
+  .done(function(response){
+    var postURL = "/users/" + getCurrentUser() + "/assets"
     clearMainFrame()
     hideMainMenu()
-    appendToMainFrame($(response))
+    $dropzone = $(response).dropzone({postURL})
+    appendToMainFrame($dropzone)
     // s3Run()
   })
 }

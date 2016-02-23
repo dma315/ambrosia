@@ -6,7 +6,6 @@ function createExperience(form){
     data: formData
   })
   request.done(function(response){
-    console.log(response)
     var experienceID = response
     addImageToExperienceForm(experienceID) // This file doesn't know which experience to add stuff to
   })
