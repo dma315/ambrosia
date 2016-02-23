@@ -88,7 +88,8 @@ form.experience-form{
 
 .click-to-edit-text {
   text-align: center;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .edit-image-form {  

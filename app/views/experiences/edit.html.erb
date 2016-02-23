@@ -2,12 +2,12 @@
   <div class="close-button">&#10005</div>
   <h1 id="experience-title">Add captions</h1>
 
-  <%=form_for @experience, :html => {:id => "create-experience-submit"} do |f| %>
-    <% @experience.assets.each do |asset| %>
-      <%= render partial: 'assets/edit', locals: { asset: asset } %>
-    <% end %>
-    <%= f.submit "Create", class: "form-submit" %>
+  <% @experience.assets.each do |asset| %>
+    <%= render partial: 'assets/edit', locals: { asset: asset } %>
   <% end %>
+
+
+
 </div>
 
 

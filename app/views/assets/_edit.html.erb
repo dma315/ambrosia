@@ -1,13 +1,15 @@
-<%= form_for asset, :html => { class: "edit-caption" } do |f| %>
-  <div class="edit-image-container">
-    <img class="edit-image" src="<%= asset.direct_upload_url %>">
-    <div class="click-to-edit">
-      <p class="click-to-edit-text">Click to add caption</p>
+<div class="edit-image-caption-container">
+  <% path = "/users/#{session[:user_id]}/assets/#{asset.id}/edit" %> 
+  <%= form_for :asset, :url => path, :html => { class: "edit-caption" }, method: "patch" do |f| %>
+    <div class="edit-image-container">
+      <img class="edit-image" src="<%= asset.direct_upload_url %>">
+      <div class="click-to-edit">
+        <p class="click-to-edit-text"><%= asset.caption ? asset.caption : "Click to add caption" %></p>
+      </div>
+      <div class="edit-image-form">
+        <%= f.text_area :caption, placeholder: "What do you want to say about this photo?", class: "transparent-input", rows: 4 %>
+        <%= f.submit "Add caption", class: "caption-submit" %>
+      </div>
     </div>
-    <div class="edit-image-form">
-      <%= f.text_area :caption, placeholder: "What do you want to say about this photo?", class: "transparent-input", rows: 4 %>
-      <%= f.submit "Add caption", class: "caption-submit" %>
-    </div>
-  </div>
-  
-<% end %> 
+  <% end %> 
+</div>
