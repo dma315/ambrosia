@@ -18,7 +18,6 @@ function addImageToExperienceForm(experienceID) {
     $submit = $("<input type='submit'>").addClass("form-submit").appendTo($dropzone)
     appendToMainFrame($dropzone)
     var dropzone = new Dropzone("#multi-upload", { url: postURL });
-    // s3Run()
   })
 }
 
