@@ -3,7 +3,6 @@ function ExperienceView(id) {
   this.$element = $("<div>").addClass('module grid')
   this.loadAssets();
   this.masonify();
-
 }
 
 ExperienceView.prototype.loadAssets = function() {
@@ -20,9 +19,12 @@ ExperienceView.prototype.loadAssets = function() {
 
 ExperienceView.prototype.render = function() {
   var that = this
-  clearMainFrame().done(function() {
-    appendToMainFrame(that.$element).done(that.remasonify.bind(that));
-  });
+  var $fullpage = this.$fullpage
+    clearFullpage().done(function() {
+    var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
+    appendToFullPage($section2)
+    appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
+    })
   this.$element.kinetic()
 }
 
@@ -44,4 +46,5 @@ ExperienceView.prototype.masonify = function() {
 
 ExperienceView.prototype.remasonify = function() {
   this.$element.masonry("layout");
+  applyFullpage()
 };

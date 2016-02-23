@@ -9,27 +9,29 @@
 </span>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		var assList = [];
-		var assLength = $("#assets-length").text();
-		for ( var i = 0 ; i < assLength ; i ++) {
-			assList.push("x")
-		};
-		$('#fullpage').fullpage({
-				anchors: assList,
-				navigation: true,
-				navigationPosition: 'right',
-				navigationTooltips: assList,
-				css3: true,
-				verticalCentered: true,
-				scrollOverflow: true,
-				'afterLoad': function(anchorLink, index){
-					if(index == 5){
-						console.log("this is 2")
-						$("#asset21").addClass('active2')
-					}
-				},
+	// $(document).ready(function() {
+	// 	var assList = [];
+	// 	var assLength = $("#assets-length").text();
+	// 	for ( var i = 0 ; i < assLength ; i ++) {
+	// 		assList.push("x")
+	// 	};
+	// 	$('#fullpage').fullpage({
+	// 			anchors: assList,
+	// 			navigation: true,
+	// 			navigationPosition: 'right',
+	// 			navigationTooltips: assList,
+	// 			css3: true,
+	// 			verticalCentered: true,
+	// 			scrollOverflow: true,
+	// 			'afterLoad': function(anchorLink, index){
+	// 				if(index == 5){
+	// 					console.log("this is 2")
+	// 					$("#asset21").addClass('active2')
+	// 				}
+	// 			}
 
-		});
-	});
+	// 	});
+	// });
+
 </script>
+
