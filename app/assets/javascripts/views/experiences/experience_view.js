@@ -3,6 +3,8 @@ function ExperienceView(id) {
   this.$element = $("<div>").addClass('module grid')
   this.loadAssets();
   this.masonify();
+  // Some sort of object that holds "sections"
+  // Some algorithm that determines which pictures go into which "section"
 }
 
 ExperienceView.prototype.loadAssets = function() {
@@ -19,11 +21,15 @@ ExperienceView.prototype.loadAssets = function() {
 
 ExperienceView.prototype.render = function() {
   var that = this
+
+  var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
+
   var $fullpage = this.$fullpage
     clearFullpage().done(function() {
     var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
     appendToFullPage($section2)
     appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
+    appendToFullPage($bigPicSection);
     })
   this.$element.kinetic()
 }
@@ -48,3 +54,13 @@ ExperienceView.prototype.remasonify = function() {
   this.$element.masonry("layout");
   applyFullpage()
 };
+
+// ExperienceView.prototype.fullScreenImage = function () {
+//   var $bigPicSection = $("<div>").addClass("section")
+//   $bigPicSection.append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
+// }
+
+
+
+
+
