@@ -1,5 +1,4 @@
-function addImageToExperienceForm(event) {
-  event.preventDefault()
+function addImageToExperienceForm(experienceID) {
   var assetURL = "/users/" + getCurrentUser() + "/assets/new"
   $.ajax({
     method: "get",
@@ -8,7 +7,7 @@ function addImageToExperienceForm(event) {
     clearMainFrame()
     hideMainMenu()
     appendToMainFrame($(response))
-    s3Run()
+    // s3Run()
   })
 }
 
