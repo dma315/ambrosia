@@ -46,7 +46,7 @@ $(document).ready(function() {
   // Load experiences -- needs refactoring
   $("nav").on('click', ".experience-bubble", function(event) {
     var experienceID = +$(this).attr('id')
-    $('.background-images').css({'background': 'black'})
+    // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
     $(this).addClass("active-bubble")
     var experienceView = new ExperienceView(experienceID)
