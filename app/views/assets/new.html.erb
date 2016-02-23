@@ -1,5 +1,6 @@
-<div class="close-button">&#10005</div>
+
 <div id="asset-upload-box" class="dialog-box">
+  <div class="close-button">&#10005</div>
   <h1 id="asset-upload-title">Upload Images</h1>
   <%= form_for(:asset, multipart: true, as: :asset, html: {id: 'multi-upload', class: 'dropzone'}) do |f| %>
   <% end %>
