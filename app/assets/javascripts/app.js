@@ -60,5 +60,8 @@ $(document).ready(function() {
     loadUserExperienceBubbles();
     clearMainFrame();
   })
+
+  //Close button on forms
+  $(document).on('click', '.close-button', clearMainFrame)
 })
 
