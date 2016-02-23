@@ -1,0 +1,14 @@
+<div id="experience-box" class="dialog-box">
+  <div class="close-button">&#10005</div>
+  <h1 id="experience-title">Edit assets</h1>
+
+  <%=form_for @experience, :html => {:id => "create-experience-submit"} do |f| %>
+    <% @experience.assets.each do |asset| %>
+      <%= render partial: 'assets/edit', locals: { asset: asset } %>
+    <% end %>
+    <%= f.submit "Create", class: "form-submit" %>
+  <% end %>
+</div>
+
+
+

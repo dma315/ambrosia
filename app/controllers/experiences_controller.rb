@@ -39,6 +39,11 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def edit
+    @experience = Experience.find(params[:id])
+    render 'experiences/edit', layout: false
+  end
+
   private
 
    def experience_params

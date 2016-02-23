@@ -36,7 +36,9 @@ $(document).ready(function() {
   // Create new experience
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
-  $('#main-menu').on('click', '#manage', addImageToExperienceForm)
+  $('#main-menu').on('click', '#manage', function() {
+    renderAssetCaptionForm(EXPERIENCES[0].id)
+  });
 
   $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();
@@ -57,10 +59,12 @@ $(document).ready(function() {
   // Adds new experience and reloads river
   $(document).on('click', '#submit-images', function(event) {
     event.preventDefault();
+    var experienceID = +$('input[name="assets[experience_id]"').val()
     clearUserExperienceBubbles();
     loadUserExperienceBubbles();
-    hideMainFrame();
-    clearMainFrame();
+    clearMainFrame().done(function() {
+      renderAssetCaptionForm(experienceID)
+    });
   })
 
   //Close button on forms

@@ -1,0 +1,5 @@
+<%= form_for asset, :html => { class: "edit-caption" } do |f| %>
+  <img class="edit-image" src="<%= asset.direct_upload_url %>">
+  <%= f.text_field :caption, class: "hidden", placeholder: "What do you want to say about this photo?" %>
+  <%= f.submit "Add caption" %>
+<% end %> 
