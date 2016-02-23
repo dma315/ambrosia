@@ -52,6 +52,7 @@ function getExperienceByID(id) {
 }
 
 function fadeOutExperienceBubbles() {
+  $('.experience-bubble').removeAttr('id');
   $('.experience-bubble').children().fadeOut(400, function() {
     $(this).remove()
   });
