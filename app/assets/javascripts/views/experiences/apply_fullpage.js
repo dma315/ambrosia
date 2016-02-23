@@ -1,7 +1,7 @@
 var applyFullpage = function() {
 	removePanelNavigation()
 	var fakeNavs = new Array
-	for (var i = 1; i < 150; i++) { fakeNavs.push("Panel " + i) }
+	for (var i = 1; i < 150; i++) { fakeNavs.push("x") }
   $('html').removeClass('fp-enabled').promise().done(function(){
     $('#fullpage').fullpage({
     	scrollOverflow: true,
