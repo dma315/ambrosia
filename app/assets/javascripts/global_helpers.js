@@ -6,9 +6,23 @@ function clearMainFrame() {
   });
 }
 
+function clearFullpage() {
+  $allChildren = $('#fullpage').children()
+  $allChildren.fadeOut();
+  return $allChildren.promise().done(function() {
+    $allChildren.remove()
+  });
+}
+
 function appendToMainFrame($element) {
   $element.hide()
   $('#main-frame').append($element)
+  return $element.fadeIn().promise();
+}
+
+function appendToFullPage($element) {
+  $element.hide()
+  $('#fullpage').append($element)
   return $element.fadeIn().promise();
 }
 

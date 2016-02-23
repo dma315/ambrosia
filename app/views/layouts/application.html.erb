@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/vendors/jquery.slimscroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.8/jquery.fullPage.min.js"></script>
   <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
@@ -41,8 +43,17 @@
 
   <main class="background-images">
     <div id="main-frame">
+      <div id="fullpage"></div>
     </div>
   </main>
+
+  <script>
+  //   var applyFullpage = function() {
+  //     $('#fullpage').fullpage({
+  //     });
+  //   };
+  //   applyFullpage();
+  </script>
 
 </body>
 </html>

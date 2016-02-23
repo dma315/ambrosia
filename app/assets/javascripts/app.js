@@ -60,5 +60,6 @@ $(document).ready(function() {
     loadUserExperienceBubbles();
     clearMainFrame();
   })
+  // applyFullpage();
 })
 
