@@ -75,25 +75,22 @@ ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
-<<<<<<< HEAD
   // this.loadAssets([
   //   "loadSingleImage",
   //   ["masonify", 8],
   //   ["masonify",12],
   //   "loadTwoImages"])
-=======
-  this.loadAssets([
-    "titleCaption",
-    "loadSingleImage",
-    ["masonify", 8],
-    ["masonify",12],
-    "loadTwoImages"])
->>>>>>> 9c6b712682cfdab31206e8660ead2e4811438e47
+
+  // this.loadAssets([
+  //   "titleCaption",
+  //   "loadSingleImage",
+  //   ["masonify", 8],
+  //   ["masonify",12],
+  //   "loadTwoImages"])
 
   // this.loadAssets()
 
-  // Iterate through each panel in the panel array and append to fullpage
-  console.log(this.panelInstructions)
+  // console.log(this.panelInstructions)
   this.loadAssets(this.panelInstructions)
 
   this.panels.forEach(function(panel) {
