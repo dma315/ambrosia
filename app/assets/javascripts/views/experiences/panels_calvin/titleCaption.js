@@ -14,3 +14,44 @@ PanelView.prototype.titleCaption = function(){
   $div.append($imageDiv)
   return $div
 }
+
+PanelView.prototype.masonifyFun = function(){
+  var $div = $("<div>").addClass("section")
+  var $masonGrid = $("<div>").addClass('module grid')
+  var $gridRuler = $("<div>").addClass('grid-sizer')
+  $masonGrid.append($gridRuler)
+
+  var sortedAssets = this.assets.sort(function(a, b){
+    return b.caption.length - a.caption.length;
+  });
+
+  console.log(sortedAssets)
+
+  this.assets.forEach(function(asset,index) {
+    var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
+    var $img = $("<div class='grid-item-content'>").append($("<img>").attr('src', asset.direct_upload_url))
+    $gridItem.append($img)
+    $masonGrid.append($gridItem)
+  })
+
+  var self = this;
+
+  $masonGrid.imagesLoaded(function() {
+    $masonGrid.masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: 10,
+      percentPosition: true
+    });
+
+    $masonGrid.on('click', '.grid-item', function(){
+      $(this).toggleClass('grid-item--gigante');
+      $masonGrid.masonry();
+    })
+    $masonGrid.on( 'layoutComplete', function( event, laidOutItems ) {
+      console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
+    });
+  });
+
+  return $div.append($masonGrid.kinetic())
+}

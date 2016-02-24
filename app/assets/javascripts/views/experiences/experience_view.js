@@ -9,6 +9,7 @@ function ExperienceView(id) {
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
+    "masonifyFun": ""
   }
 }
 
@@ -78,7 +79,7 @@ ExperienceView.prototype.render = function() {
     "titleCaption",
     "loadSingleImage",
     ["masonify", 8],
-    ["masonify",12],
+    ["masonifyFun", 4],
     "loadTwoImages"])
 
   // this.loadAssets()
