@@ -91,10 +91,6 @@ ExperienceView.prototype.render = function() {
   applyFullpage()
 }
 
-//this is a helper for if you want to get the asset's EXPERIENCE description
-var getExperienceDescription = function(experienceID){
-  var experienceObject = $.grep(EXPERIENCES, function(e){ return e.id == experienceID; });
-  return experienceObject[0].description
-}
+
 
 
