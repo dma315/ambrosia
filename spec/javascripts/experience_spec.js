@@ -77,4 +77,9 @@ describe("Experience", function(){
       expect(loadedNewExperience.assets).toEqual([newAsset1, newAsset2])
     });
   });
+  describe("Valid Experience", function(){
+    it("will validate an experience", function(){
+      expect(newExperience.validExperience()).toEqual(true);
+    });
+  });
 });
