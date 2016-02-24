@@ -1,10 +1,12 @@
 function ExperienceView(id) {
   this.experience = getExperienceByID(id)
   this.assets = this.experience.assets
+  this.experienceTitle = this.experience.title
   this.assetCount = this.experience.assets.length
   this.panels = []
   this.assetsPaneled = 0
   this.layoutLookup = {
+    "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
@@ -74,6 +76,7 @@ ExperienceView.prototype.render = function() {
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
+    "titleCaption",
     "loadSingleImage",
     ["masonify", 8],
     ["masonify",12],
@@ -88,44 +91,10 @@ ExperienceView.prototype.render = function() {
   applyFullpage()
 }
 
-// ExperienceView.prototype.gridify = function() {
-//   var $element = this.$element;
-// }
-
-// ExperienceView.prototype.masonify = function() {
-//   var that = this;
-//   this.$element.imagesLoaded(function() {
-//     that.$element.masonry({
-//       itemSelector: '.grid-item',
-//       columnWidth: '.grid-sizer',
-//       gutter: 10,
-//       percentPosition: true,
-//     });
-//   });
-// }
-
-// ExperienceView.prototype.remasonify = function() {
-//   this.$element.masonry("layout");
-//   applyFullpage()
-// };
-
-// ExperienceView.prototype.fullScreenImage = function () {
-//   var $bigPicSection = $("<div>").addClass("section")
-//   $bigPicSection.append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
-// }
-
-// ExperienceView.prototype.loadAssets = function() {
-  // var $element = this.$element
-  // var $gridSizer = $("<div>").addClass("grid-sizer")
-  // $element.append($gridSizer);
-  // this.experience.assets.forEach(function(asset) {
-  // var $img = $("<img>").attr('src', asset.direct_upload_url)
-  // var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-  // $element.append($div) // These need to be individual assetViews maybe?
-  // })
-  // return $element
-// }
-
-
+//this is a helper for if you want to get the asset's EXPERIENCE description
+var getExperienceDescription = function(experienceID){
+  var experienceObject = $.grep(EXPERIENCES, function(e){ return e.id == experienceID; });
+  return experienceObject[0].description
+}
 
 
