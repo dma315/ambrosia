@@ -1,65 +1,105 @@
 function ExperienceView(id) {
-  this.experience = getExperienceByID(id)
-  this.$element = $("<div>").addClass('module grid')
-  this.loadAssets();
+  this.experience = getExperienceByID(id);
+  this.$element = $("<div>").addClass('module grid');
+  this.id = id;
   this.masonify();
-  // Some sort of object that holds "sections"
-  // Some algorithm that determines which pictures go into which "section"
-}
-
-ExperienceView.prototype.loadAssets = function() {
-  var $element = this.$element
-  var $gridSizer = $("<div>").addClass("grid-sizer")
-  $element.append($gridSizer);
-  this.experience.assets.forEach(function(asset) {
-  var $img = $("<img>").attr('src', asset.direct_upload_url)
-  var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-  $element.append($div) // These need to be individual assetViews maybe?
-  })
-  return $element
 }
 
 ExperienceView.prototype.render = function() {
-  var that = this
+  // Test image:
+  var $bigPicSection = $("<div>").addClass("module grid-item").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"));
 
-  var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
+  var that = this;
+  var $gridSizer = $('<div>').addClass('grid-sizer');
+  this.$element.append($gridSizer);
+  var sectionifier = new Sectionify(this.id);
+  sectionifier.buildMasonryPage(sectionifier.assets);
+  sectionifier.thingsToRender.forEach(function(renderable){
+    that.$element.append(renderable);
+  });
 
-  var $fullpage = this.$fullpage
-    clearFullpage().done(function() {
-    var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
-    appendToFullPage($section2)
+  clearFullpage().done(function(){
     appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
-    appendToFullPage($bigPicSection);
-    })
-  this.$element.kinetic()
-}
-
-ExperienceView.prototype.gridify = function() {
-  var $element = this.$element;
+  });
+  this.$element.kinetic();
 }
 
 ExperienceView.prototype.masonify = function() {
   var that = this;
   this.$element.imagesLoaded(function() {
-    that.$element.masonry({
-      itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      gutter: 10,
-      percentPosition: true,
-    });
+    that.responsify();
   });
 }
 
 ExperienceView.prototype.remasonify = function() {
-  this.$element.masonry("layout");
-  applyFullpage()
+  var that = this;
+  this.$element.imagesLoaded(function(){
+    that.responsify();
+  })
 };
 
-// ExperienceView.prototype.fullScreenImage = function () {
-//   var $bigPicSection = $("<div>").addClass("section")
-//   $bigPicSection.append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
-// }
+ExperienceView.prototype.responsify = function() {
+  var $grid = $('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  gutter: 10,
+  percentPosition: true
+});
 
+$grid.on( 'click', '.grid-item-content', function() {
+
+  var itemContent = this;
+  setItemContentPixelSize( itemContent );
+
+  var itemElem = itemContent.parentNode;
+  $( itemElem ).toggleClass('is-expanded');
+
+  // force redraw
+  var redraw = itemContent.offsetWidth;
+  // renable default transition
+  itemContent.style[ transitionProp ] = '';
+
+  addTransitionListener( itemContent );
+  setItemContentTransitionSize( itemContent, itemElem );
+
+  $grid.masonry();
+});
+
+var docElem = document.documentElement;
+var transitionProp = typeof docElem.style.transition == 'string' ?
+    'transition' : 'WebkitTransition';
+var transitionEndEvent = {
+  WebkitTransition: 'webkitTransitionEnd',
+  transition: 'transitionend'
+}[ transitionProp ];
+
+function setItemContentPixelSize( itemContent ) {
+  var previousContentSize = getSize( itemContent );
+  // disable transition
+  itemContent.style[ transitionProp ] = 'none';
+  // set current size in pixels
+  itemContent.style.width = previousContentSize.width + 'px';
+  itemContent.style.height = previousContentSize.height + 'px';
+}
+
+function addTransitionListener( itemContent ) {
+  // reset 100%/100% sizing after transition end
+  var onTransitionEnd = function() {
+    itemContent.style.width = '';
+    itemContent.style.height = '';
+    itemContent.removeEventListener( transitionEndEvent, onTransitionEnd );
+  };
+  itemContent.addEventListener( transitionEndEvent, onTransitionEnd );
+}
+
+function setItemContentTransitionSize( itemContent, itemElem ) {
+  // set new size
+  var size = getSize( itemElem );
+  itemContent.style.width = size.width + 'px';
+  itemContent.style.height = size.height + 'px';
+}
+
+}
 
 
 
