@@ -56,19 +56,7 @@ $(document).ready(function() {
 
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
-    removePanelNavigation()
-    hideMainFrame();
-    hideMainMenu();
-    showFullpage();
-    var experienceID = +$(this).attr('id')
-    updateManageLink(experienceID) // This is critical for updating the manage link to link to appropriate experience
-    // $('.background-images').css({'background': 'black'})
-    $('.experience-bubble').removeClass("active-bubble")
-    $(this).addClass("active-bubble")
-    var experienceView = new ExperienceView(experienceID)
-    clearFullpage().done(function() {
-      experienceView.render();
-    });
+    loadSingleExperience(this)
   })
 
   // Adds new experience and reloads river
