@@ -9,6 +9,7 @@ function ExperienceView(id) {
     "loadTwoImages": 2,
     "masonify": "User input",
   }
+  this.getPanels()
 }
 
 ExperienceView.prototype.loadAssets = function(_arrayOfLayouts) {
@@ -88,44 +89,13 @@ ExperienceView.prototype.render = function() {
   applyFullpage()
 }
 
-// ExperienceView.prototype.gridify = function() {
-//   var $element = this.$element;
-// }
-
-// ExperienceView.prototype.masonify = function() {
-//   var that = this;
-//   this.$element.imagesLoaded(function() {
-//     that.$element.masonry({
-//       itemSelector: '.grid-item',
-//       columnWidth: '.grid-sizer',
-//       gutter: 10,
-//       percentPosition: true,
-//     });
-//   });
-// }
-
-// ExperienceView.prototype.remasonify = function() {
-//   this.$element.masonry("layout");
-//   applyFullpage()
-// };
-
-// ExperienceView.prototype.fullScreenImage = function () {
-//   var $bigPicSection = $("<div>").addClass("section")
-//   $bigPicSection.append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
-// }
-
-// ExperienceView.prototype.loadAssets = function() {
-  // var $element = this.$element
-  // var $gridSizer = $("<div>").addClass("grid-sizer")
-  // $element.append($gridSizer);
-  // this.experience.assets.forEach(function(asset) {
-  // var $img = $("<img>").attr('src', asset.direct_upload_url)
-  // var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-  // $element.append($div) // These need to be individual assetViews maybe?
-  // })
-  // return $element
-// }
-
-
-
-
+ExperienceView.prototype.getPanels = function() {
+  var experience = this.experience
+  $.ajax({
+    method: "get",
+    url: "/experiences/" + experience.id + "/panels.json"
+  })
+  .done(function(response) {
+    console.log(response)
+  })
+}
