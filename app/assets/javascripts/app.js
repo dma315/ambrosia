@@ -37,16 +37,19 @@ $(document).ready(function() {
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
   $('#main-menu').on('click', '#manage', function() {
-    var experienceID = $('#manage').data().experienceid
+    // Write caption form
+  });
+
+  $('#main-menu').on('click', '#captions', function() {
+    var experienceID = $('#captions').data().experienceid
     if (experienceID != undefined) {
-      var experienceToManage = EXPERIENCES.find(function(experience) {
+      var experienceToCaption = EXPERIENCES.find(function(experience) {
         return experience.id === experienceID
       })
-      renderAssetCaptionForm(experienceToManage.id)
+      renderAssetCaptionForm(experienceToCaption.id)
     } else {
       renderAssetCaptionForm(EXPERIENCES[0].id)
     }
-
   });
 
   $('main').on('submit', '#create-experience-submit', function(event) {

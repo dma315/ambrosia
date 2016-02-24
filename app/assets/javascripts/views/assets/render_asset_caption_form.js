@@ -1,5 +1,5 @@
 function renderAssetCaptionForm(experienceID) {
-  var url = "/experiences/" + experienceID + "/edit" 
+  var url = "/experiences/" + experienceID + "/edit"
   $.ajax({
     method: "get",
     url: url

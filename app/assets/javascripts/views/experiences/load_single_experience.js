@@ -9,6 +9,7 @@ function loadSingleExperience(bubble) {
 
   // Gets experience
   var experienceID = +$(bubble).attr('id')
+  updateCaptionsLink(experienceID)
   updateManageLink(experienceID) // This is critical for updating the manage link to link to appropriate experience
   // $('.background-images').css({'background': 'black'})
 
