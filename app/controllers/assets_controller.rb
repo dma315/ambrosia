@@ -43,6 +43,14 @@ class AssetsController < ApplicationController
     @asset = user.assets.find(params[:id]).direct_upload_url
   end
 
+  def update
+    @asset = Asset.find(params[:id])
+    @asset.update_attributes(asset_params)
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
   # Calvin, do we need this still?
   def collection
     @assets = Asset.where(user_id: session[:user_id])

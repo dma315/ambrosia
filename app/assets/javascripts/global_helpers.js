@@ -22,6 +22,14 @@ function clearFullpage() {
   });
 }
 
+function showFullpage() {
+  $("#fullpage").show();
+}
+
+function hideFullpage() {
+  $("#fullpage").hide();
+}
+
 function appendToMainFrame($element) {
   $element.hide()
   $('#main-frame').append($element)
