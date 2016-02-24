@@ -5,6 +5,7 @@ function ExperienceView(id) {
   this.panels = []
   this.assetsPaneled = 0
   this.layoutLookup = {
+    "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
@@ -74,6 +75,7 @@ ExperienceView.prototype.render = function() {
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
+    "titleCaption",
     "loadSingleImage",
     ["masonify", 8],
     ["masonify",12],
