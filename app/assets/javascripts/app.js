@@ -75,12 +75,7 @@ $(document).ready(function() {
 
   // Edit image caption
   $(document).on('click', '.click-to-edit', function() {
-    $(this).closest('.edit-image-container').find('.click-to-edit').css({
-      'color': 'transparent'
-    })
-    $(this).closest('.edit-image-container').find('.edit-image-form').css({
-      'background': 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))'
-    }).fadeIn();
+    showEditCaptionForm(this)
   })
 
   $(document).on('mouseover', '.click-to-edit', function() {
@@ -90,5 +85,12 @@ $(document).ready(function() {
   $(document).on('mouseleave', '.click-to-edit', function() {
     removeClickToEditOpacity(this)
   });
+
+  $(document).on('submit', '.edit-caption', function(event) {
+    event.preventDefault()
+    submitCaption(this)
+  })
+
+
 })
 
