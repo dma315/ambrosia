@@ -42,11 +42,11 @@ $(document).ready(function() {
       var experienceToManage = EXPERIENCES.find(function(experience) {
         return experience.id === experienceID
       })
-      renderAssetCaptionForm(experienceToManage.id)  
+      renderAssetCaptionForm(experienceToManage.id)
     } else {
-      renderAssetCaptionForm(EXPERIENCES[0].id)  
+      renderAssetCaptionForm(EXPERIENCES[0].id)
     }
-    
+
   });
 
   $('main').on('submit', '#create-experience-submit', function(event) {
@@ -58,6 +58,7 @@ $(document).ready(function() {
   $("nav").on('click', ".experience-bubble", function(event) {
     hideMainFrame();
     hideMainMenu();
+    clearFullpage();
     showFullpage();
     var experienceID = +$(this).attr('id')
     updateManageLink(experienceID) // This is critical for updating the manage link to link to appropriate experience

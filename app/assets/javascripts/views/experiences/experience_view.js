@@ -1,61 +1,77 @@
 function ExperienceView(id) {
   this.experience = getExperienceByID(id)
+  this.assets = this.experience.assets
   this.assetCount = this.experience.assets.length
   this.panels = []
   this.assetsPaneled = 0
   this.layoutLookup = {
-    "loadSingleImage": function() something
+    "loadSingleImage": 1,
+    "loadTwoImages": 2
   }
-  // this.$element = $("<div>").addClass('module grid')
-  // this.loadAssets();
-  // this.masonify();
-  // Some sort of object that holds "sections"
-  // Some algorithm that determines which pictures go into which "section"
 }
-
-["loadSingleImage", "lotsofImages"]
 
 ExperienceView.prototype.loadAssets = function(_arrayOfLayouts) {
 
   var arrayOfLayouts = _arrayOfLayouts
+  var assetCount = this.assetCount
+  var assetsPaneled = this.assetsPaneled
+  var layoutLookup = this.layoutLookup
+  var assets = this.assets
+  var panels = this.panels
+
   if (arrayOfLayouts) {
     // Take first layout
-    // Look it up in the object
-    // Figure out how many images it will take from assets
-    // Increment assets
-    // Load panel view
+    arrayOfLayouts.forEach(function(layoutString) {
+      var numAssets = layoutLookup[layoutString]
+      var assetSlice = assets.slice(assetsPaneled, assetsPaneled + numAssets)
+      var panel = new PanelView(assetSlice)
+      var loadedPanel = eval("panel." + layoutString + "()")
+      panels.push(loadedPanel)
+      assetsPaneled += numAssets
+    })
   } else {
-    var assets = this.experience.assets
-    var panels = this.panels
+    assetsPaneled += assetCount
     assets.forEach(function(asset) {
       var panel = new PanelView([asset])
-      panels.push(panel)
-      // Remind to call the single page panel view here
-    });
+      panels.push(panel.loadSingleImage())
+    })
+  }
+  if (assetsPaneled < assetCount) {
+    this.loadRemainingAssets(assetsPaneled)
   }
   return panels
 }
 
+ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
+  var assetsPaneled = this.assetsPaneled
+  var assetCount = this.assetCount
+  var assetsPaneled = this.assetsPaneled
+  var assets = this.assets
+  var panels = this.panels
+
+  var assetsIndex = startingIndex
+  while (assetsIndex < assetCount) {
+    var panel = new PanelView([assets[assetsIndex]])
+    panels.push(panel.loadSingleImage())
+    assetsIndex += 1
+  }
+}
+
 
 ExperienceView.prototype.render = function() {
-  this.loadAssets()
+  // For testing a predefined set of routes
+  this.loadAssets(["loadSingleImage", "loadTwoImages"])
+
+  // For testing single page views of everything
+  // this.loadAssets()
+
+  // Iterate through each panel in the panel array and append to fullpage
   this.panels.forEach(function(panel) {
-    console.log(panel.loadToSection())
-    $('#fullpage').append(panel.loadToSection())
+    $('#fullpage').append(panel)
   })
+
+  // Reapply fullpage
   applyFullpage();
-  // var that = this
-
-  // var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
-
-  // var $fullpage = this.$fullpage
-  //   clearFullpage().done(function() {
-  //   var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
-  //   appendToFullPage($section2)
-  //   appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
-  //   appendToFullPage($bigPicSection);
-  //   })
-  // this.$element.kinetic()
 }
 
 // ExperienceView.prototype.gridify = function() {
