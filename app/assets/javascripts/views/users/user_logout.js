@@ -7,6 +7,9 @@ function userLogout() {
     clearCurrentUser()
     hideMainMenu();
     clearUserExperienceBubbles();
+    clearFullpage();
+    hideFullpage();
+    showMainFrame();
     clearMainFrame().done(function() {
       renderLoginForm();
     })

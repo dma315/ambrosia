@@ -48,6 +48,7 @@ $(document).ready(function() {
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     hideMainFrame();
+    hideMainMenu();
     showFullpage();
     var experienceID = +$(this).attr('id')
     // $('.background-images').css({'background': 'black'})
