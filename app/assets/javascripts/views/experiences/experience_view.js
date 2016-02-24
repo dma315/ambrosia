@@ -6,7 +6,8 @@ function ExperienceView(id) {
   this.assetsPaneled = 0
   this.layoutLookup = {
     "loadSingleImage": 1,
-    "loadTwoImages": 2
+    "loadTwoImages": 2,
+    "masonify": "",
   }
 }
 
@@ -21,13 +22,23 @@ ExperienceView.prototype.loadAssets = function(_arrayOfLayouts) {
 
   if (arrayOfLayouts) {
     // Take first layout
-    arrayOfLayouts.forEach(function(layoutString) {
-      var numAssets = layoutLookup[layoutString]
-      var assetSlice = assets.slice(assetsPaneled, assetsPaneled + numAssets)
-      var panel = new PanelView(assetSlice)
-      var loadedPanel = eval("panel." + layoutString + "()")
-      panels.push(loadedPanel)
-      assetsPaneled += numAssets
+    arrayOfLayouts.forEach(function(layoutOption) {
+      if (layoutOption.constructor == String) {
+        var numAssets = layoutLookup[layoutOption]
+        var assetSlice = assets.slice(assetsPaneled, assetsPaneled + numAssets)
+        var panel = new PanelView(assetSlice)
+        var loadedPanel = eval("panel." + layoutOption + "()")
+      } else if (layoutOption.constructor == Array) {
+        var numAssets = layoutOption[1]
+        var method = layoutOption[0]
+        var assetSlice = assets.slice(assetsPaneled, assetsPaneled + numAssets)
+        var panel = new PanelView(assetSlice)
+        var loadedPanel = eval("panel." + method + "(" + numAssets + ")")
+      }
+      if (assetSlice.length > 0) {
+        panels.push(loadedPanel)
+        assetsPaneled += numAssets
+      }
     })
   } else {
     assetsPaneled += assetCount
@@ -61,21 +72,18 @@ ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
 ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
-  this.loadAssets(["loadSingleImage", "loadTwoImages"])
-
-  // For testing single page views of everything
-  // this.loadAssets()
+  // this.loadAssets(["loadSingleImage", "loadTwoImages"])
+  this.loadAssets([
+    "loadSingleImage",
+    ["masonify", 8],
+    ["masonify",12],
+    "loadTwoImages"])
 
   // Iterate through each panel in the panel array and append to fullpage
-
   this.panels.forEach(function(panel) {
     $('#fullpage').append(panel)
   })
-
-  // Reapply fullpage
-  // removePanelNavigation();
   applyFullpage()
-  // applyFullpage()
 }
 
 // ExperienceView.prototype.gridify = function() {
