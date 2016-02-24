@@ -6,6 +6,7 @@ function ExperienceView(id) {
   this.assetsPaneled = 0
   this.panelInstructions = []
   this.layoutLookup = {
+    "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
@@ -74,11 +75,20 @@ ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
+<<<<<<< HEAD
   // this.loadAssets([
   //   "loadSingleImage",
   //   ["masonify", 8],
   //   ["masonify",12],
   //   "loadTwoImages"])
+=======
+  this.loadAssets([
+    "titleCaption",
+    "loadSingleImage",
+    ["masonify", 8],
+    ["masonify",12],
+    "loadTwoImages"])
+>>>>>>> 9c6b712682cfdab31206e8660ead2e4811438e47
 
   // this.loadAssets()
 
@@ -107,4 +117,3 @@ ExperienceView.prototype.getPanels = function() {
     })
   })
 }
-
