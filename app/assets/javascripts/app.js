@@ -36,7 +36,9 @@ $(document).ready(function() {
   // Create new experience
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
-  $('#main-menu').on('click', '#manage', addImageToExperienceForm)
+  $('#main-menu').on('click', '#manage', function() {
+    renderAssetCaptionForm(EXPERIENCES[0].id)
+  });
 
   $('main').on('submit', '#create-experience-submit', function(event) {
     event.preventDefault();
@@ -46,6 +48,8 @@ $(document).ready(function() {
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     hideMainFrame();
+    hideMainMenu();
+    showFullpage();
     var experienceID = +$(this).attr('id')
     // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
@@ -57,14 +61,36 @@ $(document).ready(function() {
   // Adds new experience and reloads river
   $(document).on('click', '#submit-images', function(event) {
     event.preventDefault();
+    var experienceID = +$('input[name="assets[experience_id]"').val()
     clearUserExperienceBubbles();
     loadUserExperienceBubbles();
-    hideMainFrame();
-    clearMainFrame();
+    clearMainFrame().done(function() {
+      renderAssetCaptionForm(experienceID)
+    });
   })
 
   //Close button on forms
-  $(document).on('click', '.close-button', clearMainFrame)
+  $(document).on('click', '.close-button', function() {
+    clearMainFrame().done(hideMainFrame)
+  })
+
+  // Edit image caption
+  $(document).on('click', '.click-to-edit', function() {
+    showEditCaptionForm(this)
+  })
+
+  $(document).on('mouseover', '.click-to-edit', function() {
+    addClickToEditOpacity(this)
+  });
+
+  $(document).on('mouseleave', '.click-to-edit', function() {
+    removeClickToEditOpacity(this)
+  });
+
+  $(document).on('submit', '.edit-caption', function(event) {
+    event.preventDefault()
+    submitCaption(this)
+  })
 
 })
 

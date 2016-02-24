@@ -58,3 +58,33 @@
   transition: all .3s;
   cursor:pointer;
 }
+
+.transparent-input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.transparent-input:focus {
+  outline: none;
+}
+
+.caption-submit {
+  border: 2px solid transparent;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 3px;
+  transition: .5s;
+  width: 100px;
+}
+
+.caption-submit:hover {
+  background-color: black;
+  cursor: pointer;
+  box-shadow: -2px -2px 4px #00FFFF, -2px 2px 4px #00FFFF, 2px -2px 4px #00FFFF, 2px 2px 4px #00FFFF;
+  color: #00FFFF;
+}
