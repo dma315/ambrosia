@@ -16,6 +16,7 @@
 //= require jquery.kinetic
 //= require z.jquery.fileupload
 //= require jquery.fullPage
+// require jquery.slimscroll
 //= require dropzone
 //= require bootstrap
 //= require_tree .
