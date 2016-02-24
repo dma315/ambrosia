@@ -7,22 +7,30 @@ function ExperienceView(id) {
   // Some algorithm that determines which pictures go into which "section"
 }
 
+ExperienceView.prototype.viewSelector = function() {
+  var $selector = $('<div>').attr('id', 'selector')
+
+}
+
 ExperienceView.prototype.render = function() {
   // Test image:
-  var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"));
+  var $bigPicSection = $("<div>").addClass("module grid-item").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"));
 
   var that = this;
   var $gridSizer = $('<div>').addClass('grid-sizer');
   this.$element.append($gridSizer);
   var sectionifier = new Sectionify(this.id);
+  // sectionifier.thingsToRender.push($bigPicSection.wrap("<div class='grid-item'></div>"));
 
   sectionifier.buildMasonryPage(sectionifier.assets);
   sectionifier.thingsToRender.forEach(function(renderable){
     that.$element.append(renderable);
+    // appendToFullPage($bigPicSection);
   });
 
   clearFullpage().done(function(){
     appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
+    // appendToFullPage($bigPicSection);
   });
   this.$element.kinetic();
 }
@@ -41,7 +49,7 @@ ExperienceView.prototype.masonify = function() {
 
 ExperienceView.prototype.remasonify = function() {
   this.$element.masonry("layout");
-  applyFullpage();
+  // applyFullpage();
 };
 
 // ExperienceView.prototype.fullScreenImage = function () {

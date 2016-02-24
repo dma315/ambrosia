@@ -37,8 +37,19 @@ Sectionify.prototype.buildMasonryPage = function(assArr){
   // return $gridItemContainer;
 }
 
-Sectionify.prototype.buildFullscreenPage = function() {
-
+Sectionify.prototype.buildFullscreenPage = function(assArr) {
+  var sectionifier = this;
+  var thingsToRender = [];
+  assArr.forEach(function(asset){
+    var wrappedAsset = $('asset').wrap("<div class='fullPageImg section'></div>");
+    thingsToRender.push(wrappedAsset);
+  })
+  clearFullpage().done(function(){
+    thingsToRender.forEach(function(asset){
+      appendToFullPage(asset);
+    });
+    applyFullpage();
+  });
 }
 
 
