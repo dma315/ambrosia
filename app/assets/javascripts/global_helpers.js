@@ -6,12 +6,28 @@ function clearMainFrame() {
   });
 }
 
+function hideMainFrame() {
+  $('#main-frame').hide()
+}
+
+function showMainFrame() {
+  $('#main-frame').show() 
+}
+
 function clearFullpage() {
   $allChildren = $('#fullpage').children()
   $allChildren.fadeOut();
   return $allChildren.promise().done(function() {
     $allChildren.remove()
   });
+}
+
+function showFullpage() {
+  $("#fullpage").show();
+}
+
+function hideFullpage() {
+  $("#fullpage").hide();
 }
 
 function appendToMainFrame($element) {

@@ -1,4 +1,6 @@
 function renderCreateExperienceForm() {
+    showMainFrame();
+    clearFullpage();
     $.ajax({
       method: "GET",
       url: "/experiences/new"
