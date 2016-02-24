@@ -1,7 +1,7 @@
 function userLogout() {
   $.ajax({
     method: "DELETE",
-    url: "/sessions/delete"
+    url: "/session"
   })
   .done(function(response) {
     clearCurrentUser()
