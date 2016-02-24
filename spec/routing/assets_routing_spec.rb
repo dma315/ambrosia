@@ -15,5 +15,8 @@ RSpec.describe AssetsController, :type => :routing do
     it "routes to #show" do
       expect(:get => "/users/1/assets/2").to route_to("assets#show", :user_id => "1", :id => "2")
     end
+    it "routes to #collection" do
+      expect(:get => "/assets/collection").to route_to("assets#collection")
+    end
   end
 end
