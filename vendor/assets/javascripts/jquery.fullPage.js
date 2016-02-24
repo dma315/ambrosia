@@ -786,7 +786,7 @@
         */
         function addVerticalNavigation(){
             //THis is a custom change by Calvin Lang
-            $("#main-frame").append('<div id="' + SECTION_NAV + '"><ul></ul></div>');
+            $(".background-images").append('<div id="' + SECTION_NAV + '"><ul></ul></div>');
             var nav = $(SECTION_NAV_SEL);
 
             nav.addClass(function() {
@@ -805,7 +805,7 @@
                 var tooltip = options.navigationTooltips[i];
 
                 if (typeof tooltip !== 'undefined' && tooltip !== '') {
-                    li += '<div class="' + SECTION_NAV_TOOLTIP + ' ' + options.navigationPosition + '">' + tooltip + '</div>';
+                    // li += '<div class="' + SECTION_NAV_TOOLTIP + ' ' + options.navigationPosition + '">' + tooltip + '</div>';
                 }
 
                 li += '</li>';
@@ -1877,7 +1877,7 @@
                     afterSlideLoads();
                 });
             }
-
+            
             slidesNav.find(ACTIVE_SEL).removeClass(ACTIVE);
             slidesNav.find('li').eq(slideIndex).find('a').addClass(ACTIVE);
         }
