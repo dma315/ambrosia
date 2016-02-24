@@ -75,8 +75,7 @@ html.fp-enabled,
     top: 50%;
     opacity: 1;
     -webkit-transform: translate3d(0,0,0);
-<<<<<<< HEAD
-=======
+
     &.right {
        right: 17px;
     }
@@ -121,8 +120,8 @@ html.fp-enabled,
 }
 .fp-slidesNav ul li {
     display: inline-block;
->>>>>>> f6433b85fd8f495899c703aba2e1e076caff24ee
 }
+
 #fp-nav.right {
     right: 17px;
 }

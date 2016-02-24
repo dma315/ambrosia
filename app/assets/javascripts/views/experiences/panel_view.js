@@ -31,10 +31,12 @@ PanelView.prototype.masonify = function(){
 
   this.assets.forEach(function(asset) {
     var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
-    var $img = $("<img>").attr('src', asset.direct_upload_url)
+    var $img = $("<div class='grid-item-content'>").append($("<img>").attr('src', asset.direct_upload_url))
     $gridItem.append($img)
     $masonGrid.append($gridItem)
   })
+
+  var self = this;
 
   $masonGrid.imagesLoaded(function() {
     $masonGrid.masonry({
@@ -43,9 +45,18 @@ PanelView.prototype.masonify = function(){
       gutter: 10,
       percentPosition: true
     });
+
+    $masonGrid.on('click', '.grid-item', function(){
+      $(this).toggleClass('grid-item--gigante');
+      $masonGrid.masonry();
+    })
+    $masonGrid.on( 'layoutComplete', function( event, laidOutItems ) {
+      console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
+    });
   });
 
   return $div.append($masonGrid.kinetic())
+<<<<<<< HEAD
 }
 
 //this is a helper for if you want to get the asset's EXPERIENCE title
@@ -56,3 +67,6 @@ var getExperienceTitle = function(experienceID){
 
 
 
+=======
+}
+>>>>>>> master

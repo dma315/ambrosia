@@ -89,7 +89,3 @@ ExperienceView.prototype.render = function() {
   })
   applyFullpage()
 }
-
-
-
-
