@@ -1,7 +1,6 @@
 function ExperienceView(id) {
   this.experience = getExperienceByID(id)
   this.assets = this.experience.assets
-  this.experienceTitle = this.experience.title
   this.assetCount = this.experience.assets.length
   this.panels = []
   this.assetsPaneled = 0
