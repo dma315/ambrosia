@@ -1,6 +1,11 @@
 function ExperienceView(id) {
   this.experience = getExperienceByID(id)
+  this.assetCount = this.experience.assets.length
   this.panels = []
+  this.assetsPaneled = 0
+  this.layoutLookup = {
+    "loadSingleImage": function() something
+  }
   // this.$element = $("<div>").addClass('module grid')
   // this.loadAssets();
   // this.masonify();
@@ -8,23 +13,27 @@ function ExperienceView(id) {
   // Some algorithm that determines which pictures go into which "section"
 }
 
-ExperienceView.prototype.loadAssets = function() {
-  var assets = this.experience.assets
-  var panels = this.panels
-  assets.forEach(function(asset) {
-    var panel = new PanelView([asset])
-    panels.push(panel)
-  })
+["loadSingleImage", "lotsofImages"]
+
+ExperienceView.prototype.loadAssets = function(_arrayOfLayouts) {
+
+  var arrayOfLayouts = _arrayOfLayouts
+  if (arrayOfLayouts) {
+    // Take first layout
+    // Look it up in the object
+    // Figure out how many images it will take from assets
+    // Increment assets
+    // Load panel view
+  } else {
+    var assets = this.experience.assets
+    var panels = this.panels
+    assets.forEach(function(asset) {
+      var panel = new PanelView([asset])
+      panels.push(panel)
+      // Remind to call the single page panel view here
+    });
+  }
   return panels
-  // var $element = this.$element
-  // var $gridSizer = $("<div>").addClass("grid-sizer")
-  // $element.append($gridSizer);
-  // this.experience.assets.forEach(function(asset) {
-  // var $img = $("<img>").attr('src', asset.direct_upload_url)
-  // var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-  // $element.append($div) // These need to be individual assetViews maybe?
-  // })
-  // return $element
 }
 
 
@@ -75,6 +84,17 @@ ExperienceView.prototype.render = function() {
 //   $bigPicSection.append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
 // }
 
+// ExperienceView.prototype.loadAssets = function() {
+  // var $element = this.$element
+  // var $gridSizer = $("<div>").addClass("grid-sizer")
+  // $element.append($gridSizer);
+  // this.experience.assets.forEach(function(asset) {
+  // var $img = $("<img>").attr('src', asset.direct_upload_url)
+  // var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
+  // $element.append($div) // These need to be individual assetViews maybe?
+  // })
+  // return $element
+// }
 
 
 
