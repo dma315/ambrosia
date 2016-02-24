@@ -7,7 +7,7 @@ function ExperienceView(id) {
   this.layoutLookup = {
     "loadSingleImage": 1,
     "loadTwoImages": 2,
-    "masonify": "",
+    "masonify": "User input",
   }
 }
 
@@ -78,6 +78,8 @@ ExperienceView.prototype.render = function() {
     ["masonify", 8],
     ["masonify",12],
     "loadTwoImages"])
+
+  // this.loadAssets()
 
   // Iterate through each panel in the panel array and append to fullpage
   this.panels.forEach(function(panel) {
