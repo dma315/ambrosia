@@ -3,6 +3,7 @@ class CreatePanels < ActiveRecord::Migration
     create_table :panels do |t|
       t.integer :experience_id, null: false
       t.string :panel_type, null: false
+      t.integer :number_asset_input
 
       t.timestamps null: false
     end

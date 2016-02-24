@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 20160224195410) do
   end
 
   create_table "panels", force: :cascade do |t|
-    t.integer  "experience_id", null: false
-    t.string   "panel_type",    null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "experience_id",      null: false
+    t.string   "panel_type",         null: false
+    t.integer  "number_asset_input"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -18,7 +18,9 @@ function loadSingleExperience(bubble) {
 
   // Creates and renders view
   var experienceView = new ExperienceView(experienceID)
-  clearFullpage().done(function() {
-    experienceView.render();
-  });
+  experienceView.getPanels().done(function() {
+    clearFullpage().done(function() {
+      experienceView.render();
+    });
+  })
 }
