@@ -15,7 +15,7 @@ function showMainFrame() {
 }
 
 function clearFullpage() {
-  $('html').removeClass('fp-enabled')
+  $('html').removeClass('fp-enabled');
   $allChildren = $('#fullpage').children()
   $allChildren.fadeOut();
   return $allChildren.promise().done(function() {
