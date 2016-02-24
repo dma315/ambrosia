@@ -7,6 +7,11 @@ class ExperiencesController < ApplicationController
     end
   end
 
+  def manage
+    @experience = Experience.find(params[:id])
+    render 'experiences/manage', layout: false
+  end
+
   def show
     @experience = Experience.find(params[:id])
     respond_to do |format|

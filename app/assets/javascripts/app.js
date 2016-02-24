@@ -37,7 +37,15 @@ $(document).ready(function() {
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
   $('#main-menu').on('click', '#manage', function() {
-    // Write caption form
+    var experienceID = $('#manage').data().experienceid
+    if (experienceID != undefined) {
+      var experienceToManage = EXPERIENCES.find(function(experience) {
+        return experience.id === experienceID
+      })
+      renderExperienceManageForm(experienceToManage.id)
+    } else {
+      renderExperienceManageForm(EXPERIENCES[0].id)
+    }
   });
 
   $('#main-menu').on('click', '#captions', function() {
