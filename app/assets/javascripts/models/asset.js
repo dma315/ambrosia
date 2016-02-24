@@ -9,3 +9,12 @@ function Asset(object) {
   // this.upload_file_size = object.upload_file_size
   this.user_id = object.user_id
 }
+
+Asset.prototype.validAsset = function() {
+  if (this.id && this.direct_upload_url && this.experience_id && this.user_id){
+    return true;
+  } else {
+    return false;
+  }
+};
+

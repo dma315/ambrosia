@@ -49,6 +49,7 @@ gem 'image_suckr'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem "jasmine-rails"
 end
 
 group :development do

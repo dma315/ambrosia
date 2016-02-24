@@ -16,3 +16,11 @@ Experience.prototype.loadAssets = function() {
     assets.push(asset)
   })
 }
+
+Experience.prototype.validExperience = function(){
+  if(this.id && this.title && this.start_date && this.user_id){
+    return true;
+  } else {
+    return false;
+  }
+};
