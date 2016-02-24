@@ -3,15 +3,15 @@
   height: 100vh;
 }
 
-.titleCaption-h2 {
+.titleCaption-h1 {
    position: absolute;
-   top: 70%;
-   left: 0;
+   top: 72%;
    width: 100%;
    color: white;
-   font: bold 24px/45px Helvetica, Sans-Serif;
+   font: bold 55px Sans-Serif;
    letter-spacing: -1px;
-   background: rgb(0, 0, 0); /* fallback color */
-   background: rgba(0, 0, 0, 0.7);
-   padding: 10px;
+   background: rgba(0, 0, 0, 0.6);
+   padding-top: 25px;
+   padding-bottom: 25px;
+   padding-left: 55px;
 }
