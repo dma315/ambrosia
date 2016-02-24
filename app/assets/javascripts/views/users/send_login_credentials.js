@@ -2,7 +2,7 @@ function sendLoginCredentials(form) {
   formData = $(form).serialize();
   var request = $.ajax({
     method: 'post',
-    url: '/sessions',
+    url: '/session',
     data: formData
   })
   request.done(function(response){

@@ -3,7 +3,7 @@ function renderLoginForm() {
   if (!mainFrameContains(loginFormID)) {
     $.ajax({
       method: "GET",
-      url: "/sessions/new"
+      url: "/session/new"
     })
     .done(function(response) {
       $loginForm = $(response);

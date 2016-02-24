@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 
   get 'sessions/uid', to: 'sessions#uid', as: :get_session_uid
 
-  resources :sessions
-
-  get 'sessions/delete', to: 'sessions#destroy', as: :destroy_session
+  resource :session, only: [:new, :create, :destroy]
 
   get 'assets/collection', to: 'assets#collection'
 
