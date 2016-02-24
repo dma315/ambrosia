@@ -1,5 +1,5 @@
 var applyFullpage = function() {
-	removePanelNavigation()
+	// removePanelNavigation()
 	var fakeNavs = new Array
 	for (var i = 1; i < 150; i++) { fakeNavs.push("Panel " + i) }
   $('html').removeClass('fp-enabled').promise().done(function(){

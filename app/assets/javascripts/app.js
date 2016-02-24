@@ -42,11 +42,11 @@ $(document).ready(function() {
       var experienceToManage = EXPERIENCES.find(function(experience) {
         return experience.id === experienceID
       })
-      renderAssetCaptionForm(experienceToManage.id)  
+      renderAssetCaptionForm(experienceToManage.id)
     } else {
-      renderAssetCaptionForm(EXPERIENCES[0].id)  
+      renderAssetCaptionForm(EXPERIENCES[0].id)
     }
-    
+
   });
 
   $('main').on('submit', '#create-experience-submit', function(event) {
@@ -56,6 +56,7 @@ $(document).ready(function() {
 
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
+    removePanelNavigation()
     hideMainFrame();
     hideMainMenu();
     showFullpage();
@@ -65,7 +66,9 @@ $(document).ready(function() {
     $('.experience-bubble').removeClass("active-bubble")
     $(this).addClass("active-bubble")
     var experienceView = new ExperienceView(experienceID)
-    experienceView.render();
+    clearFullpage().done(function() {
+      experienceView.render();
+    });
   })
 
   // Adds new experience and reloads river
