@@ -56,4 +56,17 @@ PanelView.prototype.masonify = function(){
   });
 
   return $div.append($masonGrid.kinetic())
+<<<<<<< HEAD
 }
+
+//this is a helper for if you want to get the asset's EXPERIENCE title
+var getExperienceTitle = function(experienceID){
+  var experienceObject = $.grep(EXPERIENCES, function(e){ return e.id == experienceID; });
+  return experienceObject[0].title
+}
+
+
+
+=======
+}
+>>>>>>> master
