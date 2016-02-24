@@ -59,6 +59,7 @@ ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
 
 
 ExperienceView.prototype.render = function() {
+  removePanelNavigation()
   // For testing a predefined set of routes
   this.loadAssets(["loadSingleImage", "loadTwoImages"])
 
@@ -66,12 +67,15 @@ ExperienceView.prototype.render = function() {
   // this.loadAssets()
 
   // Iterate through each panel in the panel array and append to fullpage
+
   this.panels.forEach(function(panel) {
     $('#fullpage').append(panel)
   })
 
   // Reapply fullpage
-  applyFullpage();
+  // removePanelNavigation();
+  applyFullpage()
+  // applyFullpage()
 }
 
 // ExperienceView.prototype.gridify = function() {

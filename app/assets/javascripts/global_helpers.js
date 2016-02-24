@@ -11,13 +11,14 @@ function hideMainFrame() {
 }
 
 function showMainFrame() {
-  $('#main-frame').show() 
+  $('#main-frame').show()
 }
 
 function clearFullpage() {
   $allChildren = $('#fullpage').children()
   $allChildren.fadeOut();
   return $allChildren.promise().done(function() {
+    removePanelNavigation();
     $allChildren.remove()
   });
 }
