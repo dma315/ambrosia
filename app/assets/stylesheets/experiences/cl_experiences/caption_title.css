@@ -4,14 +4,27 @@
 }
 
 .titleCaption-h1 {
-   position: absolute;
-   top: 72%;
-   width: 100%;
-   color: white;
-   font: bold 55px Sans-Serif;
-   letter-spacing: -1px;
-   background: rgba(0, 0, 0, 0.6);
-   padding-top: 25px;
-   padding-bottom: 25px;
-   padding-left: 55px;
+  position: absolute;
+  top: 72%;
+  width: 100%;
+  color: white;
+  font: bold 55px Sans-Serif;
+  letter-spacing: -1px;
+  background: rgba(0, 0, 0, 0.6);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 55px;
+  animation-name: dropTitleHeight; /*this is the title of the CSS*/
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes dropTitleHeight {
+    0% {
+        transform: translateY(-26%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
