@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     @users = User.all
   end
@@ -51,12 +52,12 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
+  def set_user
       @user = User.find(params[:id])
-    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :username, :avatar_url)
-    end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :username, :avatar_url)
+  end
 end
