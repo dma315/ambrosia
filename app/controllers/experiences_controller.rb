@@ -10,7 +10,7 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find(params[:id])
     respond_to do |format|
-      format.json { render json: @experience.to_json(include: :assets) }
+      format.json { render json: @experience.to_json(include: :panels) }
     end
     # @user = User.find_by(id: params[:user_id])
     # @experience = Experience.find_by(id: params[:id])

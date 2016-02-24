@@ -15,6 +15,7 @@ function showMainFrame() {
 }
 
 function clearFullpage() {
+  $('html').removeClass('fp-enabled');
   $allChildren = $('#fullpage').children()
   $allChildren.fadeOut();
   return $allChildren.promise().done(function() {
@@ -88,3 +89,4 @@ function clearUserExperienceBubbles() {
     $(this).remove()
   });
 }
+
