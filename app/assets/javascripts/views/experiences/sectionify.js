@@ -29,7 +29,7 @@ Sectionify.prototype.buildMasonryPage = function(assArr){
   var that = this;
   // Wrap each link in <img> tag, then wrap <img> in 'grid-item' div:
   imgLinks.forEach(function(link){
-    var $img = $("<img>").attr('src', link);
+    var $img = $("<div class='grid-item-content'>").append($("<img>").attr('src', link));
     var $gridItem = $("<div>").addClass('grid-item').append($img);
     $gridItemContainer.push($gridItem);
     that.thingsToRender.push($gridItem);
