@@ -83,6 +83,7 @@ ExperienceView.prototype.render = function() {
   // this.loadAssets()
 
   // Iterate through each panel in the panel array and append to fullpage
+  console.log(this.panelInstructions)
   this.loadAssets(this.panelInstructions)
 
   this.panels.forEach(function(panel) {
