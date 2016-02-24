@@ -37,7 +37,16 @@ $(document).ready(function() {
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
   $('#main-menu').on('click', '#manage', function() {
-    renderAssetCaptionForm(EXPERIENCES[0].id)
+    var experienceID = $('#manage').data().experienceid
+    if (experienceID != undefined) {
+      var experienceToManage = EXPERIENCES.find(function(experience) {
+        return experience.id === experienceID
+      })
+      renderAssetCaptionForm(experienceToManage.id)  
+    } else {
+      renderAssetCaptionForm(EXPERIENCES[0].id)  
+    }
+    
   });
 
   $('main').on('submit', '#create-experience-submit', function(event) {
@@ -51,6 +60,7 @@ $(document).ready(function() {
     hideMainMenu();
     showFullpage();
     var experienceID = +$(this).attr('id')
+    updateManageLink(experienceID) // This is critical for updating the manage link to link to appropriate experience
     // $('.background-images').css({'background': 'black'})
     $('.experience-bubble').removeClass("active-bubble")
     $(this).addClass("active-bubble")
