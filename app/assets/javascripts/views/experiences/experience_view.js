@@ -1,41 +1,30 @@
 function ExperienceView(id) {
-  this.experience = getExperienceByID(id)
-  this.$element = $("<div>").addClass('module grid')
-  this.loadAssets();
+  this.experience = getExperienceByID(id);
+  this.$element = $("<div>").addClass('module grid');
+  this.id = id;
   this.masonify();
   // Some sort of object that holds "sections"
   // Some algorithm that determines which pictures go into which "section"
 }
 
-ExperienceView.prototype.loadAssets = function() {
-  var $element = this.$element
-  var $gridSizer = $("<div>").addClass("grid-sizer")
-  $element.append($gridSizer);
-  this.experience.assets.forEach(function(asset) {
-  var $img = $("<img>").attr('src', asset.direct_upload_url)
-  var $div = $("<div>").attr('id', asset.id).addClass("sample-image grid-item").append($img)
-  $element.append($div) // These need to be individual assetViews maybe?
-  })
-  return $element
-}
-
 ExperienceView.prototype.render = function() {
-  var that = this
+  // Test image:
+  var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"));
 
-  var $bigPicSection = $("<div>").addClass("section").append($("<img src='http://i.telegraph.co.uk/multimedia/archive/03235/potd-husky_3235255k.jpg'>"))
+  var that = this;
+  var $gridSizer = $('<div>').addClass('grid-sizer');
+  this.$element.append($gridSizer);
+  var sectionifier = new Sectionify(this.id);
 
-  var $fullpage = this.$fullpage
-    clearFullpage().done(function() {
-    var $section2 = $("<div>").addClass("section").append($("<p>").text("Hello, I should be on the first page"))
-    appendToFullPage($section2)
+  sectionifier.buildMasonryPage(sectionifier.assets);
+  sectionifier.thingsToRender.forEach(function(renderable){
+    that.$element.append(renderable);
+  });
+
+  clearFullpage().done(function(){
     appendToFullPage(that.$element.addClass("section")).done(that.remasonify.bind(that));
-    appendToFullPage($bigPicSection);
-    })
-  this.$element.kinetic()
-}
-
-ExperienceView.prototype.gridify = function() {
-  var $element = this.$element;
+  });
+  this.$element.kinetic();
 }
 
 ExperienceView.prototype.masonify = function() {
@@ -45,14 +34,14 @@ ExperienceView.prototype.masonify = function() {
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
       gutter: 10,
-      percentPosition: true,
+      percentPosition: true
     });
   });
 }
 
 ExperienceView.prototype.remasonify = function() {
   this.$element.masonry("layout");
-  applyFullpage()
+  applyFullpage();
 };
 
 // ExperienceView.prototype.fullScreenImage = function () {
