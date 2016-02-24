@@ -107,3 +107,4 @@ ExperienceView.prototype.getPanels = function() {
     })
   })
 }
+

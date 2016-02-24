@@ -1,0 +1,7 @@
+.grid-item--gigante {
+  width: 70%;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid gray;
+  z-index: 2; /* abover other items */
+}
