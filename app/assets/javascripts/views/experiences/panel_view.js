@@ -28,7 +28,6 @@ PanelView.prototype.masonify = function(){
   var $masonGrid = $("<div>").addClass('module grid')
   var $gridRuler = $("<div>").addClass('grid-sizer')
   $masonGrid.append($gridRuler)
-
   this.assets.forEach(function(asset) {
     var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
     var $img = $("<div class='grid-item-content'>").append($("<img>").attr('src', asset.direct_upload_url))

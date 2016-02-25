@@ -14,9 +14,9 @@ class PanelsController < ApplicationController
     ordered_panels = experience.panels.order(created_at: :asc)
     ordered_panels.each do |panel|
       if panel.number_asset_input
-        panels << [panel.panel_type, panel.number_asset_input]
+        panels << [ [panel.panel_type, panel.number_asset_input], panel.assets.map(&:id)]
       else
-        panels << panel.panel_type
+        panels << [ panel.panel_type, panel.assets.map(&:id) ]
       end
     end
     respond_to do |format|
