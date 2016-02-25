@@ -10,6 +10,7 @@ function ExperienceView(id) {
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
+    "masonifyWithCaptions": ""
   }
 }
 
@@ -75,23 +76,14 @@ ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
-  // this.loadAssets([
-  //   "loadSingleImage",
-  //   ["masonify", 8],
-  //   ["masonify",12],
-  //   "loadTwoImages"])
+  this.loadAssets([
+    "titleCaption",
+    "loadSingleImage",
+    ["masonify", 8],
+    ["masonifyWithCaptions", 10],
+    "loadTwoImages"])
 
-  // this.loadAssets([
-  //   "titleCaption",
-  //   "loadSingleImage",
-  //   ["masonify", 8],
-  //   ["masonify",12],
-  //   "loadTwoImages"])
-
-  // this.loadAssets()
-
-  // console.log(this.panelInstructions)
-  this.loadAssets(this.panelInstructions)
+  // this.loadAssets(this.panelInstructions)
 
   this.panels.forEach(function(panel) {
     $('#fullpage').append(panel)
