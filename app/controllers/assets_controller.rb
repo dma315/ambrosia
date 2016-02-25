@@ -8,7 +8,8 @@ class AssetsController < ApplicationController
   end
 
   def create
-    obj = S3_BUCKET.objects[params[:file].original_filename]
+    # obj = S3_BUCKET.objects[params[:file].original_filename]
+    obj = S3_BUCKET.objects[SecureRandom.hex]
     obj.write(
       file: params[:file],
       acl: :public_read
