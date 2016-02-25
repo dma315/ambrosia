@@ -12,8 +12,22 @@ function renderExperienceManageForm(experienceID) {
     });
     hideMainMenu();
     appendToMainFrame($(response))
+
+    // Draggable
     $(".draggable-image-box").draggable({
-      containment: "window"
+      revert: true,
+      containment: "document",
+      scroll: false,
+      appendTo: 'body',
+      helper: 'clone'
     })
+
+    // Droppable
+    $('.droppable-panel').droppable({
+      drop: function(event, ui) {
+        $dropArea = $(this)
+        $(ui.draggable).appendTo($dropArea)
+      }
+    });
   })
 }

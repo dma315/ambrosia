@@ -22,6 +22,7 @@
   border-radius: 20px;
   border: 1px dotted white;
   padding: 5%;
+  overflow-y: scroll;
 }
 
 .manage-experience-half h1 {
@@ -35,7 +36,6 @@
   width: 90%;
   display: flex;
   flex-wrap: wrap;
-  overflow-y: scroll;
 }
 
 .draggable-image-box {
@@ -101,6 +101,12 @@
 .panel-holder {
   width: 90%;
   margin: 0 auto;
-  overflow: hidden;
   height: 90%;
+}
+
+.droppable-panel {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 200px;
+  width: 100%;
 }
