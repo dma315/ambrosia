@@ -5,7 +5,7 @@ function PanelView(assetsArray) {
 PanelView.prototype.loadSingleImage = function() {
   var src = this.assets[0].direct_upload_url
   var $div = $("<div>").addClass("section")
-  var $img = $("<img>").attr("src", src)
+  var $img = $("<img>").attr("src", src).addClass("load-single-image")
   $div.append($img)
   return $div
 }
@@ -50,7 +50,7 @@ PanelView.prototype.masonify = function(){
       $masonGrid.masonry();
     })
     $masonGrid.on( 'layoutComplete', function( event, laidOutItems ) {
-      console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
+      // console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
     });
   });
 
