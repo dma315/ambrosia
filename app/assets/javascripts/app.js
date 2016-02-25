@@ -73,6 +73,7 @@ $(document).ready(function() {
   // Load experiences -- needs refactoring -- may get removed once we finalize
   $("nav").on('click', ".experience-bubble", function(event) {
     loadSingleExperience(this)
+    var idleInterval = setInterval(timerIncrement, 600); //For the idle time of about 16 seconds
   })
 
   // Adds new experience and reloads river
@@ -127,6 +128,7 @@ $(document).ready(function() {
   $(document).on('click', '.panel-remove', function() {
     removePanel(this)
   })
+
 
   //This is for the autoscroll after 20 seconds. Needs to be on doc ready.
   $(this).mousemove(function (e) {

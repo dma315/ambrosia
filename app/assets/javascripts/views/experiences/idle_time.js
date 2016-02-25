@@ -1,8 +1,9 @@
-var idleInterval = setInterval(timerIncrement, 600); // 1 second
-
 function timerIncrement() {
     IDLETIME += 1;
-    if (IDLETIME > 3) {
-        $(document).trigger("keydown")
+    if (IDLETIME > 26) {
+        IDLETIME = 0;
+        $.fn.fullpage.moveSectionDown()
     }
 }
+
+// 40 is the down key button
