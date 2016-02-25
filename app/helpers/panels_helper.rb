@@ -10,6 +10,7 @@ module PanelsHelper
       "imagesWithCaptions" => ["Captioned Grid: 8 images", 8],
       "masonify" => ["Masonry: Many images", "variable"],
       "masonifyWithCaptions" => ["Masonry: Many images", "variable"],
+      "load9GridWithSlideDown" => ["3x3 Grid with Captions", 9]
     }
   end
 end
