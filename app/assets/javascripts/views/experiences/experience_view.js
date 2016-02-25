@@ -79,7 +79,7 @@ ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
 
 ExperienceView.prototype.render = function() {
   removePanelNavigation()
-  For testing a predefined set of routes
+  // For testing a predefined set of routes
   this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
     ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
