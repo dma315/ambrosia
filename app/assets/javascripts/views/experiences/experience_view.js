@@ -104,7 +104,7 @@ ExperienceView.prototype.getPanels = function() {
     url: "/experiences/" + experience.id + "/panels.json"
   })
   return request.then(function(response) {
-    console.log(response)
+    // console.log(response)
     response.forEach(function(panelInstruction) {
       thisView.panelInstructions.push(panelInstruction)
     })
@@ -117,7 +117,7 @@ ExperienceView.prototype.reorderAssets = function() {
   // console.log(assets)
   var reorderedAssets = []
   var panelInstructions = this.panelInstructions
-  console.log(panelInstructions)
+  // console.log(panelInstructions)
 
   function findAssetByID(array, id) {
     return array.find(function(element) {
