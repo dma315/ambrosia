@@ -89,7 +89,7 @@ PanelView.prototype.masonifyWithCaptions = function(){
 }
 
 PanelView.prototype.imagesWithCaptions = function(){
-  var $div = $("<div>").addClass("section");
+  var $div = $("<div>").addClass("section sectionCenterAlign");
   this.assets.forEach(function(asset){
     $figure = $("<div class='snipper'>").append($("<img class='imagesWithCaptions'>").attr("src", asset.direct_upload_url))
     $figureCaption = $("<figcaption>").append($("<p>").append(asset.caption))
