@@ -5,16 +5,6 @@ function ExperienceView(id) {
   this.panels = []
   this.assetsPaneled = 0
   this.panelInstructions = []
-  // this.layoutLookup = {
-  //   "imagesWithCaptions": 8,
-  //   "titleCaptionWithOverflow": 4, //Includes overflow and "loadSingleImage" should be next
-  //   "titleCaption": 1,
-  //   "loadSingleImage": 1,
-  //   "loadTwoImages": 2,
-  //   "masonify": "User input",
-  //   "masonifyWithCaptions": "User input",
-  //   "niceView4Images": 4
-  // }
   this.layoutLookup = LAYOUTLOOKUP
 }
 
@@ -27,12 +17,12 @@ ExperienceView.prototype.loadAssets = function(_arrayOfLayouts) {
   var assets = this.assets
   var panels = this.panels
 
+
   if (arrayOfLayouts) {
     // Take first layout
     arrayOfLayouts.forEach(function(layoutOption) {
       if (layoutOption.constructor == String) {
         var numAssets = layoutLookup[layoutOption][1]
-        console.log(numAssets)
         var assetSlice = assets.slice(assetsPaneled, assetsPaneled + numAssets)
         var panel = new PanelView(assetSlice)
         var loadedPanel = eval("panel." + layoutOption + "()")
@@ -79,7 +69,7 @@ ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
 
 ExperienceView.prototype.render = function() {
   removePanelNavigation()
-  // For testing a predefined set of routes
+  For testing a predefined set of routes
   this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
     ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
@@ -89,7 +79,6 @@ ExperienceView.prototype.render = function() {
     ["masonify", 8],
     ["masonifyWithCaptions", 10],
     "loadTwoImages"])
-
   // this.loadAssets(this.panelInstructions)
 
   this.panels.forEach(function(panel) {
