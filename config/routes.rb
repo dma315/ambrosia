@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'experiences/:id/manage' => 'experiences#manage'
 
   resources :experiences, only: [:new, :create, :edit, :show, :index] do
-    resources :panels, only: [:index]
+    resources :panels, only: [:index, :create]
   end
 
   resources :users do

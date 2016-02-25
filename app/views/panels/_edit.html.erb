@@ -1,4 +1,4 @@
-<div class="panel">
+<div class="panel" id="<%= panel.id %>">
   <div class="panel-heading">
     <div class="panel-holder">
       <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= panel.id %>">Panel <%= index + 1 %></a>
@@ -8,12 +8,12 @@
     <div class="droppable-panel">
     </div>
     <div class="dropdown">
-      <span>Select a panel type:</span>
+      <span class="option-selected">Select a panel type:</span>
       <div class="dropdown-content">
-        <p class="dropdown-option">Cover Screen: 1 image</p>
-        <p class="dropdown-option">Full Screen: 1 image</p>
-        <p class="dropdown-option">Split Screen: 2 images</p>
-        <p class="dropdown-option">Masonry: Many images</p>
+        <p class="dropdown-option" id="titleCaption">Cover Screen: 1 image</p>
+        <p class="dropdown-option" id="loadSingleImage">Full Screen: 1 image</p>
+        <p class="dropdown-option" id="loadTwoImages">Split Screen: 2 images</p>
+        <p class="dropdown-option" id="masonify">Masonry: Many images</p>
       </div>
     </div>
     <button class="panel-submit">Save Panel</button>
