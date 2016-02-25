@@ -9,6 +9,9 @@ $(document).ready(function() {
     $('.logged-in').hide()
   }
 
+  // Get object that is the lookup table for all panel methods
+  getLayoutLookup()
+
   // Load navBubbles
   NAVSCROLL = new NavScroll().initialize()
   $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })
@@ -37,7 +40,15 @@ $(document).ready(function() {
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
   $('#main-menu').on('click', '#manage', function() {
-    // Write caption form
+    var experienceID = $('#manage').data().experienceid
+    if (experienceID != undefined) {
+      var experienceToManage = EXPERIENCES.find(function(experience) {
+        return experience.id === experienceID
+      })
+      renderExperienceManageForm(experienceToManage.id)
+    } else {
+      renderExperienceManageForm(EXPERIENCES[0].id)
+    }
   });
 
   $('#main-menu').on('click', '#captions', function() {
@@ -95,6 +106,26 @@ $(document).ready(function() {
     event.preventDefault()
     submitCaption(this)
   })
+
+
+  // Panel stuff
+  $(document).on('click', '.panel-submit', function(event) {
+    panelSubmit(this)
+  })
+
+  $(document).on('click', '.dropdown-option', function() {
+    var $optionSelected = $(this)
+    $optionSelected.closest('.dropdown').find('.dropdown-option').removeClass("selected")
+    $optionSelected.addClass("selected")
+    var textToAppend = $optionSelected.text()
+    $optionSelected.closest('.panel').find('.option-selected').text(textToAppend)
+  })
+
+  $(document).on('click', '#add-new-panel', addNewPanel)
+  $(document).on('click', '.panel-remove', function() {
+    removePanel(this)
+  })
+
 
 })
 

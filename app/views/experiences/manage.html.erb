@@ -1,0 +1,28 @@
+<div id="manage-experience">
+
+  <div class="manage-experience-half" id="manage-experience-assets">
+    <h1>Unsorted Pictures</h1>
+    <p>Drag these images...</p>
+      <div class="draggable-images-container">
+        <% @unpaneled.each do |asset| %>
+          <div class="draggable-image-box" id="<%= asset.id %>">
+            <img class="draggable-image" src="<%= asset.direct_upload_url %>">
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="manage-experience-half" id="manage-experience-panels">
+    <h1>Your Panels</h1>
+    <p>..into panels</p>
+    <button id="add-new-panel">Add new panel</button>
+    <div class="panel-holder">
+      <div class="panel-group" id="accordion">
+        <% @ordered_panels.each_with_index do |panel, index| %>
+          <%= render partial: 'panels/edit', locals: { panel: panel, index: index, panel_methods: @panel_methods} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
