@@ -9,6 +9,7 @@ class ExperiencesController < ApplicationController
 
   def manage
     @experience = Experience.find(params[:id])
+    @unpaneled = @experience.assets.where(panel_id: nil)
     render 'experiences/manage', layout: false
   end
 
