@@ -6,10 +6,14 @@ function ExperienceView(id) {
   this.assetsPaneled = 0
   this.panelInstructions = []
   this.layoutLookup = {
+    "imagesWithCaptions": 8,
+    "titleCaptionWithOverflow": 4, //Includes overflow and "loadSingleImage" should be next
     "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
+    "masonifyWithCaptions": "",
+    "niceView4Images": ""
   }
 }
 
@@ -75,23 +79,16 @@ ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
-  // this.loadAssets([
-  //   "loadSingleImage",
-  //   ["masonify", 8],
-  //   ["masonify",12],
-  //   "loadTwoImages"])
+  this.loadAssets([
+    ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
+    "loadSingleImage",
+    ["imagesWithCaptions", 8],
+    "titleCaption",
+    ["masonify", 8],
+    ["masonifyWithCaptions", 10],
+    "loadTwoImages"])
 
-  // this.loadAssets([
-  //   "titleCaption",
-  //   "loadSingleImage",
-  //   ["masonify", 8],
-  //   ["masonify",12],
-  //   "loadTwoImages"])
-
-  // this.loadAssets()
-
-  // console.log(this.panelInstructions)
-  this.loadAssets(this.panelInstructions)
+  // this.loadAssets(this.panelInstructions)
 
   this.panels.forEach(function(panel) {
     $('#fullpage').append(panel)
@@ -109,7 +106,6 @@ ExperienceView.prototype.getPanels = function() {
   })
   return request.then(function(response) {
     response.forEach(function(panelInstruction) {
-      console.log(panelInstruction)
       thisView.panelInstructions.push(panelInstruction)
     })
   })
