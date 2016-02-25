@@ -17,8 +17,8 @@
     <p>..into panels</p>
     <div class="panel-holder">
       <div class="panel-group" id="accordion">
-        <% @experience.panels.each_with_index do |panel, index| %>
-          <%= render partial: 'panels/edit', locals: { panel: panel, index: index} %>
+        <% @ordered_panels.each_with_index do |panel, index| %>
+          <%= render partial: 'panels/edit', locals: { panel: panel, index: index, panel_methods: @panel_methods} %>
         <% end %>
       </div>
     </div>

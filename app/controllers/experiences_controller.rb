@@ -8,7 +8,14 @@ class ExperiencesController < ApplicationController
   end
 
   def manage
+    @panel_methods = {
+      "titleCaption" => "Cover Screen: 1 image",
+      "loadSingleImage" => "Full Screen: 1 image",
+      "loadTwoImages" => "Split Screen: 2 images",
+      "masonify" => "Masonry: Many images",
+    }
     @experience = Experience.find(params[:id])
+    @ordered_panels = @experience.panels.order(created_at: :asc)
     @unpaneled = @experience.assets.where(panel_id: nil)
     render 'experiences/manage', layout: false
   end

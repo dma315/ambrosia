@@ -6,14 +6,18 @@
   </div>
   <div id="collapse<%= panel.id %>" class="panel-collapse collapse">
     <div class="droppable-panel">
+      <% panel.assets.each do |asset| %>
+        <div class="draggable-image-box" id="<%= asset.id %>">
+          <img class="draggable-image" src="<%= asset.direct_upload_url %>">
+        </div>
+      <% end %>
     </div>
     <div class="dropdown">
-      <span class="option-selected">Select a panel type:</span>
+      <span class="option-selected">
+        <%= panel_methods[panel.panel_type] %>
+      </span>
       <div class="dropdown-content">
-        <p class="dropdown-option" id="titleCaption">Cover Screen: 1 image</p>
-        <p class="dropdown-option" id="loadSingleImage">Full Screen: 1 image</p>
-        <p class="dropdown-option" id="loadTwoImages">Split Screen: 2 images</p>
-        <p class="dropdown-option" id="masonify">Masonry: Many images</p>
+        <%= render partial: 'panels/all_methods' %>
       </div>
     </div>
     <button class="panel-submit">Save Panel</button>

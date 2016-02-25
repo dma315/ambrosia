@@ -1,8 +1,10 @@
 class PanelsController < ApplicationController
   def index
+
     experience = Experience.find(params[:experience_id])
     panels = []
-    experience.panels.each do |panel|
+    ordered_panels = experience.panels.order(created_at: :asc)
+    ordered_panels.each do |panel|
       if panel.number_asset_input
         panels << [panel.panel_type, panel.number_asset_input]
       else
@@ -15,7 +17,9 @@ class PanelsController < ApplicationController
   end
 
   def create
+
     # Because laziness, this also handles update...
+
     panel_id = params["panelID"].to_i
     asset_ids = params["assetIDs"].map(&:to_i)
     experience_id = params["experienceID"].to_i
