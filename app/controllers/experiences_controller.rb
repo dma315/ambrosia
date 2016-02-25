@@ -1,4 +1,5 @@
 class ExperiencesController < ApplicationController
+  include PanelsHelper
 
   def my_experiences
     @experiences = Experience.where(user_id: session[:user_id]).order(start_date: :desc)
@@ -8,12 +9,7 @@ class ExperiencesController < ApplicationController
   end
 
   def manage
-    @panel_methods = {
-      "titleCaption" => "Cover Screen: 1 image",
-      "loadSingleImage" => "Full Screen: 1 image",
-      "loadTwoImages" => "Split Screen: 2 images",
-      "masonify" => "Masonry: Many images",
-    }
+    @panel_methods = panel_methods
     @experience = Experience.find(params[:id])
     @ordered_panels = @experience.panels.order(created_at: :asc)
     @unpaneled = @experience.assets.where(panel_id: nil)
@@ -25,9 +21,6 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       format.json { render json: @experience.to_json(include: :panels) }
     end
-    # @user = User.find_by(id: params[:user_id])
-    # @experience = Experience.find_by(id: params[:id])
-    # render :'layouts/application'
   end
 
   def index

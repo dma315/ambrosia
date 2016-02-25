@@ -1,4 +1,6 @@
 class PanelsController < ApplicationController
+  include PanelsHelper
+
   def index
 
     experience = Experience.find(params[:experience_id])
@@ -28,6 +30,11 @@ class PanelsController < ApplicationController
     panel = Panel.find_by(id: panel_id)
     panel.panel_type = panel_type
     panel.save
+
+    if panel_methods[panel_type][1] == "variable"
+      panel.number_asset_input = asset_ids.length
+      panel.save
+    end
 
     # Unset any assets that were removed from panel
     panel.assets.each do |asset|

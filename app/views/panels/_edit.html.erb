@@ -14,7 +14,7 @@
     </div>
     <div class="dropdown">
       <span class="option-selected">
-        <%= panel_methods[panel.panel_type] %>
+        <%= panel_methods[panel.panel_type][0] %>
       </span>
       <div class="dropdown-content">
         <%= render partial: 'panels/all_methods' %>
