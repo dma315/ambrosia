@@ -4,12 +4,13 @@ function ExperienceView(id) {
   this.assetCount = this.experience.assets.length
   this.panels = []
   this.assetsPaneled = 0
+  this.panelInstructions = []
   this.layoutLookup = {
     "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
-    "masonifyFun": ""
+    "masonifyWithCaptions": ""
   }
 }
 
@@ -79,14 +80,29 @@ ExperienceView.prototype.render = function() {
     "titleCaption",
     "loadSingleImage",
     ["masonify", 8],
-    ["masonifyFun", 4],
+    ["masonifyWithCaptions", 10],
     "loadTwoImages"])
 
-  // this.loadAssets()
+  // this.loadAssets(this.panelInstructions)
 
-  // Iterate through each panel in the panel array and append to fullpage
   this.panels.forEach(function(panel) {
     $('#fullpage').append(panel)
   })
   applyFullpage()
+}
+
+ExperienceView.prototype.getPanels = function() {
+  var experience = this.experience
+  var panelInstructions = this.panelInstructions
+  var thisView = this
+  var request = $.ajax({
+    method: "get",
+    url: "/experiences/" + experience.id + "/panels.json"
+  })
+  return request.then(function(response) {
+    response.forEach(function(panelInstruction) {
+      console.log(panelInstruction)
+      thisView.panelInstructions.push(panelInstruction)
+    })
+  })
 }

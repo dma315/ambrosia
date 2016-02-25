@@ -15,7 +15,7 @@ PanelView.prototype.titleCaption = function(){
   return $div
 }
 
-PanelView.prototype.masonifyFun = function(){
+PanelView.prototype.masonifyWithCaptions = function(){
   var $div = $("<div>").addClass("section")
   var $masonGrid = $("<div>").addClass('module grid')
   var $gridRuler = $("<div>").addClass('grid-sizer')
@@ -25,11 +25,15 @@ PanelView.prototype.masonifyFun = function(){
     return b.caption.length - a.caption.length;
   });
 
-  console.log(sortedAssets)
-
   this.assets.forEach(function(asset,index) {
     var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
-    var $img = $("<div class='grid-item-content'>").append($("<img>").attr('src', asset.direct_upload_url))
+    if (Math.random() > 0.83) {
+      var assetCaption = $("<div>").addClass("masonifyWithCaptions").append('"' + sortedAssets[Math.floor(Math.random()*4)].caption + '"')
+      $gridItem.append(assetCaption)
+      $masonGrid.append($gridItem)
+    }
+    var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
+    var $img = $("<div class='masonifyWithCaptionImages'>").append($("<img>").attr('src', asset.direct_upload_url))
     $gridItem.append($img)
     $masonGrid.append($gridItem)
   })
