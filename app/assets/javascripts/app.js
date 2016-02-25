@@ -128,6 +128,14 @@ $(document).ready(function() {
     removePanel(this)
   })
 
+  //This is for the autoscroll after 20 seconds. Needs to be on doc ready.
+  $(this).mousemove(function (e) {
+      IDLETIME = 0;
+  });
+  $(this).keypress(function (e) {
+      IDLETIME = 0;
+  });
+
 
 })
 

@@ -1,4 +1,4 @@
-var
+
 
 	// Map over jQuery in case of overwrite
 	_jQuery = window.jQuery,
@@ -24,3 +24,4 @@ jQuery.noConflict = function( deep ) {
 if ( !noGlobal ) {
 	window.jQuery = window.$ = jQuery;
 }
+
