@@ -1,0 +1,29 @@
+var changeBackground = function(){
+
+  backgroundImageArray = [
+    "",
+    "<%= asset_path('ocean.jpg') %>",
+    "<%= asset_path('sand.jpg') %>",
+    "<%= asset_path('wood.jpg') %>",
+    "<%= asset_path('stars.jpg') %>"
+  ]
+
+  // BACKGROUND_ARRAY_POS found in global helpers
+  backgroundImageURL = backgroundImageArray[BACKGROUND_ARRAY_POS];
+  backgroundCSSLine = 'url("'
+    + backgroundImageURL + '")'
+
+  $('main').css({
+    "background": "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), " + backgroundCSSLine,
+    "background-size": "cover",
+    "transition": "0.5s"
+  })
+
+  backgroundImageArrayLengthMinusTwo = backgroundImageArray.length - 2
+
+  if (backgroundImageArray.length - 2 >= BACKGROUND_ARRAY_POS){
+    BACKGROUND_ARRAY_POS += 1
+  } else {
+    BACKGROUND_ARRAY_POS = 0
+  }
+}

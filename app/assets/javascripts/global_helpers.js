@@ -1,3 +1,5 @@
+BACKGROUND_ARRAY_POS = 0
+
 function clearMainFrame() {
   $allChildren = $('#main-frame').children()
   $allChildren.fadeOut();
@@ -45,9 +47,9 @@ function appendToFullPage($element) {
 }
 
 function slideIntoMF($element) {
-	$element.hide();
-	$('#main-frame').append($element);
-	$element.slideDown();
+  $element.hide();
+  $('#main-frame').append($element);
+  $element.slideDown();
 }
 
 function mainFrameContains(idString) {
@@ -89,6 +91,7 @@ function clearUserExperienceBubbles() {
     $(this).remove()
   });
 }
+
 
 function getLayoutLookup() {
   $.ajax({

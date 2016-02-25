@@ -39,6 +39,8 @@ $(document).ready(function() {
   // Create new experience
   $('#main-menu').on('click', '#create', renderCreateExperienceForm)
 
+  $("#main-menu").on('click', '#background', changeBackground);
+
   $('#main-menu').on('click', '#manage', function() {
     var experienceID = $('#manage').data().experienceid
     if (experienceID != undefined) {
