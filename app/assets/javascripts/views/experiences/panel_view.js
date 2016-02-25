@@ -14,10 +14,7 @@ PanelView.prototype.loadTwoImages = function() {
   var $div = $("<div>").addClass("section")
   this.assets.forEach(function(asset) {
     var src = asset.direct_upload_url
-    var $img = $("<img>").attr("src", src)
-    $img.css({
-      "width": "50%"
-    })
+    var $img = $("<img>").attr("src", src).addClass("two-images")
     $div.append($img)
   })
   return $div
