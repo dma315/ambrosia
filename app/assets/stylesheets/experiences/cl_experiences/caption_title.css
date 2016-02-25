@@ -101,5 +101,31 @@
 }
 
 
+.masonifySnipper *,
+.masonifySnipper *:before,
+.masonifySnipper *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.55s ease;
+  transition: all 0.55s ease;
+}
+.masonifySnipper:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+  content: '';
+}
+
+.masonifySnipper:hover img,
+.masonifySnipper.hover img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/* Demo purposes only */
+
 
 

@@ -60,7 +60,7 @@ PanelView.prototype.masonifyWithCaptions = function(){
       $gridItem.append(assetCaption)
       $masonGrid.append($gridItem)
     }
-    var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
+    var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item  masonifySnipper")
     var $img = $("<div class='masonifyWithCaptionImages'>").append($("<img>").attr('src', asset.direct_upload_url))
     $gridItem.append($img)
     $masonGrid.append($gridItem)
