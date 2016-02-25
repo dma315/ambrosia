@@ -1,5 +1,5 @@
 BACKGROUND_ARRAY_POS = 0
-IDLE_TIME = 0
+
 
 function clearMainFrame() {
   $allChildren = $('#main-frame').children()
