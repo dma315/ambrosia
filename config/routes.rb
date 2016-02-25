@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   get 'assets/collection', to: 'assets#collection'
 
   get 'experiences/my-experiences' => 'experiences#my_experiences'
+  get 'experiences/:id/manage' => 'experiences#manage'
+  get 'panels/get-layouts' => 'panels#get_layouts'
 
   resources :experiences, only: [:new, :create, :edit, :show, :index] do
-    resources :panels, only: [:index]
+    resources :panels, only: [:index, :create, :new, :destroy]
   end
 
   resources :users do
