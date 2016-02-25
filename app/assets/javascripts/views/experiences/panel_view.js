@@ -50,7 +50,7 @@ PanelView.prototype.masonify = function(){
       $masonGrid.masonry();
     })
     $masonGrid.on( 'layoutComplete', function( event, laidOutItems ) {
-      console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
+      // console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
     });
   });
 
