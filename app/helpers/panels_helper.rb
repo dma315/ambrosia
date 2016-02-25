@@ -11,7 +11,7 @@ module PanelsHelper
       "niceView4Images" => ["Grid: 4 images", 4],
       "imagesWithCaptions" => ["Captioned Grid: 8 images", 8],
       "masonify" => ["Masonry: Many images", "variable"],
-      "masonifyWithCaptions" => ["Masonry: Many images", "variable"],
+      "masonifyWithCaptions" => ["Masonry with Captions: Many images", "variable"],
       "load9GridWithSlideDown" => ["3x3 Grid with Captions", 9]
     }
   end

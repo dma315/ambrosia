@@ -49,9 +49,9 @@ PanelView.prototype.masonifyWithCaptions = function(){
   var $gridRuler = $("<div>").addClass('grid-sizer')
   $masonGrid.append($gridRuler)
 
-  var sortedAssets = this.assets.sort(function(a, b){
-    return b.caption.length - a.caption.length;
-  });
+  // var sortedAssets = this.assets.sort(function(a, b){
+  //   return b.caption.length - a.caption.length;
+  // });
 
   this.assets.forEach(function(asset,index) {
     var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
