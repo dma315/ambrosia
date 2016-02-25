@@ -15,8 +15,8 @@ function renderExperienceManageForm(experienceID) {
 
     // Draggable
     $(".draggable-image-box").draggable({
-      revert: true,
-      containment: "document",
+      // revert: true,
+      containment: "window",
       scroll: false,
       appendTo: 'body',
       helper: 'clone'
@@ -29,5 +29,14 @@ function renderExperienceManageForm(experienceID) {
         $(ui.draggable).appendTo($dropArea)
       }
     });
+
+    // Original drag area must be droppable back
+    $('.draggable-images-container').droppable({
+      drop: function(event, ui) {
+        $dropArea = $(this)
+        $(ui.draggable).prependTo($dropArea)
+      }
+    })
+
   })
 }
