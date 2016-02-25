@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       respond_to do |format|
+        format.js { render nothing: true }
         format.html { render nothing: true }
       end
       return 202
