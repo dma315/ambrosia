@@ -29,6 +29,13 @@ class PanelsController < ApplicationController
     panel.panel_type = panel_type
     panel.save
 
+    # Unset any assets that were removed from panel
+    panel.assets.each do |asset|
+      asset.panel_id = nil
+      asset.save
+    end
+
+    # Reset assets that were added to panel
     asset_ids.each do |id|
       asset = Asset.find_by(id: id)
       asset.panel_id = panel_id
