@@ -9,6 +9,9 @@ $(document).ready(function() {
     $('.logged-in').hide()
   }
 
+  // Get object that is the lookup table for all panel methods
+  getLayoutLookup()
+
   // Load navBubbles
   NAVSCROLL = new NavScroll().initialize()
   $('nav').on('scroll', function () { NAVSCROLL.resizeBubbles() })

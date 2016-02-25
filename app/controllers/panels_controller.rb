@@ -1,6 +1,12 @@
 class PanelsController < ApplicationController
   include PanelsHelper
 
+  def get_layouts
+    respond_to do |format|
+      format.json { render json: panel_methods.to_json }
+    end
+  end
+
   def index
 
     experience = Experience.find(params[:experience_id])

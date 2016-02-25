@@ -90,3 +90,12 @@ function clearUserExperienceBubbles() {
   });
 }
 
+function getLayoutLookup() {
+  $.ajax({
+    method: "get",
+    url: "/panels/get-layouts.json"
+  })
+  .done(function(response) {
+    return LAYOUTLOOKUP = response
+  })
+}
