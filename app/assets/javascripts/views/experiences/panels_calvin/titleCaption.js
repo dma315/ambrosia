@@ -20,12 +20,12 @@ PanelView.prototype.titleCaption = function(){
 PanelView.prototype.titleCaptionWithOverflow = function(){
   var $div = $("<div>").addClass("section")
   //this produces a CSS trick where the two images land on the next page
-  // var $frontImage1 = $("<img class='niceView4Front1 niceView4FrontAll niceView4Animation'>").attr("src", this.assets[1].direct_upload_url)
-  // var $frontImage2 = $("<img class='niceView4Front2 niceView4FrontAll niceView4Animation'>").attr("src", this.assets[2].direct_upload_url)
-  // var $frontImage3 = $("<img class='niceView4Front3 niceView4FrontAll'>").attr("src", this.assets[3].direct_upload_url)
-  // $div.append($frontImage1)
-  // $div.append($frontImage2)
-  // $div.append($frontImage3)
+  var $frontImage1 = $("<img class='niceView4Front1 niceView4FrontAll niceView4Animation'>").attr("src", this.assets[1].direct_upload_url)
+  var $frontImage2 = $("<img class='niceView4Front2 niceView4FrontAll niceView4Animation'>").attr("src", this.assets[2].direct_upload_url)
+  var $frontImage3 = $("<img class='niceView4Front3 niceView4FrontAll'>").attr("src", this.assets[3].direct_upload_url)
+  $div.append($frontImage1)
+  $div.append($frontImage2)
+  $div.append($frontImage3)
 
   var asset = this.assets[0]
   var experienceID = asset.experience_id
