@@ -59,3 +59,15 @@ PanelView.prototype.masonifyWithCaptions = function(){
 
   return $div.append($masonGrid.kinetic())
 }
+
+PanelView.prototype.niceView3Images = function(){
+  var $div = $("<div>").addClass("section")
+  var $backGroundImage = $("<img class='niceView3Background'>").attr("src", this.assets[0].direct_upload_url)
+  var $frontImage1 = $("<img class='niceView3Front1'>").attr("src", this.assets[1].direct_upload_url)
+  var $frontImage2 = $("<img class='niceView3Front2'>").attr("src", this.assets[2].direct_upload_url)
+  $div.append($frontImage1)
+  $div.append($frontImage2)
+  $div.append($backGroundImage)
+  return $div
+}
+

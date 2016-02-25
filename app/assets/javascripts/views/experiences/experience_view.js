@@ -10,7 +10,8 @@ function ExperienceView(id) {
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
-    "masonifyWithCaptions": ""
+    "masonifyWithCaptions": "",
+    "niceView3Images": ""
   }
 }
 
@@ -77,6 +78,7 @@ ExperienceView.prototype.render = function() {
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
+    ["niceView3Images", 3],
     "titleCaption",
     "loadSingleImage",
     ["masonify", 8],
