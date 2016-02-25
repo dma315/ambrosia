@@ -90,3 +90,5 @@ function clearUserExperienceBubbles() {
   });
 }
 
+BACKGROUND_ARRAY_POS = 0
+
