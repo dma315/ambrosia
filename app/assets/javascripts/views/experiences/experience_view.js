@@ -12,8 +12,8 @@ function ExperienceView(id) {
     "loadSingleImage": 1,
     "loadTwoImages": 2,
     "masonify": "User input",
-    "masonifyWithCaptions": "",
-    "niceView4Images": ""
+    "masonifyWithCaptions": "User input",
+    "niceView4Images": 4
   }
 }
 

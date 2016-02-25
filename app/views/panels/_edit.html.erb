@@ -17,8 +17,10 @@
         <%= panel_methods[panel.panel_type][0] %>
       </span>
       <div class="dropdown-content">
-        <%= render partial: 'panels/all_methods' %>
-        <% "Known bug, cannot submit if panel type is not re-selected" %>
+        <% panel_methods.each do |method, value_array| %>
+          <p class="dropdown-option" id="method" data-images="<%= value_array[1] %>"><%= value_array[0] %></p>
+        <% end %>
+
       </div>
     </div>
     <button class="panel-submit">Save Panel</button>
