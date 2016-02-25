@@ -1,8 +1,9 @@
+
+/* Grid 9 */
 .grid-9-container {
   display: flex;
   flex-flow: row wrap;
 }
-
 
 .grid-9-item {
   width: 33%;
@@ -109,5 +110,153 @@
 }
 .grid-9-item:hover figcaption p,
 .grid-9-item.hover figcaption p {
+  opacity: 0.7;
+}
+
+
+/* Grid Overlay */
+
+.single-image-grid-overlay {
+  width: 100%;
+  height: 100%;
+}
+
+.single-image-grid-overlay h2 {
+  margin-top: 20% !important;
+  font-size: 3em;
+}
+
+.single-image-grid-overlay {
+  /*font-family: 'Source Sans Pro', Arial, sans-serif;*/
+  position: relative;
+  float: left;
+  overflow: hidden;
+  /*margin: 10px 1%;*/
+  /*min-width: 230px;
+  max-width: 315px;
+  max-height: 220px;*/
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  margin: 0px !important;
+}
+.single-image-grid-overlay * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.single-image-grid-overlay img {
+  opacity: 1;
+  width: 100%;
+}
+.single-image-grid-overlay:after,
+.single-image-grid-overlay:before,
+.single-image-grid-overlay figcaption:after,
+.single-image-grid-overlay figcaption:before {
+  background: #0a0a0a;
+  height: 25%;
+  position: absolute;
+  content: '';
+  opacity: 0;
+  -webkit-transition: all 0.3s steps(4);
+  transition: all 0.3s steps(4);
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+}
+.single-image-grid-overlay:before {
+  top: 0;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+.single-image-grid-overlay:after {
+  top: 25%;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+.single-image-grid-overlay figcaption:before {
+  top: 50%;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  z-index: -1;
+}
+.single-image-grid-overlay figcaption:after {
+  top: 75%;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  z-index: -1;
+}
+.single-image-grid-overlay figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 30px;
+}
+.single-image-grid-overlay h2,
+.single-image-grid-overlay p,
+.single-image-grid-overlay .icons {
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+}
+.single-image-grid-overlay h2 {
+  font-weight: 900;
+  /*text-transform: uppercase;*/
+}
+.single-image-grid-overlay p {
+  font-weight: 300;
+}
+.single-image-grid-overlay .icons {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+}
+.single-image-grid-overlay i {
+  padding: 0px 10px;
+  display: inline-block;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.8;
+}
+.single-image-grid-overlay i:hover {
+  opacity: 1;
+}
+.single-image-grid-overlay:hover:after,
+.single-image-grid-overlay.hover:after,
+.single-image-grid-overlay:hover:before,
+.single-image-grid-overlay.hover:before,
+.single-image-grid-overlay:hover figcaption:after,
+.single-image-grid-overlay.hover figcaption:after,
+.single-image-grid-overlay:hover figcaption:before,
+.single-image-grid-overlay.hover figcaption:before {
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+}
+.single-image-grid-overlay:hover figcaption h2,
+.single-image-grid-overlay.hover figcaption h2,
+.single-image-grid-overlay:hover figcaption p,
+.single-image-grid-overlay.hover figcaption p,
+.single-image-grid-overlay:hover figcaption .icons,
+.single-image-grid-overlay.hover figcaption .icons {
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+.single-image-grid-overlay:hover figcaption h2,
+.single-image-grid-overlay.hover figcaption h2,
+.single-image-grid-overlay:hover figcaption .icons,
+.single-image-grid-overlay.hover figcaption .icons {
+  opacity: 1;
+}
+.single-image-grid-overlay:hover figcaption p,
+.single-image-grid-overlay.hover figcaption p {
   opacity: 0.7;
 }

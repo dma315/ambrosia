@@ -4,6 +4,7 @@ module PanelsHelper
     return {
       "titleCaption" => ["Cover Screen: 1 image", 1],
       "loadSingleImage" => ["Full Screen: 1 image", 1],
+      "singleImageGridOverlay" => ["Full Screen with faded overlay", 1],
       "titleCaptionWithOverflow" => ["1 image with 3 floats: 1 image", 4],
       "loadTwoImages" => ["Split Screen: 2 images", 2],
       "niceView4Images" => ["Grid: 4 images", 4],
