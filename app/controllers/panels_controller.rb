@@ -68,5 +68,18 @@ class PanelsController < ApplicationController
     render partial: 'panels/edit', locals: {panel: @panel}
   end
 
+  def destroy
+    @panel = Panel.find(params[:id])
+    associated_assets = @panel.assets
+    associated_assets.each do |asset|
+      asset.panel_id = nil
+      asset.save
+    end
+    @panel.destroy
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
+  end
+
 end
 

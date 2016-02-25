@@ -107,6 +107,8 @@ $(document).ready(function() {
     submitCaption(this)
   })
 
+
+  // Panel stuff
   $(document).on('click', '.panel-submit', function(event) {
     panelSubmit(this)
   })
@@ -120,6 +122,10 @@ $(document).ready(function() {
   })
 
   $(document).on('click', '#add-new-panel', addNewPanel)
+  $(document).on('click', '.panel-remove', function() {
+    removePanel(this)
+  })
+
 
 })
 
