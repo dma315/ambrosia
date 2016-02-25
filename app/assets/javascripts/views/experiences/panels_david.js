@@ -23,15 +23,26 @@ PanelView.prototype.singleImageGridOverlay = function() {
   return $div
 }
 
+PanelView.prototype.load4GridWithDoorEffect = function() {
+  var $div = $("<div>").addClass("section")
+  var $grid4container = $("<div>").addClass("grid-4-container-door").appendTo($div)
+  this.assets.forEach(function(asset) {
+    var $fig = $('<figure>').addClass("grid-4-item-door")
+    var src = asset.direct_upload_url
+    var $img = $("<img>").attr('src', src).addClass("grid-4-item-door-image").appendTo($fig)
+    var $captionContainer = $("<figcaption>").appendTo($fig)
+    var $caption = $("<h2>").text(asset.caption).appendTo($captionContainer)
+    $fig.appendTo($grid4container)
+  })
+  return $div
+}
 
-// <figure class="snip1407">
-//   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample88.jpg" alt="sample88" />
-//   <figcaption>
-//     <h2>Gunther Beard</h2>
-//     <p>Weekends don't count unless you spend them doing something completely pointless.</p>
-//     <div class="icons"><a href="#"><i class="ion-chatbubbles"></i></a>
-//       <a href="#"> <i class="ion-person-add"></i></a>
-//       <a href="#"> <i class="ion-heart"></i></a>
-//     </div>
+
+// <figure class="snip1370">
+//   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample23.jpg" alt="sq-sample23" />
+//   <figcaption><i class="ion-trophy"></i>
+//     <h4>Abraham</h4>
+//     <h2>Pigeon</h2>
 //   </figcaption>
+//   <a href="#"></a>
 // </figure>
