@@ -85,17 +85,20 @@ PanelView.prototype.masonifyWithCaptions = function(){
     });
   });
 
-  return $div.append($masonGrid.kinetic())
+  return $div.append($masonGrid.kinetic());
 }
 
-PanelView.prototype.niceView3Images = function(){
-  var $div = $("<div>").addClass("section")
-  var $backGroundImage = $("<img class='niceView4Background'>").attr("src", this.assets[0].direct_upload_url)
-  var $frontImage1 = $("<img class='niceView4Front1 niceView4FrontAll'>").attr("src", this.assets[1].direct_upload_url)
-  var $frontImage2 = $("<img class='niceView4Front2 niceView4FrontAll'>").attr("src", this.assets[2].direct_upload_url)
-  $div.append($frontImage1)
-  $div.append($frontImage2)
-  $div.append($backGroundImage)
+PanelView.prototype.imagesWithCaptions = function(){
+  var $div = $("<div>").addClass("section");
+  this.assets.forEach(function(asset){
+    $figure = $("<div class='snipper'>").append($("<img class='imagesWithCaptions'>").attr("src", asset.direct_upload_url))
+    $figureCaption = $("<figcaption>").append($("<p>").append(asset.caption))
+    $figure.append($figureCaption)
+    $div.append($figure)
+  })
   return $div
 }
+
+
+
 

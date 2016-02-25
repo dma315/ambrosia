@@ -6,7 +6,8 @@ function ExperienceView(id) {
   this.assetsPaneled = 0
   this.panelInstructions = []
   this.layoutLookup = {
-    "titleCaptionWithOverflow": 4,
+    "imagesWithCaptions": 8,
+    "titleCaptionWithOverflow": 4, //Includes overflow and "loadSingleImage" should be next
     "titleCaption": 1,
     "loadSingleImage": 1,
     "loadTwoImages": 2,
@@ -79,8 +80,9 @@ ExperienceView.prototype.render = function() {
   // For testing a predefined set of routes
   // this.loadAssets(["loadSingleImage", "loadTwoImages"])
   this.loadAssets([
-    ["titleCaptionWithOverflow", 4],
+    ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
     "loadSingleImage",
+    ["imagesWithCaptions", 8],
     "titleCaption",
     ["masonify", 8],
     ["masonifyWithCaptions", 10],
@@ -104,7 +106,6 @@ ExperienceView.prototype.getPanels = function() {
   })
   return request.then(function(response) {
     response.forEach(function(panelInstruction) {
-      console.log(panelInstruction)
       thisView.panelInstructions.push(panelInstruction)
     })
   })
