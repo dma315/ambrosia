@@ -112,13 +112,16 @@ ExperienceView.prototype.getPanels = function() {
 }
 
 ExperienceView.prototype.reorderAssets = function() {
-  var assets = this.assets
+  // Need full set of assets
+  var assets = $.extend(true, [], this.assets)
+  // console.log(assets)
   var reorderedAssets = []
   var panelInstructions = this.panelInstructions
+  console.log(panelInstructions)
 
-  function findAssetByID(id) {
-    return assets.find(function(element) {
-      return element.id === id
+  function findAssetByID(array, id) {
+    return array.find(function(element) {
+      return +element.id === id
     })
   }
 
@@ -126,16 +129,19 @@ ExperienceView.prototype.reorderAssets = function() {
     // Array[0] is the instruction
     // Array[1] is the set of asset IDs
     arrayOfAssets[1].forEach(function(assetID) {
-      asset = findAssetByID(assetID)
+      asset = findAssetByID(assets, assetID)
       var index = assets.indexOf(asset)
       reorderedAssets.push(asset)
       assets.splice(index, 1)
     })
   })
 
-  assets = reorderedAssets.concat(assets)
-  console.log(assets)
-  return assets
+  // Must return assets as a complete set
+
+  // console.log(reorderedAssets)
+  this.assets = reorderedAssets.concat(assets)
+  // console.log(this.assets)
+  return this.assets
 
 }
 
