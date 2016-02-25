@@ -12,5 +12,8 @@ function renderExperienceManageForm(experienceID) {
     });
     hideMainMenu();
     appendToMainFrame($(response))
+    $(".draggable-image-box").draggable({
+      containment: "window"
+    })
   })
 }
