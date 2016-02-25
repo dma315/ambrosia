@@ -74,20 +74,20 @@ ExperienceView.prototype.loadRemainingAssets = function(startingIndex) {
 ExperienceView.prototype.render = function() {
   removePanelNavigation()
   // For testing a predefined set of routes
-  this.loadAssets([
-    ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
-    "loadSingleImage",
-    ["imagesWithCaptions", 8],
-    "titleCaption",
-    ["masonify", 8],
-    ["masonifyWithCaptions", 10],
-    "loadTwoImages"])
+  // this.loadAssets([
+  //   ["titleCaptionWithOverflow", 4], //Includes overflow and "loadSingleImage" should be next
+  //   "loadSingleImage",
+  //   ["imagesWithCaptions", 8],
+  //   "titleCaption",
+  //   ["masonify", 8],
+  //   ["masonifyWithCaptions", 10],
+  //   "loadTwoImages"])
 
-  // var panelRotation = []
-  // this.panelInstructions.forEach(function(element) {
-  //   panelRotation.push(element[0])
-  // })
-  // this.loadAssets(panelRotation)
+  var panelRotation = []
+  this.panelInstructions.forEach(function(element) {
+    panelRotation.push(element[0])
+  })
+  this.loadAssets(panelRotation)
 
 
   this.panels.forEach(function(panel) {
