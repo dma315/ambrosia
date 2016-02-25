@@ -108,6 +108,7 @@
   box-sizing: border-box;
   -webkit-transition: all 0.55s ease;
   transition: all 0.55s ease;
+  z-index: 5;
 }
 .masonifySnipper:after {
   position: absolute;
@@ -122,8 +123,9 @@
 
 .masonifySnipper:hover img,
 .masonifySnipper.hover img {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  z-index: 1;
 }
 /* Demo purposes only */
 

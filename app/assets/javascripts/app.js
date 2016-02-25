@@ -129,5 +129,15 @@ $(document).ready(function() {
   })
 
 
+  //This is for the autoscroll after 20 seconds. Needs to be on doc ready.
+  var idleInterval = setInterval(timerIncrement, 600); //For the idle time of about 16 seconds
+  $(this).mousemove(function (e) {
+      IDLETIME = 0;
+  });
+  $(this).keypress(function (e) {
+      IDLETIME = 0;
+  });
+
+
 })
 

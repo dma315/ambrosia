@@ -55,7 +55,7 @@ PanelView.prototype.masonifyWithCaptions = function(){
 
   this.assets.forEach(function(asset,index) {
     var $gridItem = $("<div>").attr('id', asset.id).addClass("sample-image grid-item")
-    if (Math.random() > 0.83) {
+    if (Math.random() > 0.75) {
       var assetCaption = $("<div>").addClass("masonifyWithCaptions").append('"' + sortedAssets[Math.floor(Math.random()*4)].caption + '"')
       $gridItem.append(assetCaption)
       $masonGrid.append($gridItem)
