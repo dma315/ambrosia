@@ -47,30 +47,55 @@
   display: block;
 }
 
-.niceView3Background{
+.niceView4Background{
   width: 100%;
   height: 100vh;
-  z-index: 5;
+  width: 30%
 }
 
-.niceView3Front1 {
-  position: absolute;
-  width: 25%;
-  margin-top: 65vh;
-  margin-left: 40%;
-  border-top-right-radius: 25%;
-  border-bottom-left-radius: 25%;
-  z-index: 2;
+.niceView4Front1 {
+  margin-top: 166vh;
+  margin-left: 36%;
+  width: 30%;
 }
 
-.niceView3Front2 {
+.niceView4Front2 {
+  margin-top: 131vh;
+  margin-left: 66%;
+  width: 30%;
+}
+
+.niceView4Front3 {
+  margin-top: 108vh;
+  margin-left: 4%;
+  width: 55%;
+}
+
+.niceView4Animation {
+  animation-name: niceView; /*this is the title of the CSS*/
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 12s;
+}
+
+.niceView4FrontAll{
   position: absolute;
-  width: 25%;
-  margin-top: 35vh;
-  margin-left: 65%;
   border-top-right-radius: 25%;
   border-bottom-left-radius: 25%;
-  z-index: 3
+  border: 4px solid white;
+  opacity: .8;
+  z-index: 3;
 }
+
+@keyframes niceView {
+    0% {
+        transform: translateY(-440%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
 
 
