@@ -60,5 +60,13 @@ class PanelsController < ApplicationController
     end
 
   end
+
+  def new
+    experience = Experience.find(params[:experience_id])
+    # The new route leads to edit...HOW YOU LIKE ME NOW????????????
+    @panel = experience.panels.create(panel_type: "loadSingleImage")
+    render partial: 'panels/edit', locals: {panel: @panel}
+  end
+
 end
 

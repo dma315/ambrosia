@@ -116,7 +116,25 @@ $(document).ready(function() {
     $optionSelected.closest('.dropdown').find('.dropdown-option').removeClass("selected")
     $optionSelected.addClass("selected")
     var textToAppend = $optionSelected.text()
-    $optionSelected.closest('.dropdown').find('.option-selected').text(textToAppend)
+    $optionSelected.closest('.panel').find('.option-selected').text(textToAppend)
+  })
+
+  $(document).on('click', '#add-new-panel', function() {
+    var experienceID = +$('.active-bubble').attr('id')
+    $.ajax({
+      method: "get",
+      url: "/experiences/" + experienceID + "/panels/new"
+    })
+    .done(function(response) {
+      var $newForm = $(response)
+      $('.panel-group').append($newForm)
+      $('.droppable-panel').droppable({
+        drop: function(event, ui) {
+          $dropArea = $(this)
+          $(ui.draggable).appendTo($dropArea)
+        }
+      });
+    })
   })
 
 })

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'panels/get-layouts' => 'panels#get_layouts'
 
   resources :experiences, only: [:new, :create, :edit, :show, :index] do
-    resources :panels, only: [:index, :create]
+    resources :panels, only: [:index, :create, :new]
   end
 
   resources :users do
