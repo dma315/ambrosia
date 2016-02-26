@@ -1,5 +1,5 @@
-<div class="edit-image-caption-container">
-  <% path = "/users/#{session[:user_id]}/assets/#{asset.id}" %> 
+<div class="edit-image-caption-container" id="<%= asset.id %>">
+  <% path = "/users/#{session[:user_id]}/assets/#{asset.id}" %>
   <%= form_for :assets, :url => path, :html => { class: "edit-caption" }, method: "patch" do |f| %>
     <div class="edit-image-container">
       <img class="edit-image" src="<%= asset.direct_upload_url %>">
@@ -11,5 +11,5 @@
         <%= f.submit "Add caption", class: "caption-submit" %>
       </div>
     </div>
-  <% end %> 
+  <% end %>
 </div>
